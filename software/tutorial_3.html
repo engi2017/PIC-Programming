@@ -70,11 +70,11 @@
       <i class="fa fa-remove"></i>
     </a>
     <div class="w3-bar-block w3-center">
-      <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
     </div>
   </nav>
 
@@ -105,16 +105,19 @@
       <br>
       <!-- title for pdf answers-->
       <h3><b>Tutorial 3 answers:</b></h3>
-      <br>
-      <!-- PDF 2-->
-      <object data="pdf/answer_3.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+      <button onclick="showPDFButton()">Reveal Answers</button>
+      <button onclick="hidePDFButton()">Hide Answers</button>
+      <!--hidden button-->
+      <p hidden id="answers">
+        <br>
+        <!-- PDF 2-->
+        <object data="pdf/answer_3.pdf" type="application/pdf" width="1000" height="800">
+          <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
     </center>
     </object>
+    </p>
     <!-- go back to top button html-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-
     <!-- Footer -->
     <br>
     <br>
@@ -130,6 +133,14 @@
     window.onscroll = function() {
       scrollFunction()
     };
+
+    function showPDFButton() {
+      document.getElementById("answers").removeAttribute("hidden");
+    }
+
+    function hidePDFButton() {
+      document.getElementById("answers").setAttribute("hidden");
+    }
 
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
