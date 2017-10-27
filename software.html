@@ -7,111 +7,89 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-.bgimg {
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif
+  }
+  
+  .w3-row-padding img {
+    margin-bottom: 12px
+  }
+  
+  .bgimg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('/w3images/profile_girl.jpg');
     min-height: 100px;
-}
+  }
 </style>
+
 <body>
 
-<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-    <i class="fa fa-remove"></i>
-  </a>
-  <div class="w3-bar-block w3-center">
-    <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-    <a href="about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-    <a href="software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-    <a href="hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-	<a href="contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-  </div>
-</nav>
-
-<!-- Page Content -->
-<div class="w3-main w3-padding-large">
-
-  <!-- Menu icon to open sidebar -->
-  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
-
-  <!-- Header -->
-  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-    <p>PIC Programming</p>
-    <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-    <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-  <!--  <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-      <i class="fa fa-download"></i> Download Resume
-    </button>
-  </header> -->
-	  
-<p style="border:10px; border-style:solid; border-color:#494949; padding: 55em; width:155px; height:90px"</p>
-	    
-	<a href="software/tutorial_3.html"> Tutorial 3 </a>
-<object data="/pdf/sample-3pp.pdf#page=2" type="application/pdf" width="100%" height="100%">
-<p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-</object>
-	  
-	  <a href="software/tutorial_4.html">Tutorial 4</a>
-<object data="/pdf/sample-3pp.pdf#page=2" type="application/pdf" width="110%" height="110%">
-<p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-</object>
-	  
-	  <a href="software/tutorial_5.html">Tutorial 5</a>
-<object data="/pdf/sample-3pp.pdf#page=2" type="application/pdf" width="120%" height="120%">
-<p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-</object>
-	  
-	  
-	  
-	 
-  <!-- Portfolio Section -->
-  <div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="w3-text-grey"></h2>
-    <hr class="w3-opacity">
-
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="#" style="width:100%">
-        <img src="#" style="width:100%">
-        <img src="#" style="width:100%">
-      </div>
-
-      <div class="w3-half">
-        <img src="#" style="width:100%">
-        <img src="#" style="width:100%">
-        <img src="#" style="width:100%">
-        <img src="#" style="width:100%">
-      </div>
-    <!-- End photo grid -->
+  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+      <i class="fa fa-remove"></i>
+    </a>
+    <div class="w3-bar-block w3-center">
+      <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+      <a href="about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+      <a href="software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+      <a href="hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+      <a href="contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
     </div>
-  <!-- End Portfolio Section -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="w3-main w3-padding-large">
+
+    <!-- Menu icon to open sidebar -->
+    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+    <!-- Header -->
+    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+      <p>PIC Programming</p>
+
+    </header>
+    <!-- end header -->
+    <center>
+      <p style="border:10px; border-style:solid; border-color:#494949">
+        <a href="software/tutorial_3.html">Tutorial 3</a>
+        <br>
+        <a href="software/tutorial_4.html">Tutorial 4</a>
+        <br>
+        <a href="software/tutorial_5.html">Tutorial 5</a>
+        <br>
+      </p>
+    </center>
+    <!-- Footer -->
+    <br>
+    <br>
+    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+      <p class="w3-medium">Created by the Web Development team</p>
+      <!-- End footer -->
+    </footer>
+
+    <!-- END PAGE CONTENT -->
   </div>
 
- 
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-    <p class="w3-medium">Created by the Web Development team</p>
-  <!-- End footer -->
-  </footer>
-  
-<!-- END PAGE CONTENT -->
-</div>
+  <script>
+    // Open and close sidebar
+    function openNav() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
 
-<script>
-// Open and close sidebar
-function openNav() {
-    document.getElementById("mySidebar").style.display = "block";
-}
-function closeNav() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-    </script>
+    function closeNav() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
 </body>
+
 </html>
