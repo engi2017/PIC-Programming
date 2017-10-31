@@ -47,7 +47,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </button>
   </header>
-  
   <!-- Contact Section -->
   <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
     <h2>Contact Us</h2>
@@ -58,10 +57,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: 905-858-5910</p>
       <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: 812991@pdsb.net</p>
     </div>
-    
-     <!-- Google Map -->
-    <div id="googleMap" class="w3-greyscale-max" style="width:100%;height:300px;margin:36px 0;"></div>
-   
     <p>Let's get in touch. Send us a message:</p>
     <form action="/action_page.php" target="_blank">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
@@ -74,6 +69,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         </button>
       </p>
     </form>
+	  <center><div id="map" style="width:400px;height:400px;background:yellow"></div></center>
   <!-- End Contact Section -->
   </div>  
     <!-- Footer -->
@@ -86,6 +82,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <script>
 // Open and close sidebar
+function myMap() {
+  var myCenter = new google.maps.LatLng(43.560073,-79.716765);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 15};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
 function openNav() {
     document.getElementById("mySidebar").style.display = "block";
 }
@@ -94,6 +98,7 @@ function closeNav() {
     document.getElementById("mySidebar").style.display = "none";
 }
 </script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5i3qsndQ88vG_QZ4GdfjAEwVDgVjKgr4&callback=myMap">
+</script>
 </body>
 </html>
