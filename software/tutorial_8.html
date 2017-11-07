@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>Software Tutorials</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -76,152 +77,20 @@
       <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
     </div>
   </nav>
-	
-	<!-- Menu icon to open sidebar -->
+
+  <!-- Page Content -->
+  <div class="w3-main w3-padding-large">
+
+    <!-- Menu icon to open sidebar -->
     <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
-	
-<body lang=EN-US>
 
-<div class=WordSection1>
-
-<p class=MsoNormal style='text-autospace:none'><span style='color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-indent: .5in; text-autospace:none'> <span style='font-size:11.5pt;
-color:black'>TEJ4M0                     </span><span style='font-size:14.0pt;
-color:black'>TUTORIAL #8: Counters     </span><span style='font-size:11.5pt;
-</p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt; color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-indent: .5in; text-autospace:none'><b><u><span style='font-size: 11.0pt;color:black'>Objective: </span></u></b></p>
-
-<p class=MsoNormal style='text-indent: .5in;text-autospace:none'><span style='font-size:11.0pt; color:black'>To create a PIC interface that will act as a Mod16 counter using 4
-LEDs attached from RC0:RC3. </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt; color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-indent: .5in;text-autospace:none'><b><u><span style='font-size: 11.0pt;color:black'>Procedure: </span></u></b></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>1. Create new project: </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>a. Create a new
-project/workspace called <i>asmMod16 </i>in a new folder with the same name.</span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>b. Open <i>asmLEDFlash_B.asm </i>(version
-B); re-save it as <i>asmMod16.asm.</i></span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>c. Add the file to the
-project's source code.</span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>2. Change the <i>Title </i>section
-(see code attached): </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>a. Change the title, and what
-the program does. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>b. <i>Hardware Notes</i>:
-Change it to specify which ports are outputs and which devices (i.e. LEDs) are attached to which port (i.e.RC0, RC1). </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace: none'><span style='font-size:11.0pt;color:black'>3. Modify and Build: </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>a. Change code in the <i>mainline
-</i>so it matches the code below. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>b. Add any other code you
-think is necessary. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>c. Build the code and debug
-any problems. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>4. Setup your Workspace
-appropriately (i.e. arrange all windows): </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>a. Open <i>MPLAB SIM. </i>Arrange
-all windows as per Tutorial #7 (Open your <i>Project, </i>Ou<i>tput</i>,
-Stopwatch, <i>Watch </i>windows: <i>CMCON0, STATUS, ANSEL, TRISC, WREG, PORTC).
-</i></span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>b. Add your breakpoints next
-to the <i>nop </i>instruction. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>5. Run the <i>Simulator</i>: </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>a. Verify SFRs. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>b. Verify outputs and delays
-are correct. </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>c. You should see <b><i>bit 1 </i></b>of
-the <i>STATUS </i>being set (i.e. goes to a 1) when <i>PORTC </i>resets from
-1111 to 0000. Why does it do this??? </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>6. Program Your <i>PIC </i>and
-test on breadboard. (Don't forget resistors with your LEDs!)</span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>7. Make a new program<b>: </b></span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>a. Construct a new program
-called <b><i>asmMod16d </i></b>which counts down from 1111 to 0000, then
-automatically resets (hint: use one of the flags to assist you). </span></p>
-
-<p class=MsoNormal style='margin-left: .5in;text-indent: .5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>b. Setup your workspace to
-include all relevant windows: <i>Project, Output, Stopwatch, Watch (including
-all SFRs </i>and relevant <i>PORTS</i>). </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
-color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-indent: .5in; text-autospace:none'><b><u><span style='font-size:
-11.0pt;color:black'>Conclusion:</span></u></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>Why does <b><i>bit 1 </i></b>of the <i>STATUS
-</i>set (i.e. goes to a 1) when <i>PORTC </i>resets from 1111 to 0000? </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'>
-
-<span style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-autospace:none'><span
-style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal>&nbsp;</p>
-
-</div>
-
-</body>
+    <!-- Header -->
+    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    </header>
+    <!-- End header -->
     <br>
     <br>
     <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
