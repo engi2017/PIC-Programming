@@ -85,482 +85,26 @@
     <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
 
     <!-- Header -->
-  
-<body lang=EN-US>
-
-<div class=WordSection1>
-
-<p class=MsoNormal style='text-autospace:none'><span style='color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt;
-color:black'>TEJ4M0                        </span><span style='font-size:14.0pt;
-color:black'>TUTORIAL #1: <i>MPLAB IDE           </i></span></p>
-
-<p class=MsoNormal align=left style='text-align:left;text-autospace:none'><span
-style='font-size:11.5pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
-color:black'>Objectives: </span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>• Create a project, workspace,
-source code template in <i>MPLAB IDE </i>that you can use for</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>all your subsequent programs.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>• Learn to troubleshoot basic <i>&quot;ERRORS&quot;</i>,
-<i>&quot;WARNINGS&quot; </i>and <i>&quot;MESSAGES&quot;.</i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>• Apply a structured approach
-to coding.</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
-color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
-color:black'>Procedure: </span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>1. Create a new project and
-workspace: </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>a. Select <i><u>Project&gt;New…
-</u></i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>b. Name the project <i>asmTemplate
-</i>in the <i>Project Name </i>textbox.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>c. Click the '<i>Browse' </i>button
-in the <i>Project Directory </i>textbox. Create a new folder within your student
-drive and call it <i>Pic Programming.</i> Then save your file in this new
-folder with the name <i>asmTemplate. </i>Click OK to close both windows. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>d. In older versions of MPLAB,
-the project window would automatically appear, but not so with the new one.
-Select <i><u>View&gt;Project </u></i>. Notice that the project window opens and
-a new workspace (<i>asmTemplate.mcw</i>) is created with the new project
-contained inside it (<i>asmTemplate.mcp</i>) – see picture below. The purpose
-of the workspace is that it saves the &quot;view&quot; or the arrangement of
-windows, which is very useful as we will see later. The project is essentially
-a container for all the other files (i.e. source code, header, object files).
-For our purposes, we will be storing one source file within one project. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>e. Move the Project Window to
-the bottom left-hand corner (Fig 1.1).</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'><img width=316 height=237
-id="Picture 1" src="Tutorial%201_files/image001.png"></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'>
-
-<table cellpadding=0 cellspacing=0 align=left>
- <tr>
-  <td width=49 height=1></td>
- </tr>
- <tr>
-  <td></td>
-  <td><img width=332 height=31 src="Tutorial%201_files/image002.png"
-  alt="Fig 1.1: Project window placement"></td>
- </tr>
-</table>
-
-<span style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<br clear=ALL>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>2. Verify the correct
-Toolsuite is used: </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>a. Select <i><u>Project&gt;Select
-Language Toolsuite… </u></i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt;color:black'>b. You should have <i>Microchip
-MPASM Toolsuite </i>already selected. If not, change it. This is also where you
-would change to <i>HIGH-TECH Universal Toolsuite </i>if you wanted to program
-your PIC in 'C' (Fig 1.2).</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='position:absolute;z-index:251672576;left:0px;margin-left:
-107px;margin-top:70px;width:212px;height:55px'><img width=212 height=55
-src="Tutorial%201_files/image003.png"></span><span style='font-size:11.0pt;
-color:black'><img width=328 height=246 id="Picture 2"
-src="Tutorial%201_files/image004.png"></span></p>
-
-<p class=MsoNormal style='text-autospace:none'>
-
-<table cellpadding=0 cellspacing=0 align=left>
- <tr>
-  <td width=46 height=1></td>
- </tr>
- <tr>
-  <td></td>
-  <td><img width=332 height=31 src="Tutorial%201_files/image005.png"
-  alt="Fig 1.2: Select MPASM Toolsite"></td>
- </tr>
-</table>
-
-<span style='font-size:11.0pt;color:black'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:8.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:8.0pt'>&nbsp;</span></p>
-
-<br clear=ALL>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace: none'><span style='font-size:11.0pt'>3. Configure <i>MPLAB IDE </i>to use the
-proper PIC device: </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace: none'><span style='font-size:11.0pt'>a. First select <i><u>Configure&gt;Select
-Device… </u></i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>b. Locate and select the <i>P16F684 </i>in
-the <i>Device </i>textbox.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>4. Create a new source code file <i>asmTemplate.asm:
-</i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>a. Select <i><u>File&gt;New… </u></i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>b. Select <i><u>File&gt;Save As… </u></i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>c. Name it <i>asmTemplat</i>e.<i>asm </i>(include
-the <i>.asm </i>extension) and save it in the <i>Pic Programming </i>folder.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>5. Add source code file to project: </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>a. Right click on <i>Source Files </i>in
-the <i>Project </i>window. Select <i><u>Add Files… </u></i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>b. Open the <i>Pic Programming </i>folder.
-Add <i>asmTemplate</i>.asm source code file to the project.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>c. You should see the file <i>asmTemplate.asm
-</i>is part of the project in the <i>Project </i>window.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:none'><span style='font-size:11.0pt'>d. Double click on that file in the <i>Project
-</i>window, and your <i>Editor </i>window (which contains your source code)
-should pop up. Stretch the <i>Editor </i>window to fit above the <i>Project </i>window,
-but still leaving space to the right (Fig 1.3). </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='position:absolute;z-index:251674624;left:0px;margin-left:
-48px;margin-top:245px;width:332px;height:31px'><img width=332 height=31
-src="Tutorial%201_files/image006.png" alt="Fig 1.3: Editor window placement"></span><span
-style='font-size:11.0pt'><img width=329 height=245 id="Picture 3"
-src="Tutorial%201_files/image007.png"></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>6. Write the source code in the <i>Editor </i>window:</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>a. Read the last page of this Tutorial
-entitled - &quot;Programming Conventions&quot; – which gives you an explanation
-of the different sections that make up a typical program. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>b. Type in code (in the blue box) and
-programmer’s comments to your <i>Editor </i>window. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>c. Remember that only one minor syntax
-error will result in a “BUILD FAILED” . </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt'>Troubleshooting
-<i>&quot;ERRORS&quot; </i>and <i>&quot;WARNINGS&quot; </i>and <i>&quot;MESSAGES&quot;
-</i></span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>• The only way your code won't build
-successfully is if you have an &quot;ERROR&quot;. &quot;WARNINGS&quot; and
-&quot;MESSAGES&quot; usually involve a mistake in formatting. A common warning,
-for example, is <i>&quot;Found opcode in column 1&quot;. </i>Any code that
-occupies the first character space of any line is considered to be in column 1.
-Simple press the space bar, or tab key to shift the code out of column 1.
-Rebuild (Ctrl + F10) and you should see it disappear. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>• If your code doesn't build successfully,
-scroll back and locate the <u>FIRST </u>&quot;ERROR&quot; . Scroll to the end
-of the error, and or warning and you will find a message describing the error
-(i.e. <i>&quot;path exceeds 62 characters&quot; </i>– try saving all files in a
-folder in the root directory of 'C' to shorten path length). Double click on
-the &quot;ERROR&quot;, which will point to the exact line where the
-&quot;ERROR&quot; has occurred, fix it and rebuild. ERRORS are typically syntax
-in nature, and thus involve fixing a spelling mistake of some sort. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>• <b>Remember that it only takes ONE
-syntax error to get a BUILD FAILED, so check carefully!!!</b> </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='position:relative;
-z-index:251659264;left:-21px;top:28px;width:684px;height:650px'><img width=684
-height=622 src="Tutorial%201_files/image008.png"
-alt="title &quot;asmTemplate.asm - Assembly Language Coding Template&quot; &#13;&#10;; &#13;&#10;; Explain the Operation of the Program &#13;&#10;; &#13;&#10;; Hardware Notes: &#13;&#10;; details about which PIC is being used, I/O ports used, clock speed, etc. &#13;&#10;; &#13;&#10;; author &#13;&#10;; date &#13;&#10;; ------------------------------------------------------------------------------------------------------------------- &#13;&#10;; Setup &#13;&#10;LIST R=DEC ;the default numbering system is decimal &#13;&#10;INCLUDE &quot;p16f684.inc&quot; ;include the &quot;header file&quot; for this PIC which &#13;&#10;;equates labels to specific addresses in memory &#13;&#10;__CONFIG _FCMEN_OFF &amp; _IESO_OFF &amp; _BOD_OFF &amp; _CPD_OFF &amp; _CP_OFF &amp; _MCLRE_ON &amp; _PWRTE_ON &amp; _WDT_OFF &amp; _INTOSCIO ; put this all one ONE line &#13;&#10;; variables &#13;&#10;CBLOCK 0x20 &#13;&#10;; put variable names here. &#13;&#10;; CBLOCK will assign variables &#13;&#10;; to the first available GPRs (General Purpose Registers), &#13;&#10;; which begin at 0x20 (decimal 32)and end at 0x7F(decimal 127) &#13;&#10;ENDC &#13;&#10;; ---------------------------------------------------------------------------------------------------------------------- &#13;&#10;PAGE &#13;&#10;; Mainline Code &#13;&#10;org 0 ;&quot;origin&quot; directive which indicates to start &#13;&#10;; program on first address of memory(0x00) &#13;&#10;; --------------------------------------------------------------------------------------------------------------------- &#13;&#10;PAGE &#13;&#10;; Subroutines &#13;&#10;end&#13;&#10;&#13;&#10;"></span><span
-style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='page-break-before:always;text-autospace:none'><span
-style='font-size:11.5pt'>&nbsp;</span></p>
-
-<br clear=ALL>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>7. Build your program as shown in Fig 1.4.:</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>a. Modify the two lines of code that say
-'author' and 'date' to your name and today's date. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>b. Resave your <i>asmTemplate.asm </i>file.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>c. Select <i><u>Project&gt;Build All </u>(Ctrl
-+ F10 </i>is faster!<i>).</i></span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>d. The <i>Output </i>window should open
-and a message should state &quot;<i>BUILD SUCCEEDED</i>&quot;.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>e. Resize the <i>Output </i>window to fit
-below the <i>Editor </i>window.</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='position:absolute;z-index:251668480;left:0px;margin-left:
--83px;margin-top:125px;width:80px;height:49px'><img width=80 height=49
-src="Tutorial%201_files/image009.png" alt="Editor &#13;&#10;window &#13;&#10;&#13;&#10;"></span><span
-style='position:absolute;z-index:251667456;left:0px;margin-left:0px;margin-top:
-138px;width:88px;height:29px'><img width=88 height=29
-src="Tutorial%201_files/image010.png"></span><span style='position:absolute;
-z-index:251665408;left:0px;margin-left:159px;margin-top:376px;width:124px;
-height:26px'><img width=124 height=26 src="Tutorial%201_files/image011.png"></span><span
-style='position:absolute;z-index:251663360;left:0px;margin-left:251px;
-margin-top:406px;width:22px;height:100px'><img width=22 height=100
-src="Tutorial%201_files/image012.png"></span><span style='position:absolute;
-z-index:251661312;left:0px;margin-left:948px;margin-top:325px;width:76px;
-height:52px'><img width=76 height=52 src="Tutorial%201_files/image013.png"
-alt="Project &#13;&#10;window &#13;&#10;&#13;&#10;"></span><span
-style='position:absolute;z-index:251660288;left:0px;margin-left:0px;margin-top:
-361px;width:101px;height:29px'><img width=101 height=29
-src="Tutorial%201_files/image014.png"></span><span style='font-size:11.5pt'><img
-width=624 height=468 id="Picture 6" src="Tutorial%201_files/image015.png"></span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'>
-
-<table cellpadding=0 cellspacing=0 align=left>
- <tr>
-  <td width=229 height=13></td>
- </tr>
- <tr>
-  <td></td>
-  <td><img width=82 height=47 src="Tutorial%201_files/image016.png"
-  alt="Output &#13;&#10;window &#13;&#10;&#13;&#10;"></td>
- </tr>
-</table>
-
-<span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<br clear=ALL>
-
-<p class=MsoNormal style='text-autospace:none'><i><span style='font-size:11.5pt'>Editor
-</span></i></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>window
-</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><img width=332 height=31
-src="Tutorial%201_files/image017.png" alt="Fig 1.4: Workspace setup"><span
-style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<br clear=ALL>
-
-<p class=MsoNormal style='text-autospace:none'><b><i><span style='font-size:
-11.0pt'>MPLAB IDE: </span></i></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>• <i>IDE </i>stands for <i>Integrated
-Development Environment</i>, which is a fancy way of saying there are multiple
-functions/windows (write source code, simulate, program hardware, etc.) that
-can be used and organized in virtual environment. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.0pt'>• Organizing windows to view all the these
-functions is essential to using the PIC, particularly later when more windows
-are introduced; otherwise windows overlap, and it becomes increasingly
-difficult to see everything. </span></p>
-
-<p class=MsoNormal style='page-break-before:always;text-autospace:none'><span
-style='font-size:8.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.5pt'>Programming
-Conventions </span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• Communicating your code correctly is
-almost as important as the code itself. Code that is not properly communicated
-is more difficult to debug. This template provides an accurate example of how
-each program is to be structured. Ensure that you always follow this format.
-All of your programs should be broken up into three or four distinct (depending
-on if you have subroutines or not) and separate sections, each of which is
-separated by a dotted line. </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.5pt'>Section
-1: Title </span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• Each of your programs should begin with
-a title and a description about what the program does. The word
-&quot;title&quot; is a <i>directive</i>, and must be placed in the second
-column (use Tab key or one space). You should notice in your <i>Editor Window </i>that
-all <i><span style='color:#0070C0'>directives </span></i><span
-style='color:#0070C0'>and <i>instructions </i>are blue</span>. <i>Directives </i>are
-actually a slightly lighter shade than are instructions. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• Underneath that should be a description
-of what the program does, some notes about the hardware, your name and the
-date. Observe the use of the semi-colon used for any comments. When your code
-builds, anything in front of the semi colon is ignored. <span style='color:
-#00B050'>Comments are depicted in green</span>. </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.5pt'>Section
-2: Setup </span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• &quot;Setup&quot; establishes a few
-things. MPLAB defaults to a hexadecimal numbering system. For most programs
-that involve hardware, it's easier to use binary, however there is no way to
-default to binary. Some programmers prefer to use decimal for ease of use. Your
-other option is octal. Notice the <i>LIST directive </i>is used to establish
-that the &quot;radix&quot; (or &quot;R&quot;: a fancy way of saying numbering
-system) will be decimal. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• The &quot;include&quot; directive on the
-second line includes the &quot;header file&quot; for the particular PIC we are
-using - the 16F684. This header file equates labels (words that describe
-registers, locations in memory, etc.) to specific addresses so that you can
-code with greater ease. For example, to move to Bank 1, we must set the <i>RP0 </i>bit
-in the <i>STATUS </i>register. Rather than having to remember what bit number <i>RP0
-</i>represents (bit 5), and write - <i>bsf STATUS, 5 </i>- we can write - <i>bsf
-STATUS, RP0 </i>– instead. </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• The configuration statement enables and
-disables specific features of the PIC, &quot;ANDing&quot; all of these
-instructions together. For example, the last statement _INTOSCIO enables the
-internal oscillator (i.e. clock). Be sure to record this statement exactly as
-you see it. Keep in mind that the first statement (__CONFIG) consists of two
-underscores, and to put the entire config statement on ONE line. </span></p>
-
-<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
-none'><span style='font-size:11.5pt'>• &quot;CBLOCK&quot; is used to declare
-variables to the first available registers in the GPR. Recall that the first
-available GPR is at address 0x020 (remember the &quot;0x&quot; means it's hex,
-do the conversion, and the number is 32 in decimal). CBLOCK automatically
-assigns variables to addresses in data memory (RAM). </span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.5pt'>Section
-3/4: Mainline/Subroutine </span></b></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:11.5pt'>• &quot;PAGE&quot; is another directive
-which refers to where you write the mainline code and subroutines (more on that
-later). Note that all subroutines are placed after the mainline. The <i>directive
-</i>&quot;org&quot; tells the PIC to begin executing code in the first address
-of program memory (called the reset vector @ address 0x00). </span></p>
-
-<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;text-autospace:
-none'><span style='font-size:10.0pt'>• </span><span style='font-size:11.5pt'>The
-&quot;end&quot; <i>directive </i>does just what it says – it ends your program!
-</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.5pt'>&nbsp;</span></p>
-
-<p class=MsoNormal><span style='font-size:8.0pt'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-size:11.5pt'>Tips</span></b></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1)<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>If the project
-window is closed, then click <i><u>View&gt;Project</u></i> to open up the
-window.</p>
-
-<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>2)<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Make sure that
-your code is not in the first column as that will give you an error.</p>
-
-</div>
-
-</body>
-	  
-	  
-	  
+    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    </header>
+    <!-- End header -->
+    <!-- Title and prev/next pdfs hyperlink-->  
+    <center><pre class="tab"><h3>			                   <b>Tutorial 1 - Programming Conventions</b>			 <a href="tutorial_2.html">Next Tutorial</a></h3></pre>
+      <br>
+      <!-- PDF 1-->
+      <object data="pdf/tutorial_1.pdf" type="application/pdf" width="1000" height="800">
+        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+      </object>
+      
+      
+    </p>
+    <br>
+	<br>
+    <!-- go back to top button html-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Footer -->
     <br>
     <br>
@@ -575,12 +119,29 @@ your code is not in the first column as that will give you an error.</p>
   <script>
     window.onscroll = function() {
       scrollFunction()
+    };
+    function showPDFButton() {
+      document.getElementById("answers").removeAttribute("hidden");
+    }
+    function hidePDFButton() {
+      document.getElementById("answers").setAttribute("hidden", "true");
+    }
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+      document.documentElement.scrollTop = 0; // For IE and Firefox
     }
     // Open and close sidebar
     function openNav() {
       document.getElementById("mySidebar").style.display = "block";
     }
-
     function closeNav() {
       document.getElementById("mySidebar").style.display = "none";
     }
