@@ -91,20 +91,51 @@
       <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </header>
     <!-- End header -->
+    <!-- Title and prev/next pdfs hyperlink-->
+    <center><pre class="tab"><h3><a href="tutorial_8.html">Previous Tutorial</a>	 		 <b>Tutorial 9 - Inputs</b>			<a href="tutorial_10.html">Next Tutorial</a></h3></pre>
+      <br>
+      <!-- PDF 1-->
+      <object data="pdf/Tutorial 9.pdf" type="application/pdf" width="1000" height="800">
+        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+    
+    </center>
+    </object>
+    </p>
+    <!-- go back to top button html-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- Footer -->
     <br>
     <br>
     <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
       <p class="w3-medium">Created by the Web Development team</p>
       <!-- End footer -->
     </footer>
-    
-     <!-- END PAGE CONTENT -->
+
+    <!-- END PAGE CONTENT -->
   </div>
   <!-- js dont touch-->
   <script>
     window.onscroll = function() {
       scrollFunction()
     };
+    function showPDFButton() {
+      document.getElementById("answers").removeAttribute("hidden");
+    }
+    function hidePDFButton() {
+      document.getElementById("answers").setAttribute("hidden", "true");
+    }
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+      document.documentElement.scrollTop = 0; // For IE and Firefox
+    }
     // Open and close sidebar
     function openNav() {
       document.getElementById("mySidebar").style.display = "block";
@@ -112,7 +143,6 @@
     function closeNav() {
       document.getElementById("mySidebar").style.display = "none";
     }
-    
   </script>
 </body>
 
