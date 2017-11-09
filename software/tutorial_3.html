@@ -91,6 +91,137 @@
       <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </header>
     <!-- End header -->
+<center><h2>TUTORIAL #3: PIC Scavenger Hunt
+<br>
+TEJ4M0</h2>
+</center>
+<br>
+<div class="row">
+<div id="instructionsPrompt" class="column">
+<!-- hey you want to put the stuff for the left column in here -->
+<br>
+<b><u>Objectives:</u></b>
+<br>
+• To educate one self on how to find answers about the PIC16F684 and Assembler
+<br><br>
+<b><u>Procedure:</b></u>
+<br>
+- Go to <a href="www.microchip.com">www.micorchip.com</a> and download the latest full version of MPLAB IDE onto your PC at home. Also load PICC-Lite when it prompts you after loading MPLAB. This is the 'C' complier you can use if writing in 'C'.
+<br>
+- Use MPLAB
+<br>
+b. Create a new folder called asmFirst within the Pic Programming folder in your student drive.
+<br>
+c. Save the project asmFirst into the folder asmFirst.
+<br>
+2. Create a new source code file - use asmTemplate.asm:
+<br>
+a. Select <u>File>Open...</u>Open asmTemplate.asm that you created in Tutorial #2.
+<br>
+b. Select  <u>File>Save As…</u> Change the name from asmTemplate.asm to asmFirst.asm.
+<br>
+c. Save it in the folder asmFirst.
+<br>
+3. Add source code to project and build:
+<br>
+a. Right click on Source Files in the Project window (TIP: To open the Project window, click  <u>View>Project</u>  and the Project window should open up).
+<br>
+b. Select  <u>Add  Files…</u>Add asmFirst.asm to the project.
+<br>
+c. Build project (Ctrl + F10); ensure you get "BUILD SUCCEEDED!".
+<br>
+4. Open MPLAB SIM and Watch window:
+<br>
+a. Select <u>Debugger>Select Tool>MPLAB SIM.</u> You should notice a new set of tools on the taskbar have 
+been added. These are the controls for the simulator.
+<br>
+b. Select <u>View>Watch</u> to open up the Watch window.
+<br>
+c. Rearrange the four windows to match Figure 2.1.
+<br>
+5. Write the program:
+<br>
+a. Modify the 'title' and 'setup' sections.
+<br>
+b. Add the code and programmer's comments in the mainline.
+<br>
+c. Remember that only one minor syntax error will result in a "BUILD FAILED”.
+<br>
+6. ‘Rebuild’ your program:
+<br>
+a. Ctrl + F10
+<br>
+b. Troubleshoot if necessary.
+<br>
+7. Setup Watch window (Fig 2.2):
+<br>
+a. Right-click on the column entitled Value and select both Binary and Decimal.
+<br>
+b. Deselect Value and Address.
+<br>
+c. Select the WREG from the pull down menu on the left.
+<br>
+d. Click the Add SFR button; WREG should appear in the window.
+<br>
+e. Select the i variable from the pull-down menu on the right.
+<br>
+f. Click the Add Symbol button; variable i should appear (Fig 2.4).
+<br>
+8. Start MPLAB SIM:
+<br>
+a. Place your mouse cursor over each of the symbols on the simulator toolbar until you
+come across Reset. Click it (Fig 2.5).
+<br>
+b. You will notice a green arrow (which represents the PC (Program Counter)) pop up on
+the screen, pointing at the first line of code after “org 0”. This is where the simulator
+starts (Fig 2.6).
+<br>
+9. Execute MPLAB SIM:
+<br>
+a. Each instruction in Assembler has two distinct parts: The mnemonic and the operand.
+(refer to your “Instruction Set” table which lists all 35 instructions). For example, the
+instruction movlw k, movlw is called the mnemonic and k is the operand. The
+mnemonic is simply an abbreviated form of the instruction. In this case, it’s saying
+“move some value into the working register”. The operand k, simply represents the
+value. Therefore, movlw 15 would move a value of 15 into the working register.
+<br>
+b. Click on the Step Into button on the simulator taskbar.
+<br>
+c. Observe the change to WREG in the Watch window: 6 has been loaded into the
+working register. Hence, the instruction movlw (i.e. move a literal value into the
+working register) is visible in both binary and decimal. Notice also that it turned
+everything red, indicating a change has been made (Fig 2.7).
+<br>
+d. Click one more time and you will see that 6 has been moved from the WREG to i.
+Hence, the instruction movwf (i.e. move the contents of w to a file register).
+Remember: All data must pass though the working register FIRST before going
+to any other register.
+<br>
+e. Step through until you reach the addwf i, f line of code. As you can probably guess,
+the addwf mnemonic is telling you that it will add the contents of the WREG with the
+contents of variable i. The additional piece of code that is included is the letter f. This
+is referred to as the destination bit, which can be either f or w. This means you can
+store the result of the addition in either the variable you're using, or the WREG (Fig
+2.8).
+<br>
+f. Change the destination bit to w, rebuild, reset the simulator and note the change (Fig
+2.9).
+<br>
+g. The simulator is an essential tool for building successful programs and interfaces,
+particularly when building the robot!!!
+<br>
+<!-- don't put text after this for first column john -->
+</div>
+<div class="column">
+<!-- pictures and whatever you want in the second column can go here!! -->
+hi
+<!-- dont put anything after this john -->
+</div>
+</div>
+	  
+	  
+	  
+	  
     <!-- Title and prev/next pdfs hyperlink-->
     <center><pre class="tab"><h3><a href="tutorial_2.html">Previous Tutorial</a>		<b>Tutorial 3 - PIC Scavenger Hunt</b>			<a href="tutorial_4.html">Next Tutorial</a></h3></pre>
       <br>
