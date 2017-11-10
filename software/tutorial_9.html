@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  #myBtn {
+    #myBtn {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -60,6 +60,21 @@
     background-image: url('/w3images/profile_girl.jpg');
     min-height: 100%;
   }
+  
+  #instructionsPrompt {
+    width: 50%;
+    font-size: 20px;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 </style>
 
 <body>
@@ -91,16 +106,266 @@
       <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </header>
     <!-- End header -->
-    <!-- Title and prev/next pdfs hyperlink-->
-    <center><pre class="tab"><h3><a href="tutorial_8.html">Previous Tutorial</a>	    		  <b>Tutorial 9 - Inputs</b>		 	   <a href="tutorial_10.html">Next Tutorial</a></h3></pre>
+    <center>
+      <h2>TUTORIAL #9: Inputs
+<br>
+TEJ4M0</h2>
       <br>
-      <!-- PDF 1-->
-      <object data="pdf/Tutorial 9.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-    
+      <h3>
+		<a href="tutorial_8.html">Previous Tutorial</a>
+		<br>
+		<a href="tutorial_10.html">Next Tutorial</a>
+	  </h3>
     </center>
-    </object>
-    </p>
+    <div class="row">
+      <div id="instructionsPrompt" class="column">
+        <!-- hey you want to put the stuff for the left column in here -->
+        <br>
+        <b><u>Objective:</u></b>
+        <br> To create a PIC interface which uses one button input to control the speed of three LEDs flashing.
+        <br>
+        <br>
+        <b><u>Procedure:</b></u>
+		<br>
+1. Using your pinout diagram, build your circuit as follows:
+<br>
+&nbsp &nbsp &nbsp a. Connect three LEDs through 1k resistors to ground from RC2, RC3, RC4.
+<br>
+&nbsp &nbsp &nbsp b. Use the following schematic to wire a push button to RA5 (Fig 9.1).
+<br>
+&nbsp &nbsp &nbsp c. You should note that the schematic is somewhat counter-intuitive; it sends a HIGH when
+you DON`T press the button, and sends a LOW when you DO press the button. The
+reason for this is that interference from DC motors can cause some PICS inputs to switch
+from LOW to HIGH at random. If inputs are always set HIGH, then you avoid this
+problem. 
+        <br>
+2. Create a new project:
+<br>
+&nbsp &nbsp &nbsp a. Create a new project/workspace/source file called asmButton, all saved in a new folder
+with the same name.
+<br>
+3. Add source code to the Editor window (see last page):
+<br>
+&nbsp &nbsp &nbsp a. Write in your own Hardware Notes. Remember you are adding an input, so include that as
+well as the three outputs, specifying the port responsible (i.e. RA5).
+<br>
+&nbsp &nbsp &nbsp b. Add in your own programmer`s comments that describe how the hardware is being
+affected (i.e. LED turns ON), rather than interpreting the code (move a literal value of 10
+into the working register). Keep your comments readable, simple and to the point!
+<br>
+&nbsp &nbsp &nbsp c. Add breakpoints next to all nop instructions.
+<br>
+&nbsp &nbsp &nbsp d. Build it! (Ctrl + F10).
+<br>
+4. Setup your workspace:
+<br>
+&nbsp &nbsp &nbsp a. Open MPLAB SIM, organize windows as shown in Fig 9.2: 
+<br>
+5. Open the Stimulus window (for simulating inputs):
+<br>
+&nbsp &nbsp &nbsp a. Select Debugger>Stimulus>New Workbook.
+<br>
+&nbsp &nbsp &nbsp b. Select the Asynch tab if it's not already in view.
+<br>
+&nbsp &nbsp &nbsp c. Add RA5 and comments for each, resizing window as shown below in Fig 9.3:
+<br>
+&nbsp &nbsp &nbsp d. Click on "Save" on the window. Call it asmButton.sbs and save it in the asmButton folder.
+<br>
+6. Resize and position the Stimulus Controller in the top right hand corner of your screen (Fig 9.4):
+<br>
+7. Verify Configuring SFRs (Fig 9.5):
+<br>
+&nbsp &nbsp &nbsp a. Use the "Step Into" feature of the simulator (F7) to verify that your SFR registers.
+(CMCON0, ANSEL, TRISA, TRISC) in the Watch window are set to the correct values
+<br>
+&nbsp &nbsp &nbsp b. Stop "stepping" when you reach the first nop instruction.
+<br>
+&nbsp &nbsp &nbsp c. Notice that TRISA is added, and shows two bits that are 1 (RA5 is taught to be an INPUT,
+and RA3 is always an INPUT) and the rest are 0 (RA0, RA1, RA2, RA4 are therefore
+OUTPUTS).
+<br>
+8. Simulate LED flashing slowly (part 1) (Fig 9.5):
+<br>
+&nbsp &nbsp &nbsp a. With the PC counter pointed at the first nop instruction, fire RA5 HIGH (flash slowly) by
+clicking on the Fire (>) button for "RA5 Set High" in the Stimulus Controller.
+<br>
+&nbsp &nbsp &nbsp b. Press "RUN" once. You should notice the PC pointer has now jumped to the subroutine
+flashSlow, stopping at the breakpoint at nop.
+<br>
+&nbsp &nbsp &nbsp a. Observe the three different windows:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is HIGH (flash slowly).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all HIGH (3 LEDs ON).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is about 2 seconds (recall that the extra 16 microseconds
+(.000016) is a result of the execution of the instructions.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is ON for.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash slowly fired" indicating the button has not been
+pressed.
+<br>
+9. Simulate LED flashing slowly (part 2) (Fig 9.6):
+<br>
+&nbsp &nbsp &nbsp a. Reset Stopwatch window back to 0 by pressing the Zero button.
+<br>
+&nbsp &nbsp &nbsp b. Click "RUN" once, and watch the PC counter point at the next nop instruction
+<br>
+&nbsp &nbsp &nbsp c. Observe the three different windows:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is still HIGH (flash slowly).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all LOW (3 LEDs OFF).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is about 2 seconds again.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is OFF for.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash slowly fired" still shows.
+<br>
+&nbsp &nbsp &nbsp d. Repeat steps a to c above and notice what happens:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The LED turns ON and OFF at a rate of 2 seconds. This has been verified by both
+the Stopwatch and Watch windows
+<br>
+10. Simulate LED flashing quickly (part 1) (Fig 9.7):
+<br>
+&nbsp &nbsp &nbsp a. Reset Stopwatch window back to 0 by pressing the Zero button.
+<br>
+&nbsp &nbsp &nbsp b. With the PC counter pointed at the first nop instruction, fire RA5 LOW (flash quickly) by
+clicking on the Fire (>) button for "RA5 Set Low" in the Stimulus Controller.
+<br>
+&nbsp &nbsp &nbsp c. Press "RUN" until the PC pointer has jumped to the subroutine flashFast, stopping at the
+breakpoint at nop.
+<br>
+&nbsp &nbsp &nbsp d. Observe the three different windows:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is LOW (flash quickly). In other words, the button has been pressed!
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all HIGH (3 LEDs ON).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is now only 20 milliseconds!
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is ON for, and why this flashes faster.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash quickly fired" now appears.
+<br>
+11. Simulate LED flashing slowly (part 2) (Fig 9.8):
+<br>
+&nbsp &nbsp &nbsp a. Reset Stopwatch window back to 0 by pressing the Zero button.
+<br>
+&nbsp &nbsp &nbsp b. "RUN" to the next instruction.
+<br>
+&nbsp &nbsp &nbsp c. Observe the three different windows:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is still LOW (flash quickly).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all LOW (3 LEDs OFF).
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is about 20 milliseconds again.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is OFF for.
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash quickly fired" still shows.
+<br>
+&nbsp &nbsp &nbsp e. Repeat steps a to c above and notice what happens:
+<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The LED turns ON and OFF at a rate of 20 milliseconds. This has been verified by
+both the Stopwatch and Watch windows.
+<br>
+12. Program Your PIC and test on breadboard (don't forget resistors with your LEDs!)
+<br>
+a. Ensure you insert your PICKit2 correctly 
+<br>
+<br>
+<img src="../Pictures/software_9_10.jpg">
+<br>
+Conclusion:
+<br>
+1. Describe the purpose of the following instructions:
+<br>
+&nbsp &nbsp &nbsp a. btfss PORTA, 5.
+<br>
+&nbsp &nbsp &nbsp b. btfsc PORTA, 5.
+<br>
+&nbsp &nbsp &nbsp c. call flashSlow.
+<br>
+&nbsp &nbsp &nbsp d. return.
+<br>
+<img src="../Pictures/software_9_12.jpg">
+<br>
+        <br>
+        <!-- don't put text after this for first column john -->
+      </div>
+      <div class="column">
+        <!-- pictures and whatever you want in the second column can go here!! -->
+        <center>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="../Pictures/software_9_1.jpg">
+          <br>
+		  <img src="../Pictures/software_9_2.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_3.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_4.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_5.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_6.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_7.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_8.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_9.jpg">
+		  <br>
+		  <img src="../Pictures/software_9_11.jpg">
+		  <br>
+        </center>
+        <!-- dont put anything after this john -->
+      </div>
+    </div>
+    <center>
+      <object data="pdf/tutorial 9.pdf" type="application/pdf" width="1000" height="800">
+        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+      </object>
+      </p>
+      <br>
+      <br>
+    </center>
     <!-- go back to top button html-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Footer -->
@@ -108,9 +373,8 @@
     <br>
     <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
       <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
     </footer>
-
+      <!-- End footer -->
     <!-- END PAGE CONTENT -->
   </div>
   <!-- js dont touch-->
@@ -118,12 +382,15 @@
     window.onscroll = function() {
       scrollFunction()
     };
+
     function showPDFButton() {
       document.getElementById("answers").removeAttribute("hidden");
     }
+
     function hidePDFButton() {
       document.getElementById("answers").setAttribute("hidden", "true");
     }
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
@@ -140,6 +407,7 @@
     function openNav() {
       document.getElementById("mySidebar").style.display = "block";
     }
+
     function closeNav() {
       document.getElementById("mySidebar").style.display = "none";
     }
