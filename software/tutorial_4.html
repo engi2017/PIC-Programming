@@ -91,6 +91,79 @@
       <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </header>
     <!-- End header -->
+	  
+<center><h2>TUTORIAL #4: Applying MPLAB SIM
+<br>
+TEJ4M0</h2>
+</center>
+<br>
+<div class="row">
+<div id="instructionsPrompt" class="column">
+<!-- hey you want to put the stuff for the left column in here -->
+<br>
+<b><u>Objectives:</u></b>
+<br>
+• To educate one self on how to find answers about the PIC16F684 and Assembler
+<br><br>
+<b><u>Procedure:</b></u>
+<br>
+- Go to <a href="http://www.microchip.com/">www.microchip.com</a> and download the latest full version of MPLAB IDE onto your PC at home. Also load PICC-Lite when it prompts you after loading MPLAB. This is the 'C' complier you can use if writing in 'C'.
+<br>
+- Use MPLAB IDE, and “The PIC Package” to answer the following questions:
+<br>
+1. How many available GPRs are thee in Bank 0 of the 16F684?
+<br>
+2. What is the first available address (in hex) in the GPR? The last?
+<br>
+3. Which programmers can you use with the P16F684? (hint: see "Configure" menu in MPLAB IDE)
+<br>
+4. How large is the instruction set in MPASM (Microchip PIC Assembler)?
+<br>
+5. For the instruction movlw k , what does k represent?
+<br>
+6. Where must all data first be written to before going to any other register?
+<br>
+7. For the instruction addwf f,d , what does f represent?
+<br>
+8. For the instruction addwf f,d , what does d represent?
+<br>
+9. Using Notepad, open the header file p16f684.inc (run a search). What values are assigned
+(EQU) to W and F registers. Why?
+<br>
+10. What are the two address locations of the Status Register?
+<br>
+11. What would have to happen in order to set (logical 1) the Z bit of the Status Reg?
+<br>
+12. What would have to happen in order to set (logical 1) the C bit of the Status Reg?
+<br>
+13. Which bit in the STATUS Register is responsible for bank selecting?
+<br>
+14. Which bank is being selected if the Status Reg had a value of 00100110?
+<br>
+Is the value of the Digit Carry bit set (logical 1) or cleared (logical 0)?
+<br>
+15. What is the address of the “Reset Vector”?
+<br>
+16. What do bits 6 and 7 represent in both PORTA and PORTC?
+Why?
+<br>
+17. asmSecond
+<br>
+Make a new project and name it asmSecond.mcp, saving it in a folder called asmSecond
+Write a program that adds the contents of 2 different GPR registers, subtracts this sum from
+the contents of another register, and finally stores the result in the WREG (i.e. (10 + 13) - 5
+=18). Remember to utilize the template when coding and use MPLAB SIM to view the results
+of your code in the Watc.
+
+<!-- don't put text after this for first column john -->
+</div>
+<div class="column">
+<!-- pictures and whatever you want in the second column can go here!! -->
+hi
+<!-- dont put anything after this john -->
+</div>
+</div>
+	  
     <!-- Title and prev/next pdfs hyperlink-->
     <center><pre class="tab"><h3><a href="tutorial_3.html">Previous Tutorial</a>		<b>Tutorial 4 - Applying MPLAB SIM</b>			<a href="tutorial_5.html">Next Tutorial</a></h3></pre>
       <br>
