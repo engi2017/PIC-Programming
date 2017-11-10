@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  #myBtn {
+    #myBtn {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -60,6 +60,10 @@
     background-image: url('/w3images/profile_girl.jpg');
     min-height: 100%;
   }
+  
+  #instructionsPrompt {
+    font-size: 20px;
+  }
 </style>
 
 <body>
@@ -91,16 +95,97 @@
       <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </header>
     <!-- End header -->
-    <!-- Title and prev/next pdfs hyperlink-->
-    <center><pre class="tab"><h3><a href="tutorial_7.html">Previous Tutorial</a>	 		 <b>Tutorial 8 - Counters</b>			<a href="tutorial_9.html">Next Tutorial</a></h3></pre>
+    <center>
+      <h2>TUTORIAL #9: Inputs
+<br>
+TEJ4M0</h2>
       <br>
-      <!-- PDF 1-->
-      <object data="pdf/Tutorial 8 (1).pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-    
+      <h3>
+		<a href="tutorial_8.html">Previous Tutorial</a>
+		<br>
+		<a href="tutorial_10.html">Next Tutorial</a>
+	  </h3>
     </center>
-    </object>
-    </p>
+      <div id="instructionsPrompt" >
+        <!-- hey you want to put the stuff for the left column in here -->
+        <br>
+        <b><u>Objective:</u></b>
+        <br> To create a PIC interface which uses one button input to control the speed of three LEDs flashing.
+        <br>
+        <br>
+        <b><u>Procedure:</b></u>
+		<br>
+		1. Create new project:
+		<br>
+&nbsp &nbsp &nbsp a. Create a new project/workspace called asmMod16 in a new folder with the same
+name.
+<br>
+&nbsp &nbsp &nbsp b. Open asmLEDFlash_B.asm (version B); re-save it as asmMod16.asm.
+<br>
+&nbsp &nbsp &nbsp c. Add the file to the project's source code.
+<br>
+2. Change the Title section (see code attached):
+<br>
+&nbsp &nbsp &nbsp a. Change the title, and what the program does.
+<br>
+&nbsp &nbsp &nbsp b. Hardware Notes: Change it to specify which ports are outputs and which devices (i.e.
+LEDs) are attached to which port (i.e.RC0, RC1).
+<br>
+3. Modify and Build:
+<br>
+&nbsp &nbsp &nbsp a. Change code in the mainline so it matches the code below.
+<br>
+&nbsp &nbsp &nbsp b. Add any other code you think is necessary.
+<br>
+&nbsp &nbsp &nbsp c. Build the code and debug any problems.
+<br>
+4. Setup your Workspace appropriately (i.e. arrange all windows):
+<br>
+&nbsp &nbsp &nbsp a. Open MPLAB SIM. Arrange all windows as per Tutorial #7 (Open your Project,
+Output, Stopwatch, Watch windows: CMCON0, STATUS, ANSEL, TRISC, WREG,
+PORTC).
+<br>
+&nbsp &nbsp &nbsp b. Add your breakpoints next to the nop instruction.
+<br>
+5. Run the Simulator:
+<br>
+&nbsp &nbsp &nbsp a. Verify SFRs.
+<br>
+&nbsp &nbsp &nbsp b. Verify outputs and delays are correct.
+<br>
+&nbsp &nbsp &nbsp c. You should see bit 1 of the STATUS being set (i.e. goes to a 1) when PORTC resets
+from 1111 to 0000. Why does it do this???
+<br>
+6. Program Your PIC and test on breadboard. (Don't forget resistors with your LEDs!)
+<br>
+7. Make a new program:
+<br>
+&nbsp &nbsp &nbsp a. Construct a new program called asmMod16d which counts down from 1111 to 0000,
+then automatically resets (hint: use one of the flags to assist you).
+<br>
+&nbsp &nbsp &nbsp b. Setup your workspace to include all relevant windows: Project, Output, Stopwatch,
+Watch (including all SFRs and relevant PORTS).
+<br>
+<br>
+Conclusion:
+<br>
+Why does bit 1 of the STATUS set (i.e. goes to a 1) when PORTC resets from 1111 to
+0000? 
+<br>
+<center>
+<img src="../Pictures/software_8_1.jpg">
+</center>
+        <br>
+        <!-- don't put text after this for first column john -->
+	</div>
+    <center>
+      <object data="pdf/tutorial 8 (1).pdf" type="application/pdf" width="1000" height="800">
+        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+      </object>
+      </p>
+      <br>
+      <br>
+    </center>
     <!-- go back to top button html-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Footer -->
@@ -108,9 +193,8 @@
     <br>
     <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
       <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
     </footer>
-
+      <!-- End footer -->
     <!-- END PAGE CONTENT -->
   </div>
   <!-- js dont touch-->
@@ -118,12 +202,15 @@
     window.onscroll = function() {
       scrollFunction()
     };
+
     function showPDFButton() {
       document.getElementById("answers").removeAttribute("hidden");
     }
+
     function hidePDFButton() {
       document.getElementById("answers").setAttribute("hidden", "true");
     }
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
@@ -140,6 +227,7 @@
     function openNav() {
       document.getElementById("mySidebar").style.display = "block";
     }
+
     function closeNav() {
       document.getElementById("mySidebar").style.display = "none";
     }
