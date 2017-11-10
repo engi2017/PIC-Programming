@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  #myBtn {
+    #myBtn {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -60,6 +60,21 @@
     background-image: url('/w3images/profile_girl.jpg');
     min-height: 100%;
   }
+  
+  #instructionsPrompt {
+    width: 50%;
+    font-size: 20px;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 </style>
 
 <body>
@@ -91,16 +106,78 @@
       <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
     </header>
     <!-- End header -->
-    <!-- Title and prev/next pdfs hyperlink-->
-    <center><pre class="tab"><h3><a href="tutorial_9.html">Previous Tutorial</a>	 		 <b>Tutorial 10 - Gate Simulation</b>			</a></h3></pre>
+    <center>
+      <h2>TUTORIAL #10: Gate Simulation
+<br>
+TEJ4M0</h2>
       <br>
-      <!-- PDF 1-->
-      <object data="pdf/Tutorial 10.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-    
+      <h3><a href="tutorial_9.html">Previous Tutorial</a></h3>
     </center>
-    </object>
-    </p>
+    <div class="row">
+      <div id="instructionsPrompt" class="column">
+        <!-- hey you want to put the stuff for the left column in here -->
+        <br>
+        <b><u>Objective:</u></b>
+        <br> Using MPLAB SIM to discover which logic gate the program is written to emulate without building the circuit.
+        <br>
+        <br>
+        <b><u>Procedure:</b></u>
+        <br> 1. Create new project with same name:
+        <br> &nbsp &nbsp &nbsp a. Create a new project/workspace/source file, all saved in new folder called asmGate
+        <br> 2. Add source code to the Editor window (see bottom of page):
+        <br> &nbsp &nbsp &nbsp a. Make any necessary modifications or additions to the code in the Editor window
+        <br> &nbsp &nbsp &nbsp b. To simulate a logic gate, we need 2 inputs and one output. Setup your SFRs so that you are using RA3 (A) and RA4 (B) as the two inputs, and RC3 as the output (Y)
+        <br> &nbsp &nbsp &nbsp a. No breakpoints are required since you don't use the Dlay instruction.
+        <br> &nbsp &nbsp &nbsp b. Build it (Cntrl + F10) successfully.
+        <br> 3. Open <i>MPLAB SIM</i>
+        <br> &nbsp &nbsp &nbsp a. Add Watch window (<i>CMCON0, STATUS, ANSEL, TRISA, TRISC, PORTA, PORTC</i>)
+        <br> &nbsp &nbsp &nbsp c. Add <b>RA3</b> and <b>RA4</b> (push button inputs) and comments for each to new Stimulus workbook. Save it in the asmGate folder you already created.
+        <br> 4. Test inputs (<b>RA3</b> and <b>RA4</b>):
+        <br> &nbsp &nbsp &nbsp a. Since you have two inputs, this must mean you have four scenarios to test (see TT below)
+        <br> &nbsp &nbsp &nbsp b. Use the <b>Fire (>)</b> button to simulate these four scenarios and fill in the truth table.
+        <br> &nbsp &nbsp &nbsp c. Conclusion: what kind of gate is it???
+        <br>
+        <br>
+        <!-- don't put text after this for first column john -->
+      </div>
+      <div class="column">
+        <!-- pictures and whatever you want in the second column can go here!! -->
+        <center>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="../Pictures/software_10_1.jpg">
+          <br>
+        </center>
+        <!-- dont put anything after this john -->
+      </div>
+    </div>
+    <center>
+      <object data="pdf/tutorial 10.pdf" type="application/pdf" width="1000" height="800">
+        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+      </object>
+      </p>
+      <br>
+      <br>
+      <h3><b>Tutorial 10 answers:</b></h3>
+      <!--hidden/reveal button-->
+      <button onclick="showPDFButton()">Reveal Answers</button>
+      <button onclick="hidePDFButton()">Hide Answers</button>
+      <!--answer pdf contents-->
+      <p hidden id="answers">
+		<img src="../Pictures/software_10_2.jpg">
+		<br>
+        <br>
+        <!-- PDF 2-->
+        <object data="pdf/Tutorial 10 Answers.pdf" type="application/pdf" width="1000" height="800">
+          <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
+    </center>
     <!-- go back to top button html-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Footer -->
@@ -108,9 +185,8 @@
     <br>
     <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
       <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
     </footer>
-
+      <!-- End footer -->
     <!-- END PAGE CONTENT -->
   </div>
   <!-- js dont touch-->
@@ -118,12 +194,15 @@
     window.onscroll = function() {
       scrollFunction()
     };
+
     function showPDFButton() {
       document.getElementById("answers").removeAttribute("hidden");
     }
+
     function hidePDFButton() {
       document.getElementById("answers").setAttribute("hidden", "true");
     }
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
@@ -140,6 +219,7 @@
     function openNav() {
       document.getElementById("mySidebar").style.display = "block";
     }
+
     function closeNav() {
       document.getElementById("mySidebar").style.display = "none";
     }
