@@ -120,56 +120,56 @@ TEJ4M0</h2>
 &nbsp &nbsp &nbsp a. Create a new project/workspace called asmMod16 in a new folder with the same
 name.
 <br>
-&nbsp &nbsp &nbsp b. Open asmLEDFlash_B.asm (version B); re-save it as asmMod16.asm.
+&nbsp &nbsp &nbsp b. Open <i>asmLEDFlash_B.asm</i> (version B); re-save it as <i>asmMod16.asm</i>.
 <br>
 &nbsp &nbsp &nbsp c. Add the file to the project's source code.
-<br>
-2. Change the Title section (see code attached):
+<br><br>
+2. Change the <i>Title</i> section (see code attached):
 <br>
 &nbsp &nbsp &nbsp a. Change the title, and what the program does.
 <br>
-&nbsp &nbsp &nbsp b. Hardware Notes: Change it to specify which ports are outputs and which devices (i.e.
+&nbsp &nbsp &nbsp b. <i>Hardware Notes</i>: Change it to specify which ports are outputs and which devices (i.e.
 LEDs) are attached to which port (i.e.RC0, RC1).
-<br>
+<br><br>
 3. Modify and Build:
 <br>
-&nbsp &nbsp &nbsp a. Change code in the mainline so it matches the code below.
+&nbsp &nbsp &nbsp a. Change code in the <i>mainline</i> so it matches the code below.
 <br>
 &nbsp &nbsp &nbsp b. Add any other code you think is necessary.
 <br>
 &nbsp &nbsp &nbsp c. Build the code and debug any problems.
-<br>
+<br><br>
 4. Setup your Workspace appropriately (i.e. arrange all windows):
 <br>
 &nbsp &nbsp &nbsp a. Open MPLAB SIM. Arrange all windows as per Tutorial #7 (Open your Project,
-Output, Stopwatch, Watch windows: CMCON0, STATUS, ANSEL, TRISC, WREG,
-PORTC).
+Output, Stopwatch, Watch windows: <i>CMCON0, STATUS, ANSEL, TRISC, WREG,
+PORTC</i>).
 <br>
 &nbsp &nbsp &nbsp b. Add your breakpoints next to the nop instruction.
-<br>
+<br><br>
 5. Run the Simulator:
 <br>
 &nbsp &nbsp &nbsp a. Verify SFRs.
 <br>
 &nbsp &nbsp &nbsp b. Verify outputs and delays are correct.
 <br>
-&nbsp &nbsp &nbsp c. You should see bit 1 of the STATUS being set (i.e. goes to a 1) when PORTC resets
+&nbsp &nbsp &nbsp c. You should see <b>bit 1</b> of the STATUS being set (i.e. goes to a 1) when PORTC resets
 from 1111 to 0000. Why does it do this???
-<br>
+<br><br>
 6. Program Your PIC and test on breadboard. (Don't forget resistors with your LEDs!)
-<br>
+<br><br>
 7. Make a new program:
 <br>
-&nbsp &nbsp &nbsp a. Construct a new program called asmMod16d which counts down from 1111 to 0000,
+&nbsp &nbsp &nbsp a. Construct a new program called <b>asmMod16d</b> which counts down from 1111 to 0000,
 then automatically resets (hint: use one of the flags to assist you).
 <br>
 &nbsp &nbsp &nbsp b. Setup your workspace to include all relevant windows: Project, Output, Stopwatch,
 Watch (including all SFRs and relevant PORTS).
 <br>
+<br><br>
+<b><u>Conclusion:</b></u>
 <br>
-Conclusion:
-<br>
-Why does bit 1 of the STATUS set (i.e. goes to a 1) when PORTC resets from 1111 to
+Why does <b>bit 1</b> of the STATUS set (i.e. goes to a 1) when PORTC resets from 1111 to
 0000? 
 <br>
 <center>
@@ -179,6 +179,8 @@ Why does bit 1 of the STATUS set (i.e. goes to a 1) when PORTC resets from 1111 
         <!-- don't put text after this for first column john -->
 	</div>
     <center>
+	<h1>PDF Version:</h1>
+	<br>
       <object data="pdf/tutorial_8.pdf" type="application/pdf" width="1000" height="800">
         <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
       </object>
