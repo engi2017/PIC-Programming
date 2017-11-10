@@ -103,58 +103,46 @@ TEJ4M0</h2>
 <br>
 <b><u>Objectives:</u></b>
 <br>
-• To educate one self on how to find answers about the PIC16F684 and Assembler
+• To code a program using Assembler and to observe how data flows through the WREG to the file registers using MPLAB SIM
 <br><br>
 <b><u>Procedure:</b></u>
 <br>
-- Go to <a href="http://www.microchip.com/">www.microchip.com</a> and download the latest full version of MPLAB IDE onto your PC at home. Also load PICC-Lite when it prompts you after loading MPLAB. This is the 'C' complier you can use if writing in 'C'.
+1. Keep in mind the following program below:
 <br>
-- Use MPLAB IDE, and “The PIC Package” to answer the following questions:
+- Use asmTemplate.asm as a "template" for the new program
 <br>
-1. How many available GPRs are thee in Bank 0 of the 16F684?
+- Use an appropriate amount of programmer's comments
 <br>
-2. What is the first available address (in hex) in the GPR? The last?
+- Use the "Step Into" function in MPLAB SIM (remember to Select <u>Debugger>Select Tool>1 MPLAB SIM</u>) to observe how data moves through the various registers. Ensure you have the following symbols in your Watch Window:
 <br>
-3. Which programmers can you use with the P16F684? (hint: see "Configure" menu in MPLAB IDE)
+* WREG
 <br>
-4. How large is the instruction set in MPASM (Microchip PIC Assembler)?
+* Any file registers (i.e. i, j, k, result)
 <br>
-5. For the instruction movlw k , what does k represent?
+* STATUS Register
 <br>
-6. Where must all data first be written to before going to any other register?
+2. asmANDWF:
 <br>
-7. For the instruction addwf f,d , what does f represent?
+o Write a program called <b>asmANDWF</b> that will AND the contents of the 3 registers and place the result in a separate file register, named result
 <br>
-8. For the instruction addwf f,d , what does d represent?
+<b>i=0xaf</b>
 <br>
-9. Using Notepad, open the header file p16f684.inc (run a search). What values are assigned
-(EQU) to W and F registers. Why?
+<b>j=0x3b</b>
 <br>
-10. What are the two address locations of the Status Register?
+<b>k=0xd4</b>
 <br>
-11. What would have to happen in order to set (logical 1) the Z bit of the Status Reg?
+3. Based on what you observed (in the Watch window) from simulating the program, fill out the chart below:
+<br><br>
+<b><u>Conclusion:</b></u>
 <br>
-12. What would have to happen in order to set (logical 1) the C bit of the Status Reg?
+1. Why is the address for i, 020 (remember this is 0x20 – i.e. hex20)?
 <br>
-13. Which bit in the STATUS Register is responsible for bank selecting?
+2. What type of register is the STATUS register?
 <br>
-14. Which bank is being selected if the Status Reg had a value of 00100110?
+3. Reset your program and step through it again, paying close attention to the first 3 bits of the "STATUS Register" in your "Watch" Window. When does a change occur?
 <br>
-Is the value of the Digit Carry bit set (logical 1) or cleared (logical 0)?
+4. Explain why the Z bit has been affected?
 <br>
-15. What is the address of the “Reset Vector”?
-<br>
-16. What do bits 6 and 7 represent in both PORTA and PORTC?
-Why?
-<br>
-17. asmSecond
-<br>
-Make a new project and name it asmSecond.mcp, saving it in a folder called asmSecond
-Write a program that adds the contents of 2 different GPR registers, subtracts this sum from
-the contents of another register, and finally stores the result in the WREG (i.e. (10 + 13) - 5
-=18). Remember to utilize the template when coding and use MPLAB SIM to view the results
-of your code in the Watc.
-
 <!-- don't put text after this for first column john -->
 </div>
 <div class="column">
