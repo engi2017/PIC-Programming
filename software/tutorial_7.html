@@ -125,11 +125,11 @@ TEJ4M0</h2>
         <br>
 • Configure the SFRs
 <br>
-• Use basic assembly language instructions (movlw, movwf, clrf, goto):
+• Use basic assembly language instructions (<i>movlw, movwf, clrf, goto</i>):
 <br>
 &nbsp &nbsp &nbsp o To program PORTS so the LED will turn on and off, repeatedly
 <br>
-• Simulate code using MPLAB SIM before flashing code to PIC
+• Simulate code using MPLAB SIM <u>before</u> flashing code to PIC
 <br>
 &nbsp &nbsp &nbsp o Adding the Stopwatch window and breakpoints to verify the timing of a delay
 <br>
@@ -140,26 +140,26 @@ TEJ4M0</h2>
 		<br>
 1. Create new project:
 <br>
-&nbsp &nbsp &nbsp a. Create a new project and workspace called asmLED_Flash in a folder with the same
+&nbsp &nbsp &nbsp a. Create a new project and workspace called <i>asmLED_Flash</i> in a folder with the same
 name
 <br>
-&nbsp &nbsp &nbsp b. Open asmTemplate.asm from the Tutorial #1 and re-save it as asmLEDFlash_A.asm.
+&nbsp &nbsp &nbsp b. Open asmTemplate.asm from the Tutorial #1 and re-save it as <i>asmLEDFlash_A.asm</i>.
 <br>
 &nbsp &nbsp &nbsp c. Add the file to the project's source code
 <br>
 2. The Delay header file:
 <br>
-&nbsp &nbsp &nbsp a. After the INCLUDE “p16f684.inc” add: INCLUDE "asmDelay.inc" on the next line.
+&nbsp &nbsp &nbsp a. After the <b>INCLUDE “p16f684.inc”</b> add: <b>INCLUDE "asmDelay.inc"</b> on the next line.
 <br>
 Locate and open the file. This file contains code that allows the programmer to
-specify a delay in microseconds. For example - Delay 1500000 – represents 1.5
+specify a delay in microseconds. For example - <b>Delay 1500000</b> – represents 1.5
 seconds.
 <br>
 &nbsp &nbsp &nbsp b. To allow us to use it in multiple programs, we need to save it with the other header
-files in the following path: C:\Program Files\Microchip\MPASM Suite.
+files in the following path: <b>C:\Program Files\Microchip\MPASM Suite.
 <br>
 If this is not possible for you, save it in the asmLED_Flash folder and add it to
-HEADER within the MPLAB program.
+HEADER within the MPLAB program.</b>
 <br>
 &nbsp &nbsp &nbsp c. Close the file after you've saved it in the new location.
 <br>
@@ -169,7 +169,8 @@ HEADER within the MPLAB program.
 <br>
 &nbsp &nbsp &nbsp b. Build all (Ctrl + F10) and rearrange the windows as shown below.
 <br>
-Configuring SFRs:
+<br>
+<b>Configuring SFRs:</b>
 <br>
 •Before we can begin to use the PIC to send out digital 1s and 0s, we need to first configure
 some of the SFRs (Special Function Registers).
@@ -233,9 +234,9 @@ clear (0) RP0. This is called BANK SWITCHING!
 <br>
 5. Setup the Stopwatch window:
 <br>
-&nbsp &nbsp &nbsp a. Select Debugger>Stopwatch
+&nbsp &nbsp &nbsp a. Select <u><i>Debugger>Stopwatch</u></i>
 <br>
-&nbsp &nbsp &nbsp b. Select Debugger>Settings…
+&nbsp &nbsp &nbsp b. Select <u><i>Debugger>Settings…</u></i>
 <br>
 &nbsp &nbsp &nbsp c. Change the Processor Frequency from 20 to 4 MHz, which is what the P16F684's
 internal oscillator defaults at. Click OK.
@@ -247,10 +248,10 @@ internal oscillator defaults at. Click OK.
 &nbsp &nbsp &nbsp a. Click on the "Step Into" button for MPLAB SIM and verify the contents of the SFRs in
 the Watch window
 <br>
-&nbsp &nbsp &nbsp b. Stop when you get to the first nop instruction.
+&nbsp &nbsp &nbsp b. <font color="red">Stop when you get to the first nop instruction.</font>
 <br>
-&nbsp &nbsp &nbsp c. You should notice that RC0 in PORTC (i.e. bit 0 in PORTC) has been "set". In other
-words, RC0 is outputting or 'writing' a HIGH, which turns the LED ON.
+&nbsp &nbsp &nbsp c. You should notice that <b>RC0</b> in PORTC (i.e. bit 0 in PORTC) has been "set". In other
+words, <b>RC0</b> is outputting or 'writing' a HIGH, which turns the LED ON.
 <br>
 7. Add Breakpoints:
 <br>
@@ -259,14 +260,13 @@ one instruction at a time. Due to the fact that we now have delays in our progra
 which represent millions of instructions, it might take you some time to step through
 that!!!
 <br>
-&nbsp &nbsp &nbsp b. To add a breakpoint, double-click next to the nop instructions, which stand for "no
+&nbsp &nbsp &nbsp b. To add a breakpoint, double-click next to the <b>nop</b> instructions, which stand for "no
 instruction", and which offers another way to insert breakpoints.
 <br>
-&nbsp &nbsp &nbsp c. A circled B will appear signifying a breakpoint (to remove a breakpoint, simply doubleclick
+&nbsp &nbsp &nbsp c. A circled <b>B</b> will appear signifying a breakpoint (to remove a breakpoint, simply doubleclick
 again)
-<br>
-The Stopwatch window
-<br><br>
+<br><br><br>
+<b>The Stopwatch window</b>
 &nbsp &nbsp &nbsp • The P16F684 contains an internal clock that is configured to operate at 4MHz , or
 4,000,000 clock cycles/second which is why you changed this in Step 5 above. All PICs
 take 4 clock cycles to complete 1 instruction cycle, which equates to 1,000,000
@@ -288,13 +288,13 @@ require more program memory.
 <br>
 &nbsp &nbsp &nbsp b. Click on the Zero button on the Stopwatch window to reset the count back to 0.
 <br>
-&nbsp &nbsp &nbsp c. With your green PC pointer at the nop line, click on the "Run" command in the
-simulator toolbar. You should observe two crucial pieces of information:
+&nbsp &nbsp &nbsp c. With your green PC pointer at the <b>nop</b> line, click on the "Run" command in the
+simulator toolbar. <b>You should observe two crucial pieces of information</b>:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Time in the Stopwatch now shows 2.000002 seconds (the .000002 represents
-the two instructions (nop and bsf PORTC, 0) executed in addition to the 2s delay
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Time in the Stopwatch now shows <b>2.000002</b> seconds (the <b>.000002</b> represents
+the two instructions (<b>nop</b> and <b>bsf PORTC, 0</b>) executed in addition to the <b>2s</b> delay
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Watch window shows PORTC outputting a '000001`(RC0 is ON) which is
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Watch window shows <b>PORTC</b> outputting a <b>'000001`(RC0 is ON)</b> which is
 exactly what you want, and represents the turning ON of the LED for those 2
 seconds.
 <br>
@@ -311,12 +311,12 @@ been verified).</b>
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • RC0 (bit 0 in PORT0) is now 0, which represents the turning OFF of the LED.
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Time in the Stopwatch now shows 2.000004 seconds (the .000004 represents
-two instructions that require 1 instruction cycle (nop and bsf PORTC, 0) plus 1
-instruction, goto, requiring two instruction cycles (2+2=4 instruction cycles), plus
-the 2s delay
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Time in the Stopwatch now shows <b>2.000004</b> seconds (the <b>.000004</b> represents
+two instructions that require 1 instruction cycle (<b>nop</b> and <b>bsf PORTC, 0</b>) plus 1
+instruction, <b>goto</b>, requiring two instruction cycles (2+2=4 instruction cycles), plus
+the <b>2s</b> delay
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Watch window shows PORTC outputting a '000000`(RC0 is OFF) which is
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Watch window shows <b>PORTC</b> outputting a <b>'000000`(RC0 is OFF)</b> which is
 exactly what you want, and represents the turning OFF of the LED for those 2
 seconds. 
 <br>
@@ -329,16 +329,16 @@ be separately installed.
 &nbsp &nbsp &nbsp b. Plug in the PICKit3 to your PC's USB port.
 <br>
 &nbsp &nbsp &nbsp c. Connect it properly to your breadboard (the arrow on the programmer signifies the VPP
-pin or "programming pin", which is wired to RA3 (pin 4) of your PIC.
+pin or "programming pin", which is wired to <b>RA3</b> (pin 4) of your PIC.
 <br>
 &nbsp &nbsp &nbsp d. Turn on your breadboard power supply .
 <br>
-&nbsp &nbsp &nbsp e. Select Project>Select Programmer>PICKit3. The output window will show PICKit3
+&nbsp &nbsp &nbsp e. Select <u>Project>Select Programmer>PICKit3</u>. The output window will show <i>PICKit3</i>
 connected.
 <br>
 11. Program the PIC:
 <br>
-&nbsp &nbsp &nbsp a. Project>Program will allow the computer to program the device. The computer will
+&nbsp &nbsp &nbsp a. <u>Project>Program</u> will allow the computer to program the device. The computer will
 give a notification informing about voltage warning, make sure that the
 microcontroller uses the same voltage as the selected one from the computer.
 <br>
@@ -350,66 +350,68 @@ If there are any errors, refer to the information page!
 <br>
 &nbsp &nbsp &nbsp d. Can you make it flash faster?? 
 <br><br>
-&nbsp &nbsp &nbsp Conclusion
+&nbsp &nbsp &nbsp <b>Conclusion</b>
 <br>
-1. Look below at the mainline for asmFlashLED_B (version B).
+<b>1. Look below at the mainline for asmFlashLED_B (version B).</b>
 <br>
-&nbsp &nbsp &nbsp a. What has changed?
+&nbsp &nbsp &nbsp <b>a. What has changed?</b>
 <br>
 &nbsp &nbsp &nbsp Binary value is inputted instead of bsf and bcf for PORTC.
 <br>
-&nbsp &nbsp &nbsp b. When would you use method A to write to PORTC?
+&nbsp &nbsp &nbsp <b>b. When would you use method A to write to PORTC?</b>
 <br>
 &nbsp &nbsp &nbsp When only one value is supposed changed.
 <br>
-&nbsp &nbsp &nbsp c. When would you use method B to write to PORTC?
+&nbsp &nbsp &nbsp <b>c. When would you use method B to write to PORTC?</b>
 <br>
 &nbsp &nbsp &nbsp When the entire 8 bit value needs to be changed. 
 <br>
-2. How many ports are there on the P16F684?
+<b>2. How many ports are there on the P16F684?</b>
 <br>
 12 Ports are present in the chip.
 <br><br>
-3. Are all ports bi-directional?
+<b>3. Are all ports bi-directional?</b>
 <br>
 All ports are bi-directional.
 <br><br>
-4. What is the first bit# on all registers in this PIC? The last bit#?
+<b>4. What is the first bit# on all registers in this PIC? The last bit#?</b>
 <br>
 The first bits are all 7, the last bit number is 0.
 <br><br>
-5. What three things must you do before you write or read from any ports? Why?
+<b>5. What three things must you do before you write or read from any ports? Why?</b>
 <br>
 You must change the pin’s settings in to output or input,
 <br><br>
-6. How do you use bank switching and why is it necessary?
+<b>6. How do you use bank switching and why is it necessary?</b>
 <br>
 It is necessary to be able to access the special function register because the registers that
 control the chip’s settings are in it.
 <br><br>
-7. Why is MPLAB SIM such an important tool?
+<b>7. Why is MPLAB SIM such an important tool?</b>
 <br>
 It checks all the values and results before the chip is used, as errors could potentially destroy
 the internal workings of the chip.
 <br><br>
-8. What does the IDE in MPLAB IDE stand for? What does it mean?
+<b>8. What does the IDE in MPLAB IDE stand for? What does it mean?</b>
 <br>
 It stands for Integrated Development Environment.
 <br><br>
-9. Why, when using the Stopwatch window, do we have to change the processor
-frequency from 20MHz to 4MHz?
+<b>9. Why, when using the Stopwatch window, do we have to change the processor
+frequency from 20MHz to 4MHz?</b>
 <br>
 Because the PIC16F684 runs at 4MHz.
 <br><br>
-10. How many clock cycles does 1 instruction cycle represent? 
+<b>10. How many clock cycles does 1 instruction cycle represent? </b>
 <br><br>
-11. How many instruction cycles equals:
+<b>11. How many instruction cycles equals:</b>
 <br>
-a. one tenth of a second?
-100000 instruction cycles.
+&nbsp &nbsp &nbsp <b>a. one tenth of a second?</b>
 <br>
-b. one thousandth?
-1000 instruction cycles.
+&nbsp &nbsp &nbsp 100000 instruction cycles.
+<br>
+&nbsp &nbsp &nbsp <b>b. one thousandth?</b>
+<br>
+&nbsp &nbsp &nbsp 1000 instruction cycles.
         <br>
         <!-- don't put text after this for first column john -->
       </div>
