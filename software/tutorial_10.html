@@ -1,231 +1,251 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-  
-  #instructionsPrompt {
-    width: 50%;
-    font-size: 20px;
-  }
-  
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-</style>
+    <title>Software Tutorials</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-<body>
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-    <!-- End header -->
-    <center>
-      <h2>TUTORIAL #10: Gate Simulation
-<br>
-TEJ4M0</h2>
-      <br>
-      <h3><a href="tutorial_9.html">Previous Tutorial</a></h3>
-    </center>
-    <div class="row">
-      <div id="instructionsPrompt" class="column">
-        <!-- hey you want to put the stuff for the left column in here -->
-        <br>
-        <b><u>Objective:</u></b>
-        <br> Using MPLAB SIM to discover which logic gate the program is written to emulate without building the circuit.
-        <br>
-        <br>
-        <b><u>Procedure:</b></u>
-        <br> 1. Create new project with same name:
-        <br> &nbsp &nbsp &nbsp a. Create a new project/workspace/source file, all saved in new folder called asmGate
-        <br> 2. Add source code to the Editor window (see bottom of page):
-        <br> &nbsp &nbsp &nbsp a. Make any necessary modifications or additions to the code in the Editor window
-        <br> &nbsp &nbsp &nbsp b. To simulate a logic gate, we need 2 inputs and one output. Setup your SFRs so that you are using RA3 (A) and RA4 (B) as the two inputs, and RC3 as the output (Y)
-        <br> &nbsp &nbsp &nbsp a. No breakpoints are required since you don't use the Dlay instruction.
-        <br> &nbsp &nbsp &nbsp b. Build it (Cntrl + F10) successfully.
-        <br> 3. Open <i>MPLAB SIM</i>
-        <br> &nbsp &nbsp &nbsp a. Add Watch window (<i>CMCON0, STATUS, ANSEL, TRISA, TRISC, PORTA, PORTC</i>)
-        <br> &nbsp &nbsp &nbsp c. Add <b>RA3</b> and <b>RA4</b> (push button inputs) and comments for each to new Stimulus workbook. Save it in the asmGate folder you already created.
-        <br> 4. Test inputs (<b>RA3</b> and <b>RA4</b>):
-        <br> &nbsp &nbsp &nbsp a. Since you have two inputs, this must mean you have four scenarios to test (see TT below)
-        <br> &nbsp &nbsp &nbsp b. Use the <b>Fire (>)</b> button to simulate these four scenarios and fill in the truth table.
-        <br> &nbsp &nbsp &nbsp c. Conclusion: what kind of gate is it???
-        <br>
-        <br>
-        <!-- don't put text after this for first column john -->
-      </div>
-      <div class="column">
-        <!-- pictures and whatever you want in the second column can go here!! -->
-        <center>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <img src="../Pictures/software_10_1.jpg">
-          <br>
-        </center>
-        <!-- dont put anything after this john -->
-      </div>
-    </div>
-    <center>
-	<h1>PDF Version:</h1>
-	<br>
-      <object data="pdf/tutorial_10.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-      </p>
-      <br>
-      <br>
-      <h3><b>Tutorial 10 answers:</b></h3>
-      <!--hidden/reveal button-->
-      <button onclick="showPDFButton()">Reveal Answers</button>
-      <button onclick="hidePDFButton()">Hide Answers</button>
-      <!--answer pdf contents-->
-      <p hidden id="answers">
-		<img src="../Pictures/software_10_2.jpg">
-		<br>
-        <br>
-        <!-- PDF 2-->
-        <object data="pdf/answer_10.pdf" type="application/pdf" width="1000" height="800">
-          <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-    </center>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-    </footer>
-      <!-- End footer -->
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
+        .column {
+            font-size: 20px;
+            float: left;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+    </style>
 
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- End header -->
+            <center>
+                <!--                title-->
+                <br><br>
+                <h2>TUTORIAL #10: Gate Simulation
+                    <br>
+                    TEJ4M0</h2>
+                <br>
+                <!--links for prev or next-->
+                <h3><a href="tutorial_9.html">Previous Tutorial</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <a href="../software.html">Back to Menu</a></h3>
+            </center>
+            <!--two columns-->
+            <div class="row">
+                <!-- left column instructions -->
+                <div class="column">
+                    <br>
+                    <b><u>Objective:</u></b>
+                    <br> Using MPLAB SIM to discover which logic gate the program is written to emulate without building the circuit.
+                    <br>
+                    <br>
+                    <b><u>Procedure:</u></b><ol>
+                    <li>Create new project with same name:</li>
+                    <ol type="a">
+                        <li>Create a new project/workspace/source file, all saved in new folder called asmGate</li>
+                    </ol>
+                    <li>Add source code to the Editor window (see bottom of page):</li>
+                    <ol type="a">
+                        <li>Make any necessary modifications or additions to the code in the Editor window</li>
+                        <li>To simulate a logic gate, we need 2 inputs and one output. Setup your SFRs so that you are using RA3 (A) and RA4 (B) as the two inputs, and RC3 as the output (Y)</li>
+                        <li>No breakpoints are required since you don't use the Dlay instruction.</li>
+                        <li>Build it (Cntrl + F10) successfully.</li>
+                    </ol>
+                    <li>Open <i>MPLAB SIM</i></li>
+                    <ol type="a">
+                        <li>Add Watch window (<i>CMCON0, STATUS, ANSEL, TRISA, TRISC, PORTA, PORTC</i>)</li>
+                        <li>Add <b>RA3</b> and <b>RA4</b> (push button inputs) and comments for each to new Stimulus workbook. Save it in the asmGate folder you already created.</li>
+                    </ol>
+                    <li>Test inputs (<b>RA3</b> and <b>RA4</b>):</li>
+                    <ol type="a">
+                        <li>Since you have two inputs, this must mean you have four scenarios to test (see TT below)</li>
+                        <li>Use the <b>Fire (>)</b> button to simulate these four scenarios and fill in the truth table.</li>
+                        <li>Conclusion: what kind of gate is it???</li>
+                    </ol>
+                    <br>
+                    <br>
+                    </ol>
+                </div>
+                <!-- pictures to aid instructions, right column -->
+                <div class="column">
+                    <center>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img src="../Pictures/software_10_1.jpg">
+                        <br>
+                    </center>
+                </div>
+            </div>
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_10.pdf" type="application/pdf" width="1000" height="800"></object>
+                <br>
+                <br>
+                <!--                answers section-->
+                <h2><b>Tutorial 10 Answers Below:</b></h2>
+                <!--hidden/reveal button-->
+                <button onclick="showPDFButton()">Reveal Answers</button>
+                <button onclick="hidePDFButton()">Hide Answers</button>
+                <!--answer pdf contents-->
+                <div hidden id="answers">
+                    <img src="../Pictures/software_10_2.jpg">
+                    <br>
+                    <br>
+                    <h1>PDF Version:</h1>
+                    <!-- PDF 2-->
+                    <object data="pdf/answer_10.pdf" type="application/pdf" width="1000" height="800">
+                    </object>
+                </div>
+            </center>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
