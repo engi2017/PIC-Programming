@@ -138,165 +138,178 @@ you DON`T press the button, and sends a LOW when you DO press the button. The
 reason for this is that interference from DC motors can cause some PICS inputs to switch
 from LOW to HIGH at random. If inputs are always set HIGH, then you avoid this
 problem. 
-        <br>
+<br>
+<br>
 2. Create a new project:
 <br>
-&nbsp &nbsp &nbsp a. Create a new project/workspace/source file called asmButton, all saved in a new folder
+&nbsp &nbsp &nbsp a. Create a new project/workspace/source file called <i>asmButton</i>, all saved in a new folder
 with the same name.
 <br>
-3. Add source code to the Editor window (see last page):
 <br>
-&nbsp &nbsp &nbsp a. Write in your own Hardware Notes. Remember you are adding an input, so include that as
-well as the three outputs, specifying the port responsible (i.e. RA5).
+3. Add source code to the <i>Editor</i> window (see last page):
+<br>
+&nbsp &nbsp &nbsp a. Write in your own <i>Hardware Notes</i>. Remember you are adding an input, so include that as
+well as the three outputs, specifying the port responsible <i>(i.e. RA5)</i>.
 <br>
 &nbsp &nbsp &nbsp b. Add in your own programmer`s comments that describe how the hardware is being
 affected (i.e. LED turns ON), rather than interpreting the code (move a literal value of 10
 into the working register). Keep your comments readable, simple and to the point!
 <br>
-&nbsp &nbsp &nbsp c. Add breakpoints next to all nop instructions.
+&nbsp &nbsp &nbsp c. Add breakpoints next to all <i>nop</i> instructions.
 <br>
 &nbsp &nbsp &nbsp d. Build it! (Ctrl + F10).
 <br>
-4. Setup your workspace:
 <br>
-&nbsp &nbsp &nbsp a. Open MPLAB SIM, organize windows as shown in Fig 9.2: 
+4. Setup your <i>workspace</i>:
+<br>
+&nbsp &nbsp &nbsp a. Open <i>MPLAB SIM</i>, organize windows as shown in Fig 9.2: 
+<br>
 <br>
 5. Open the Stimulus window (for simulating inputs):
 <br>
-&nbsp &nbsp &nbsp a. Select Debugger>Stimulus>New Workbook.
 <br>
-&nbsp &nbsp &nbsp b. Select the Asynch tab if it's not already in view.
+&nbsp &nbsp &nbsp a. Select <u><i>Debugger>Stimulus>New Workbook</u></i>.
+<br>
+&nbsp &nbsp &nbsp b. Select the <u><i>Asynch</u></i> tab if it's not already in view.
 <br>
 &nbsp &nbsp &nbsp c. Add RA5 and comments for each, resizing window as shown below in Fig 9.3:
 <br>
-&nbsp &nbsp &nbsp d. Click on "Save" on the window. Call it asmButton.sbs and save it in the asmButton folder.
+&nbsp &nbsp &nbsp d. Click on "Save" on the window. Call it <i>asmButton.sbs</i> and save it in the asmButton folder.
 <br>
-6. Resize and position the Stimulus Controller in the top right hand corner of your screen (Fig 9.4):
+<br>
+6. Resize and position the <i>Stimulus Controller</i> in the top right hand corner of your screen (Fig 9.4):
+<br>
 <br>
 7. Verify Configuring SFRs (Fig 9.5):
 <br>
-&nbsp &nbsp &nbsp a. Use the "Step Into" feature of the simulator (F7) to verify that your SFR registers.
-(CMCON0, ANSEL, TRISA, TRISC) in the Watch window are set to the correct values
 <br>
-&nbsp &nbsp &nbsp b. Stop "stepping" when you reach the first nop instruction.
+&nbsp &nbsp &nbsp a. Use the "Step Into" feature of the simulator (<i>F7</i>) to verify that your <i>SFR</i> registers.
+(<i>CMCON0, ANSEL, TRISA, TRISC</i>) in the <i>Watch</i> window are set to the correct values
 <br>
-&nbsp &nbsp &nbsp c. Notice that TRISA is added, and shows two bits that are 1 (RA5 is taught to be an INPUT,
-and RA3 is always an INPUT) and the rest are 0 (RA0, RA1, RA2, RA4 are therefore
+&nbsp &nbsp &nbsp b. Stop "stepping" when you reach the first <i>nop</i> instruction.
+<br>
+&nbsp &nbsp &nbsp c. Notice that TRISA is added, and shows two bits that are <b>1 (RA5</b> is taught to be an INPUT,
+and <b>RA3</b> is always an INPUT) and the rest are <b>0 (RA0, RA1, RA2, RA4</b> are therefore
 OUTPUTS).
+<br>
 <br>
 8. Simulate LED flashing slowly (part 1) (Fig 9.5):
 <br>
-&nbsp &nbsp &nbsp a. With the PC counter pointed at the first nop instruction, fire RA5 HIGH (flash slowly) by
-clicking on the Fire (>) button for "RA5 Set High" in the Stimulus Controller.
+&nbsp &nbsp &nbsp a. With the PC counter pointed at the first nop instruction, fire <b>RA5</b> HIGH (<i>flash slowly</i>) by
+clicking on the <b>Fire (>)</b> button for "<b>RA5 Set High</b>" in the Stimulus Controller.
 <br>
 &nbsp &nbsp &nbsp b. Press "RUN" once. You should notice the PC pointer has now jumped to the subroutine
-flashSlow, stopping at the breakpoint at nop.
+<b>flashSlow</b>, stopping at the breakpoint at <b>nop</b>.
 <br>
 &nbsp &nbsp &nbsp a. Observe the three different windows:
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is HIGH (flash slowly).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is HIGH (flash slowly).
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all HIGH (3 LEDs ON).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all HIGH (3 LEDs ON).
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is about 2 seconds (recall that the extra 16 microseconds
-(.000016) is a result of the execution of the instructions.
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs)</b> is about <b>2 seconds</b>(recall that the extra 16 microseconds
+(<b>.000016</b>) is a result of the execution of the instructions.
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is ON for.
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash slowly fired" indicating the button has not been
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash slowly fired</b>" indicating the button has not been
 pressed.
+<br>
 <br>
 9. Simulate LED flashing slowly (part 2) (Fig 9.6):
 <br>
-&nbsp &nbsp &nbsp a. Reset Stopwatch window back to 0 by pressing the Zero button.
+&nbsp &nbsp &nbsp a. Reset <i>Stopwatch</i> window back to 0 by pressing the <i>Zero</i> button.
 <br>
-&nbsp &nbsp &nbsp b. Click "RUN" once, and watch the PC counter point at the next nop instruction
+&nbsp &nbsp &nbsp b. Click "RUN" once, and watch the PC counter point at the next <i>nop</i> instruction
 <br>
 &nbsp &nbsp &nbsp c. Observe the three different windows:
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is still HIGH (flash slowly).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is still HIGH (<i>flash slowly</i>).
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all LOW (3 LEDs OFF).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all LOW (3 LEDs OFF).
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Stopwatch</i> window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is about 2 seconds again.
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs)</b> is about <b>2</b> seconds again.
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is OFF for.
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Output</i> window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash slowly fired" still shows.
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash slowly fired</b>" still shows.
 <br>
 &nbsp &nbsp &nbsp d. Repeat steps a to c above and notice what happens:
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The LED turns ON and OFF at a rate of 2 seconds. This has been verified by both
-the Stopwatch and Watch windows
+the <i>Stopwatch</i> and <i>Watch</i> windows
+<br>
 <br>
 10. Simulate LED flashing quickly (part 1) (Fig 9.7):
 <br>
-&nbsp &nbsp &nbsp a. Reset Stopwatch window back to 0 by pressing the Zero button.
+&nbsp &nbsp &nbsp a. Reset Stopwatch window back to <b>0</b> by pressing the <i>Zero</i> button.
 <br>
-&nbsp &nbsp &nbsp b. With the PC counter pointed at the first nop instruction, fire RA5 LOW (flash quickly) by
-clicking on the Fire (>) button for "RA5 Set Low" in the Stimulus Controller.
+&nbsp &nbsp &nbsp b. With the PC counter pointed at the first nop instruction, fire <b>RA5 LOW</b> (<i>flash quickly</i>) by
+clicking on the <b>Fire (>)</b> button for <b>"RA5 Set Low"</b> in the <i>Stimulus Controller</i>.
 <br>
-&nbsp &nbsp &nbsp c. Press "RUN" until the PC pointer has jumped to the subroutine flashFast, stopping at the
-breakpoint at nop.
+&nbsp &nbsp &nbsp c. Press "RUN" until the PC pointer has jumped to the subroutine <b>flashFast</b>, stopping at the
+breakpoint at <b>nop</b>.
 <br>
 &nbsp &nbsp &nbsp d. Observe the three different windows:
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is LOW (flash quickly). In other words, the button has been pressed!
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is LOW (<i>flash quickly</i>). In other words, the button has been pressed!
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all HIGH (3 LEDs ON).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all HIGH (3 LEDs ON).
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is now only 20 milliseconds!
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs)</b> is now only <b>20 milliseconds</b>!
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is ON for, and why this flashes faster.
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Output</i> window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash quickly fired" now appears.
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash quickly fired</b>" now appears.
+<br>
 <br>
 11. Simulate LED flashing slowly (part 2) (Fig 9.8):
 <br>
-&nbsp &nbsp &nbsp a. Reset Stopwatch window back to 0 by pressing the Zero button.
+&nbsp &nbsp &nbsp a. Reset <i>Stopwatch</i> window back to <b>0</b> by pressing the <i>Zero</i> button.
 <br>
 &nbsp &nbsp &nbsp b. "RUN" to the next instruction.
 <br>
 &nbsp &nbsp &nbsp c. Observe the three different windows:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Watch</i> window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RA5 is still LOW (flash quickly).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is still LOW (<i>flash quickly</i>).
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o RC4:RC2 are all LOW (3 LEDs OFF).
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all LOW (3 LEDs OFF).
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Stopwatch</i> window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o Time (Secs) is about 20 milliseconds again.
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs) is about 20 milliseconds</b> again.
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is OFF for.
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Output</i> window:
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "RA5: flash quickly fired" still shows.
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash quickly fired</b>" still shows.
 <br>
 &nbsp &nbsp &nbsp e. Repeat steps a to c above and notice what happens:
 <br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The LED turns ON and OFF at a rate of 20 milliseconds. This has been verified by
-both the Stopwatch and Watch windows.
+both the <i>Stopwatch</i> and <i>Watch</i> windows.
+<br>
 <br>
 12. Program Your PIC and test on breadboard (don't forget resistors with your LEDs!)
 <br>
@@ -305,7 +318,9 @@ a. Ensure you insert your PICKit2 correctly
 <br>
 <img src="../Pictures/software_9_10.jpg">
 <br>
-Conclusion:
+<br>
+<br>
+<b>Conclusion:</b>
 <br>
 1. Describe the purpose of the following instructions:
 <br>
@@ -359,6 +374,9 @@ Conclusion:
       </div>
     </div>
     <center>
+	<br><br><br>
+	<h1>PDF Version:</h1>
+	<br>
       <object data="pdf/tutorial_9.pdf" type="application/pdf" width="1000" height="800">
         <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
       </object>
