@@ -1,435 +1,414 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-  
-  #instructionsPrompt {
-    width: 50%;
-    font-size: 20px;
-  }
-  
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-</style>
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-<body>
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-    <!-- End header -->
-    <center>
-      <h2>TUTORIAL #9: Inputs
-<br>
-TEJ4M0</h2>
-      <br>
-      <h3>
-		<a href="tutorial_8.html">Previous Tutorial</a>
-		<br>
-		<a href="tutorial_10.html">Next Tutorial</a>
-	  </h3>
-    </center>
-    <div class="row">
-      <div id="instructionsPrompt" class="column">
-        <!-- hey you want to put the stuff for the left column in here -->
-        <br>
-        <b><u>Objective:</u></b>
-        <br> To create a PIC interface which uses one button input to control the speed of three LEDs flashing.
-        <br>
-        <br>
-        <b><u>Procedure:</b></u>
-		<br>
-1. Using your pinout diagram, build your circuit as follows:
-<br>
-&nbsp &nbsp &nbsp a. Connect three LEDs through 1k resistors to ground from RC2, RC3, RC4.
-<br>
-&nbsp &nbsp &nbsp b. Use the following schematic to wire a push button to RA5 (Fig 9.1).
-<br>
-&nbsp &nbsp &nbsp c. You should note that the schematic is somewhat counter-intuitive; it sends a HIGH when
-you DON`T press the button, and sends a LOW when you DO press the button. The
-reason for this is that interference from DC motors can cause some PICS inputs to switch
-from LOW to HIGH at random. If inputs are always set HIGH, then you avoid this
-problem. 
-<br>
-<br>
-2. Create a new project:
-<br>
-&nbsp &nbsp &nbsp a. Create a new project/workspace/source file called <i>asmButton</i>, all saved in a new folder
-with the same name.
-<br>
-<br>
-3. Add source code to the <i>Editor</i> window (see last page):
-<br>
-&nbsp &nbsp &nbsp a. Write in your own <i>Hardware Notes</i>. Remember you are adding an input, so include that as
-well as the three outputs, specifying the port responsible <i>(i.e. RA5)</i>.
-<br>
-&nbsp &nbsp &nbsp b. Add in your own programmer`s comments that describe how the hardware is being
-affected (i.e. LED turns ON), rather than interpreting the code (move a literal value of 10
-into the working register). Keep your comments readable, simple and to the point!
-<br>
-&nbsp &nbsp &nbsp c. Add breakpoints next to all <i>nop</i> instructions.
-<br>
-&nbsp &nbsp &nbsp d. Build it! (Ctrl + F10).
-<br>
-<br>
-4. Setup your <i>workspace</i>:
-<br>
-&nbsp &nbsp &nbsp a. Open <i>MPLAB SIM</i>, organize windows as shown in Fig 9.2: 
-<br>
-<br>
-5. Open the Stimulus window (for simulating inputs):
-<br>
-<br>
-&nbsp &nbsp &nbsp a. Select <u><i>Debugger>Stimulus>New Workbook</u></i>.
-<br>
-&nbsp &nbsp &nbsp b. Select the <u><i>Asynch</u></i> tab if it's not already in view.
-<br>
-&nbsp &nbsp &nbsp c. Add RA5 and comments for each, resizing window as shown below in Fig 9.3:
-<br>
-&nbsp &nbsp &nbsp d. Click on "Save" on the window. Call it <i>asmButton.sbs</i> and save it in the asmButton folder.
-<br>
-<br>
-6. Resize and position the <i>Stimulus Controller</i> in the top right hand corner of your screen (Fig 9.4):
-<br>
-<br>
-7. Verify Configuring SFRs (Fig 9.5):
-<br>
-<br>
-&nbsp &nbsp &nbsp a. Use the "Step Into" feature of the simulator (<i>F7</i>) to verify that your <i>SFR</i> registers.
-(<i>CMCON0, ANSEL, TRISA, TRISC</i>) in the <i>Watch</i> window are set to the correct values
-<br>
-&nbsp &nbsp &nbsp b. Stop "stepping" when you reach the first <i>nop</i> instruction.
-<br>
-&nbsp &nbsp &nbsp c. Notice that TRISA is added, and shows two bits that are <b>1 (RA5</b> is taught to be an INPUT,
-and <b>RA3</b> is always an INPUT) and the rest are <b>0 (RA0, RA1, RA2, RA4</b> are therefore
-OUTPUTS).
-<br>
-<br>
-8. Simulate LED flashing slowly (part 1) (Fig 9.5):
-<br>
-&nbsp &nbsp &nbsp a. With the PC counter pointed at the first nop instruction, fire <b>RA5</b> HIGH (<i>flash slowly</i>) by
-clicking on the <b>Fire (>)</b> button for "<b>RA5 Set High</b>" in the Stimulus Controller.
-<br>
-&nbsp &nbsp &nbsp b. Press "RUN" once. You should notice the PC pointer has now jumped to the subroutine
-<b>flashSlow</b>, stopping at the breakpoint at <b>nop</b>.
-<br>
-&nbsp &nbsp &nbsp a. Observe the three different windows:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is HIGH (flash slowly).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all HIGH (3 LEDs ON).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs)</b> is about <b>2 seconds</b>(recall that the extra 16 microseconds
-(<b>.000016</b>) is a result of the execution of the instructions.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is ON for.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Output window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash slowly fired</b>" indicating the button has not been
-pressed.
-<br>
-<br>
-9. Simulate LED flashing slowly (part 2) (Fig 9.6):
-<br>
-&nbsp &nbsp &nbsp a. Reset <i>Stopwatch</i> window back to 0 by pressing the <i>Zero</i> button.
-<br>
-&nbsp &nbsp &nbsp b. Click "RUN" once, and watch the PC counter point at the next <i>nop</i> instruction
-<br>
-&nbsp &nbsp &nbsp c. Observe the three different windows:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is still HIGH (<i>flash slowly</i>).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all LOW (3 LEDs OFF).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Stopwatch</i> window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs)</b> is about <b>2</b> seconds again.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is OFF for.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Output</i> window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash slowly fired</b>" still shows.
-<br>
-&nbsp &nbsp &nbsp d. Repeat steps a to c above and notice what happens:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The LED turns ON and OFF at a rate of 2 seconds. This has been verified by both
-the <i>Stopwatch</i> and <i>Watch</i> windows
-<br>
-<br>
-10. Simulate LED flashing quickly (part 1) (Fig 9.7):
-<br>
-&nbsp &nbsp &nbsp a. Reset Stopwatch window back to <b>0</b> by pressing the <i>Zero</i> button.
-<br>
-&nbsp &nbsp &nbsp b. With the PC counter pointed at the first nop instruction, fire <b>RA5 LOW</b> (<i>flash quickly</i>) by
-clicking on the <b>Fire (>)</b> button for <b>"RA5 Set Low"</b> in the <i>Stimulus Controller</i>.
-<br>
-&nbsp &nbsp &nbsp c. Press "RUN" until the PC pointer has jumped to the subroutine <b>flashFast</b>, stopping at the
-breakpoint at <b>nop</b>.
-<br>
-&nbsp &nbsp &nbsp d. Observe the three different windows:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Watch window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is LOW (<i>flash quickly</i>). In other words, the button has been pressed!
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all HIGH (3 LEDs ON).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • Stopwatch window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs)</b> is now only <b>20 milliseconds</b>!
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is ON for, and why this flashes faster.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Output</i> window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash quickly fired</b>" now appears.
-<br>
-<br>
-11. Simulate LED flashing slowly (part 2) (Fig 9.8):
-<br>
-&nbsp &nbsp &nbsp a. Reset <i>Stopwatch</i> window back to <b>0</b> by pressing the <i>Zero</i> button.
-<br>
-&nbsp &nbsp &nbsp b. "RUN" to the next instruction.
-<br>
-&nbsp &nbsp &nbsp c. Observe the three different windows:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Watch</i> window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RA5</b> is still LOW (<i>flash quickly</i>).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>RC4:RC2</b> are all LOW (3 LEDs OFF).
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Stopwatch</i> window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o <b>Time (Secs) is about 20 milliseconds</b> again.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o This time represents the time the LED is OFF for.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • <i>Output</i> window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp o The message "<b>RA5: flash quickly fired</b>" still shows.
-<br>
-&nbsp &nbsp &nbsp e. Repeat steps a to c above and notice what happens:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The LED turns ON and OFF at a rate of 20 milliseconds. This has been verified by
-both the <i>Stopwatch</i> and <i>Watch</i> windows.
-<br>
-<br>
-12. Program Your PIC and test on breadboard (don't forget resistors with your LEDs!)
-<br>
-a. Ensure you insert your PICKit2 correctly 
-<br>
-<br>
-<img src="../Pictures/software_9_10.jpg">
-<br>
-<br>
-<br>
-<b>Conclusion:</b>
-<br>
-1. Describe the purpose of the following instructions:
-<br>
-&nbsp &nbsp &nbsp a. btfss PORTA, 5.
-<br>
-&nbsp &nbsp &nbsp b. btfsc PORTA, 5.
-<br>
-&nbsp &nbsp &nbsp c. call flashSlow.
-<br>
-&nbsp &nbsp &nbsp d. return.
-<br>
-<img src="../Pictures/software_9_12.jpg">
-<br>
-        <br>
-        <!-- don't put text after this for first column john -->
-      </div>
-      <div class="column">
-        <!-- pictures and whatever you want in the second column can go here!! -->
-        <center>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <img src="../Pictures/software_9_1.jpg">
-          <br>
-		  <img src="../Pictures/software_9_2.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_3.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_4.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_5.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_6.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_7.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_8.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_9.jpg">
-		  <br>
-		  <img src="../Pictures/software_9_11.jpg">
-		  <br>
-        </center>
-        <!-- dont put anything after this john -->
-      </div>
-    </div>
-    <center>
-	<br><br><br>
-	<h1>PDF Version:</h1>
-	<br>
-      <object data="pdf/tutorial_9.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-      </p>
-      <br>
-      <br>
-    </center>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-    </footer>
-      <!-- End footer -->
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
+        .column {
+            font-size: 20px;
+            float: left;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+    </style>
 
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- End header -->
+            <center>
+                <!--                title-->
+                <br><br>
+                <h2>TUTORIAL #9: Inputs
+                    <br>
+                    TEJ4M0</h2>
+                <br>
+                <!--links for prev or next-->
+                <h3><a href="tutorial_8.html">Previous Tutorial</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <a href="tutorial_10.html">Next Tutorial</a></h3>
+            </center>
+            <!--two columns-->
+            <div class="row">
+                <!-- left column instructions -->
+                <div class="column">
+                    <br>
+                    <b><u>Objective:</u></b>
+                    <br> To create a PIC interface which uses one button input to control the speed of three LEDs flashing.
+                    <br>
+                    <br>
+                    <b><u>Procedure:</b></u>
+                    <br>
+                    <ol>
+                        <li>Using your pinout diagram, build your circuit as follows:</li>
+                        <ol type="a">
+                            <li>Connect three LEDs through 1k resistors to ground from RC2, RC3, RC4.</li>
+                            <li>Use the following schematic to wire a push button to RA5 (Fig 9.1).</li>
+                            <li>You should note that the schematic is somewhat counter-intuitive; it sends a HIGH when
+                                you DON`T press the button, and sends a LOW when you DO press the button. The
+                                reason for this is that interference from DC motors can cause some PICS inputs to switch
+                                from LOW to HIGH at random. If inputs are always set HIGH, then you avoid this
+                                problem. </li>
+                        </ol>
+                        <li>Create a new project:</li>
+                        <ol type="a">
+                            <li>Create a new project/workspace/source file called <i>asmButton</i>, all saved in a new folder
+                                with the same name.</li>
+                        </ol>
+                        <li>Add source code to the <i>Editor</i> window (see last page):</li>
+                        <ol type="a">
+                            <li>Write in your own <i>Hardware Notes</i>. Remember you are adding an input, so include that as
+                                well as the three outputs, specifying the port responsible <i>(i.e. RA5)</i>.</li>
+                            <li>Add in your own programmer`s comments that describe how the hardware is being
+                                affected (i.e. LED turns ON), rather than interpreting the code (move a literal value of 10
+                                into the working register). Keep your comments readable, simple and to the point!</li>
+                            <li>Add breakpoints next to all <i>nop</i> instructions.</li>
+                            <li>Build it! (Ctrl + F10).</li>
+                        </ol>
+                        <li>Setup your <i>workspace</i>:</li>
+                        <ol type="a">
+                            <li>Open <i>MPLAB SIM</i>, organize windows as shown in Fig 9.2: </li>
+                        </ol>
+                        <li>Open the Stimulus window (for simulating inputs):</li>
+                        <ol type="a">
+                            <li>Select <u><i>Debugger>Stimulus>New Workbook</i></u>.</li>
+                            <li>Select the <u><i>Asynch</u></i> tab if it's not already in view.</li>
+                            <li>Add RA5 and comments for each, resizing window as shown below in Fig 9.3:</li>
+                            <li>Click on "Save" on the window. Call it <i>asmButton.sbs</i> and save it in the asmButton folder.</li>
+                        </ol>
+                        <li>Resize and position the <i>Stimulus Controller</i> in the top right hand corner of your screen (Fig 9.4):</li>
+                        <li>Verify Configuring SFRs (Fig 9.5):</li>
+                        <ol type="a">
+                            <li>Use the "Step Into" feature of the simulator (<i>F7</i>) to verify that your <i>SFR</i> registers.
+                                (<i>CMCON0, ANSEL, TRISA, TRISC</i>) in the <i>Watch</i> window are set to the correct values</li>
+                            <li>Stop "stepping" when you reach the first <i>nop</i> instruction.</li>
+                            <li>Notice that TRISA is added, and shows two bits that are <b>1 (RA5</b> is taught to be an INPUT,
+                                and <b>RA3</b> is always an INPUT) and the rest are <b>0 (RA0, RA1, RA2, RA4</b> are therefore
+                                OUTPUTS).</li>
+                        </ol>
+                        <li>Simulate LED flashing slowly (part 1) (Fig 9.5):</li>
+                        <ol type="a">
+                            <li>With the PC counter pointed at the first nop instruction, fire <b>RA5</b> HIGH (<i>flash slowly</i>) by
+                                clicking on the <b>Fire (>)</b> button for "<b>RA5 Set High</b>" in the Stimulus Controller.</li>
+                            <li>Press "RUN" once. You should notice the PC pointer has now jumped to the subroutine
+                                <b>flashSlow</b>, stopping at the breakpoint at <b>nop</b>.</li>
+                            <li>Observe the three different windows:</li>
+                            <ul>
+                                <li>Watch window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>RA5</b> is HIGH (flash slowly).</li>
+                                    <li><b>RC4:RC2</b> are all HIGH (3 LEDs ON).</li>
+                                </ul>
+                                <li>Stopwatch window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>Time (Secs)</b> is about <b>2 seconds</b>(recall that the extra 16 microseconds
+                                        (<b>.000016</b>) is a result of the execution of the instructions.</li>
+                                    <li>This time represents the time the LED is ON for.</li></ul>
+                                <li>Output window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li>The message "<b>RA5: flash slowly fired</b>" indicating the button has not been
+                                        pressed.</li>
+                                </ul>
+                            </ul>
+                        </ol>
+                        <li>Simulate LED flashing slowly (part 2) (Fig 9.6):</li>
+                        <ol type="a">
+                            <li>Reset <i>Stopwatch</i> window back to 0 by pressing the <i>Zero</i> button.</li>
+                            <li>Click "RUN" once, and watch the PC counter point at the next <i>nop</i> instruction</li>
+                            <li>Observe the three different windows:</li>
+                            <ul>
+                                <li>Watch window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>RA5</b> is still HIGH (<i>flash slowly</i>).</li>
+                                    <li><b>RC4:RC2</b> are all LOW (3 LEDs OFF).</li>
+                                </ul>
+                                <li><i>Stopwatch</i> window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>Time (Secs)</b> is about <b>2</b> seconds again.</li>
+                                    <li>This time represents the time the LED is OFF for.</li>
+                                    <li><i>Output</i> window:</li>
+                                    <li>The message "<b>RA5: flash slowly fired</b>" still shows.</li>
+                                </ul>
+                                <li>Repeat steps a to c above and notice what happens:</li>
+                                <ul style="list-style-type: circle">
+                                    <li>The LED turns ON and OFF at a rate of 2 seconds. This has been verified by both
+                                        the <i>Stopwatch</i> and <i>Watch</i> windows</li>
+                                </ul>
+                            </ul>
+                        </ol>
+                        <li>Simulate LED flashing quickly (part 1) (Fig 9.7):</li>
+                        <ol type="a">
+                            <li>Reset Stopwatch window back to <b>0</b> by pressing the <i>Zero</i> button.</li>
+                            <li>With the PC counter pointed at the first nop instruction, fire <b>RA5 LOW</b> (<i>flash quickly</i>) by
+                                clicking on the <b>Fire (>)</b> button for <b>"RA5 Set Low"</b> in the <i>Stimulus Controller</i>.</li>
+                            <li>Press "RUN" until the PC pointer has jumped to the subroutine <b>flashFast</b>, stopping at the
+                                breakpoint at <b>nop</b>.</li>
+                            <li>Observe the three different windows:</li>
+                            <ul>
+                                <li>Watch window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>RA5</b> is LOW (<i>flash quickly</i>). In other words, the button has been pressed!</li>
+                                    <li><b>RC4:RC2</b> are all HIGH (3 LEDs ON).</li>
+                                </ul>
+                                <li>Stopwatch window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>Time (Secs)</b> is now only <b>20 milliseconds</b>!</li>
+                                    <li>This time represents the time the LED is ON for, and why this flashes faster.</li>
+                                </ul>
+                                <li><i>Output</i> window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li>The message "<b>RA5: flash quickly fired</b>" now appears.</li>
+                                </ul>
+                            </ul>
+                        </ol>
+                        <li>Simulate LED flashing slowly (part 2) (Fig 9.8):</li>
+                        <ol type="a">
+                            <li>Reset <i>Stopwatch</i> window back to <b>0</b> by pressing the <i>Zero</i> button.</li>
+                            <li>"RUN" to the next instruction.</li>
+                            <li>Observe the three different windows:</li>
+                            <ul>
+                                <li><i>Watch</i> window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>RA5</b> is still LOW (<i>flash quickly</i>).</li>
+                                    <li><b>RC4:RC2</b> are all LOW (3 LEDs OFF).</li>
+                                </ul>
+                                <li><i>Stopwatch</i> window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li><b>Time (Secs) is about 20 milliseconds</b> again.</li>
+                                    <li>This time represents the time the LED is OFF for.</li>
+                                </ul>
+                                <li><i>Output</i> window:</li>
+                                <ul style="list-style-type: circle">
+                                    <li>The message "<b>RA5: flash quickly fired</b>" still shows.</li>
+                                </ul>
+                                <li>Repeat steps a to c above and notice what happens:</li>
+                                <li>The LED turns ON and OFF at a rate of 20 milliseconds. This has been verified by
+                                    both the <i>Stopwatch</i> and <i>Watch</i> windows.</li>
+                            </ul>
+                        </ol>
+                        <li>Program Your PIC and test on breadboard (don't forget resistors with your LEDs!)</li>
+                        <ol type="a">
+                            <li>Ensure you insert your PICKit2 correctly </li>
+                        </ol>
+                    </ol>
+                    <br>
+                    <img src="../Pictures/software_9_10.jpg">
+                    <br>
+                    <u><b>Conclusion:</b></u>
+                    <ol>
+                        <li>Describe the purpose of the following instructions:</li>
+                        <ol type="a">
+                            <li>btfss PORTA, 5.</li>
+                            <li>btfsc PORTA, 5.</li>
+                            <li>call flashSlow.</li>
+                            <li>return.</li>
+                        </ol>
+                    </ol>
+                    <br>
+                    <img src="../Pictures/software_9_12.jpg">
+                    <br>
+                    <br>
+                </div>
+                <!-- pictures to aid instructions, right column -->
+                <div class="column">
+                    <center>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img src="../Pictures/software_9_1.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_2.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_3.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_4.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_5.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_6.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_7.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_8.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_9.jpg">
+                        <br>
+                        <img src="../Pictures/software_9_11.jpg">
+                        <br>
+                    </center>
+                </div>
+            </div>
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_9.pdf" type="application/pdf" width="1000" height="800"></object>
+                <br>
+                <br>
+                <!--                answers section-->
+                <h2><b>Tutorial 10 Answers Below:</b></h2>
+                <!--hidden/reveal button-->
+                <button onclick="showPDFButton()">Reveal Answers</button>
+                <button onclick="hidePDFButton()">Hide Answers</button>
+                <!--answer pdf contents-->
+                <div hidden id="answers">
+                    <img src="../Pictures/software_10_2.jpg">
+                    <br>
+                    <br>
+                    <h1>PDF Version:</h1>
+                    <!-- PDF 2-->
+                    <object data="pdf/answer_10.pdf" type="application/pdf" width="1000" height="800">
+                    </object>
+                </div>
+            </center>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
