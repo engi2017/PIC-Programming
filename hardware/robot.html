@@ -1,290 +1,345 @@
 <!DOCTYPE html>
 <html>
-<title>Hardware Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-#instructionsPrompt{
-  width: 50%;
-  font-size: 20px;
-  display: inline-block;
-  border-style:solid;
-  border-color:#494949;
-  border-radius: 25px;
-}
-#instructions{
-	margin-left: 40px;
-	margin-right: 40px;
-}
-#pictures{
-display: inline-block;
-float: center;
-}
-#banner{
-border:5px;
-border-style:solid;
-height-top:500px;
-width: 110%;
-margin-left: -5%;
-margin-top: -8%;
-background-color: #85878c;
-border-color: #494949;
-}
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-</style>
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
+        #instructionsPrompt{
+            font-size: 20px;
+            border-style:solid;
+            border-color:#494949;
+            border-radius: 25px;
+        }
+        #purposePrompt{
+            width: 50%;
+            font-size: 20px;
+            border-style:solid;
+            border-color:#494949;
+            border-radius: 25px;
+        }
 
-<body>
+        .column {
+            font-size: 20px;
+            float: left;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+        #video {
+            width:75%;
+            border:10px; 
+            border-style:solid; 
+            border-color:#494949; 
+            border-radius: 25px; 
+            background-color: #85878c; 
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        #videoTitle{
+            width:75%;
+            border:10px; 
+            border-style:solid; 
+            border-color:#494949; 
+            border-radius: 25px; 
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            background-color: #85878c; 
+        }
+    </style>
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+    <body>
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:64px 16px" id="home">
-	    <div id="banner">
-		    <br><br><br><br>
-      <h1 class="w3-jumbo"><b>Hardware Tutorials</b></h1>
-      <p>PIC Programming</p>
-	    </div>
-    </header>
-    <!-- end header --><center>
-	<div id="instructionsPrompt">
-	<b>Purpose:</b> To understand how the PIC16F684 functions by building and programming a robot that is able to follow a line.
-	<div id="instructions">
-	<p align="left">
-	<br> <br>
-	<b>Materials:</b>
-	<br>
-	PIC16F684
-	<br>
-	LM293N Chip
-	<br>
-	L293D Chip
-	<br>
-	PICkit 3
-	<br>
-	Dip for PICkit 3
-	<br>
-	2 QTI Light Sensors
-	<br>
-	2 Electric motors with Gear box
-	<br>
-	3 680 Ω Resistor (Blue, Grey, Brown, Gold)
-	<br>
-	Variable Resistor
-	<br>
-	100 µF Capacitor
-	<br>
-	0.1 µF Capacitor
-	<br>
-	3 LEDs
-	<br>
-	Wires
-	<br>
-	9V Battery
-	<br>
-	6V Battery
-	<br>
-	Voltage Regulator
-	<br></p>
-	</div></div></center>
-	<br> <br>
-	<div id="instructionsPrompt">
-	<center><b>Robot Tutorial</b></center><br><div id="instructions">
-<b>Build Power Supply</b>
-<br>
-1. 	The 9V battery will be connected to a voltage regulator to decrease the voltage as the circuit requires 5V of the 9V in the battery.
-<br>
-&nbsp &nbsp &nbsp a) The input pin will be attached to the positive side of the 9V battery.
-<br> 
-&nbsp &nbsp &nbsp b) The ground pin will go to ground.
-<br>
-&nbsp &nbsp &nbsp c) The output pin will go to Vcc.
-<br>
-&nbsp &nbsp &nbsp d) A 0.1 uF and 100uF  capacitor will be connected to and from the ground and output pin
-<br><br>
-2. 	The 6V battery can be replicated using four 1.5V batteries and will be connected on the bottom part of the breadboard
-<br><br>
-3. 	Set up a power LED by connecting a 680Ω from Vcc tothe positive leg of an LED. Place the negative leg of the LED in ground. 
-<br><br>
-<b>Inserting the Chips</b> <br>
-4. 	Place the chips (PIC16F684, LM293N, L293D) an appropriate distance apart on the breadboard, make sure you also have an idea of where you will place your motors, dip, variable resistors and sensors so your breadboard is organized.
-<br><br>
-<b>Powering the Circuit</b> <br>
-5. 	Sensors:
-<br>
-&nbsp &nbsp &nbsp a) Connect the B pin to ground 
-<br>
-&nbsp &nbsp &nbsp b) Connect the W pin to Vcc
-<br><br>
-6. L2D3D Chip:
-<br>
-&nbsp &nbsp &nbsp a) Connect pin 13 and 5 to ground
-<br>
-&nbsp &nbsp &nbsp b) Connect pin 8, 9 and 16 to Vcc
-<br>
-&nbsp &nbsp &nbsp c) Connect a wire from pin 16 to pin 1
-<br>
-&nbsp &nbsp &nbsp d) Connect a wire from pin 4 to 5
-<br>
-&nbsp &nbsp &nbsp e) Connect a wire from pin 13 and 12
-<br><br>
-7. LM293 Chip:
-<br>
-&nbsp &nbsp &nbsp a) Connect pin 4 to to ground 
-<br>
-&nbsp &nbsp &nbsp b) Connect pin 8 to Vcc
-<br><br>
-8. PIC16F684:
-<br>
-&nbsp &nbsp &nbsp a) Connect pin 14 to ground
-<br>
-&nbsp &nbsp &nbsp b) Connect pin 1 to Vcc
-<br> <br>
-9. PICkit3 (dip):
-<br>
-&nbsp &nbsp &nbsp a) Connect pin 2 to Vcc 
-<br>
-&nbsp &nbsp &nbsp b) Connect pin 3 to ground
-<br><br>
-10. Connections between the L293D chip and the PIC: 
-<br>
-&nbsp &nbsp &nbsp a) Connect  pin 2 on the L293D chip to pin 8 on the PIC
-<br>
-&nbsp &nbsp &nbsp b) Connect pin 7 on the L293D chip to pin 7 on the PIC
-<br>
-&nbsp &nbsp &nbsp c) Connect pin 15 on the L293D chip to pin 9 on the PIC
-<br>
-&nbsp &nbsp &nbsp d) Connect pin 10 on the L293D chip to pin 10 on the PIC
-<br><br>
-11. Connections between the L293D chip and the PIC: 
-<br>
-&nbsp &nbsp &nbsp a) Connect pin 3 on the L293D chip to the left side of the left motor
-<br>
-&nbsp &nbsp &nbsp b) Connect pin 6 on the L293D chip to the right side of the left motor
-<br>
-&nbsp &nbsp &nbsp c) Connect pin 14 on the L293D chip to the right side of the right motor
-<br>
-&nbsp &nbsp &nbsp d) Connect pin 11 on the L293D chip to the left side of the right motor
-<br><br>
-<b>Sensor Circuit</b> <br>
-12. Connect pin 2 on the PIC to pin 7 on the LM293 chip
-<br><br>
-13. Connect pin 3 on the PIC to pin 1 on the LM293 chip
-<br><br>
-14. Connect pin 3 and pin 5 on the LM293 chip to the input pin on the variable resistor
-<br><br>
-15. Connect pin 2 on the LM293 chip to the R pin on the right sensor
-<br><br>
-16. Connect pin 6 on the LM293 chip to the R pin on the left sensor
-<br><br>
-17. Connect a 680 Ω resistor from pin 1 on the LM293 chip to the negative leg of the LED. The positive leg will be placed in Vcc.
-<br><br>
-18. Connect a 680 Ω resistor from pin 7 on the LM293 chip to the negative leg of the LED. The positive leg will be placed in Vcc. 
-<br><br>
-<b>Programming the Circuit</b> <br>
-19. Connect pin 1 on the dip for PICkit3 to pin 4 on the PIC
-<br><br>
-20. Connect pin 4 on the dip for PICkit3 to pin 13 on the PIC
-<br><br>
-21. Connect pin 5 on the dip for PICkit3 to pin 12 on the PIC
-		<br>
-		<br>
-      </div></div>
-	  <div id="pictures">
-	  <!-- do not judge -->
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-	  <img src="../Pictures/hardware_diagram_1.png">
-	  <br>
-	  <!-- do not judge -->
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-	  Pinout for the PICKkit3.
-	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	  <!-- do not judge -->
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-	  <img src="../Pictures/hardware_diagram_2.png" width="493">
-	  <br>
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-	  Pinout for the PIC16F684
-	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	  <!-- do not judge -->
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-	  <img src="../Pictures/hardware_diagram_3.png" width="250">
-	  <br>
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-	  Pinout for QTI Sensor
-	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-	  <img src="../Pictures/schematic_3.jpg" width="800">
-	  <br>
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-	  Layout Diagram
-	  <br><br><br><br><br><br><br><br>
-	  </div>
-	  <br><br><br><br><br><center>
-	  <iframe width="1000" height="800" src="https://www.youtube.com/embed/bZVGH_PZ1mw" frameborder="0" allowfullscreen></iframe>
-	  </center>
-	  
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
-    </footer>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    <!-- END PAGE CONTENT -->
-  </div>
+        <!-- Page Content -->
+        <div class="w3-main w3-padding-large">
 
-  <script>
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Hardware Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- end header -->
+            <center>
+                <br><br><br>
+                <div id="purposePrompt">
+                    <b>Purpose:</b> To understand how the PIC16F684 functions by building and programming a robot that is able to follow a line.
+                    <div style="margin-left: 20px;">
+                        <p align="left">
+                            <br>
+                            <b>Materials:</b>
+                            <br>
+                            PIC16F684
+                            <br>
+                            LM293N Chip
+                            <br>
+                            L293D Chip
+                            <br>
+                            PICkit 3
+                            <br>
+                            Dip for PICkit 3
+                            <br>
+                            2 QTI Light Sensors
+                            <br>
+                            2 Electric motors with Gear box
+                            <br>
+                            3 680 Ω Resistor (Blue, Grey, Brown, Gold)
+                            <br>
+                            Variable Resistor
+                            <br>
+                            100 µF Capacitor
+                            <br>
+                            0.1 µF Capacitor
+                            <br>
+                            3 LEDs
+                            <br>
+                            Wires
+                            <br>
+                            9V Battery
+                            <br>
+                            6V Battery
+                            <br>
+                            Voltage Regulator
+                        </p>
+                    </div>
+                </div>
+            </center>
+            <br> <br>
+            <div class="row">
+                <div class="column">
+                    <div id="instructionsPrompt">
+                        <center><b>Robot Tutorial</b></center><br>
+                        <ol>
+                            <b>Build Power Supply</b>
+                            <li>The 9V battery will be connected to a voltage regulator to decrease the voltage as the circuit requires 5V of the 9V in the battery.</li>
+                            <ol type="a">
+                                <li>The input pin will be attached to the positive side of the 9V battery.</li>
+                                <li>The ground pin will go to ground.</li>
+                                <li>The output pin will go to Vcc.</li>
+                                <li>A 0.1 uF and 100uF  capacitor will be connected to and from the ground and output pin</li>
+                            </ol>
+                            <li>The 6V battery can be replicated using four 1.5V batteries and will be connected on the bottom part of the breadboard</li>
+                            <li>Set up a power LED by connecting a 680Ω from Vcc tothe positive leg of an LED. Place the negative leg of the LED in ground. </li>
+                            <b>Inserting the Chips</b>
+                            <li>Place the chips (PIC16F684, LM293N, L293D) an appropriate distance apart on the breadboard, make sure you also have an idea of where you will place your motors, dip, variable resistors and sensors so your breadboard is organized.</li>
+                            <b>Powering the Circuit</b>
+                            <li>Sensors:</li>
+                            <ol type="a">
+                                <li>Connect the B pin to ground</li>
+                                <li>Connect the W pin to Vcc</li>
+                            </ol>
+                            <li>L2D3D Chip:</li>
+                            <ol type="a">
+                                <li>Connect pin 13 and 5 to ground</li>
+                                <li>Connect pin 8, 9 and 16 to Vcc</li>
+                                <li>Connect a wire from pin 16 to pin 1</li>
+                                <li>Connect a wire from pin 4 to 5</li>
+                                <li>Connect a wire from pin 13 and 12</li>
+                            </ol>
+                            <li>LM293 Chip:</li>
+                            <ol type="a">
+                                <li>Connect pin 4 to to ground </li>
+                                <li>Connect pin 8 to Vcc</li>
+                            </ol>
+                            <li>PIC16F684:</li>
+                            <ol type="a">
+                                <li>Connect pin 14 to ground</li>
+                                <li>Connect pin 1 to Vcc</li>
+                            </ol>
+                            <li>PICkit3 (dip):</li>
+                            <ol type="a">
+                                <li>Connect pin 2 to Vcc</li>
+                                <li>Connect pin 3 to ground</li>
+                            </ol>
+                            <li>Connections between the L293D chip and the PIC: </li>
+                            <ol type="a">
+                                <li>Connect  pin 2 on the L293D chip to pin 8 on the PIC</li>
+                                <li>Connect pin 7 on the L293D chip to pin 7 on the PIC</li>
+                                <li>Connect pin 15 on the L293D chip to pin 9 on the PIC</li>
+                                <li>Connect pin 10 on the L293D chip to pin 10 on the PIC</li>
+                            </ol>
+                            <li>Connections between the L293D chip and the PIC: </li>
+                            <ol type="a">
+                                <li>Connect pin 3 on the L293D chip to the left side of the left motor</li>
+                                <li>Connect pin 6 on the L293D chip to the right side of the left motor</li>
+                                <li>Connect pin 14 on the L293D chip to the right side of the right motor</li>
+                                <li>Connect pin 11 on the L293D chip to the left side of the right motor</li>
+                            </ol>
+                            <b>Sensor Circuit</b> <br>
+                            <li>Connect pin 2 on the PIC to pin 7 on the LM293 chip</li>
+                            <li>Connect pin 3 on the PIC to pin 1 on the LM293 chip</li>
+                            <li>Connect pin 3 and pin 5 on the LM293 chip to the input pin on the variable resistor</li>
+                            <li>Connect pin 2 on the LM293 chip to the R pin on the right sensor</li>
+                            <li>Connect pin 6 on the LM293 chip to the R pin on the left sensor</li>
+                            <li>Connect a 680 Ω resistor from pin 1 on the LM293 chip to the negative leg of the LED. The positive leg will be placed in Vcc.</li>
+                            <li>Connect a 680 Ω resistor from pin 7 on the LM293 chip to the negative leg of the LED. The positive leg will be placed in Vcc. </li>
+                            <b>Programming the Circuit</b> <br>
+                            <li>Connect pin 1 on the dip for PICkit3 to pin 4 on the PIC</li>
+                            <li>Connect pin 4 on the dip for PICkit3 to pin 13 on the PIC</li>
+                            <li>Connect pin 5 on the dip for PICkit3 to pin 12 on the PIC</li>
+                        </ol>
+                        <br>
+                    </div>
+                </div>
+                <div class="column">
+                    <center>
+                        <!-- do not judge -->
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+                        <img src="../Pictures/hardware_diagram_1.png">
+                        <br>
+                        <!-- do not judge -->
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        Pinout for the PICKkit3.
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <!-- do not judge -->
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+                        <img src="../Pictures/hardware_diagram_2.png" width="493">
+                        <br>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        Pinout for the PIC16F684
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <!-- do not judge -->
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+                        <img src="../Pictures/hardware_diagram_3.png" width="250">
+                        <br>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        Pinout for QTI Sensor
+                    </center>
+                </div>
+            </div>
+            <center>
+                <img src="../Pictures/schematic_3.jpg" width="800">
+                <br>
+                Layout Diagram
+                <br><br><br><br><br><br><br>
+                <div id="videoTitle">
+                    <h1>Video Tutorial</h1>
+                </div>
+                <div id="video">
+                    <br>
+                    <iframe width="1000" height="800" src="https://www.youtube.com/embed/bZVGH_PZ1mw" frameborder="0" allowfullscreen></iframe>
+                    <br><br>
+                </div>
+            </center>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+                <!-- End footer -->
+            </footer>
+
+            <!-- END PAGE CONTENT -->
+        </div>
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
