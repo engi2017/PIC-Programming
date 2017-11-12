@@ -1,239 +1,239 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-  
-  #instructionsPrompt {
-    font-size: 20px;
-  }
-</style>
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-<body>
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-    <!-- End header -->
-    <center>
-      <h2>TUTORIAL #8: Counters
-<br>
-TEJ4M0</h2>
-      <br>
-      <h3>
-		<a href="tutorial_7.html">Previous Tutorial</a>
-		<br>
-		<a href="tutorial_9.html">Next Tutorial</a>
-	  </h3>
-    </center>
-      <div id="instructionsPrompt" >
-        <!-- hey you want to put the stuff for the left column in here -->
-        <br>
-        <b><u>Objective:</u></b>
-        <br> To create a PIC interface which uses one button input to control the speed of three LEDs flashing.
-        <br>
-        <br>
-        <b><u>Procedure:</b></u>
-		<br>
-		1. Create new project:
-		<br>
-&nbsp &nbsp &nbsp a. Create a new project/workspace called asmMod16 in a new folder with the same
-name.
-<br>
-&nbsp &nbsp &nbsp b. Open <i>asmLEDFlash_B.asm</i> (version B); re-save it as <i>asmMod16.asm</i>.
-<br>
-&nbsp &nbsp &nbsp c. Add the file to the project's source code.
-<br><br>
-2. Change the <i>Title</i> section (see code attached):
-<br>
-&nbsp &nbsp &nbsp a. Change the title, and what the program does.
-<br>
-&nbsp &nbsp &nbsp b. <i>Hardware Notes</i>: Change it to specify which ports are outputs and which devices (i.e.
-LEDs) are attached to which port (i.e.RC0, RC1).
-<br><br>
-3. Modify and Build:
-<br>
-&nbsp &nbsp &nbsp a. Change code in the <i>mainline</i> so it matches the code below.
-<br>
-&nbsp &nbsp &nbsp b. Add any other code you think is necessary.
-<br>
-&nbsp &nbsp &nbsp c. Build the code and debug any problems.
-<br><br>
-4. Setup your Workspace appropriately (i.e. arrange all windows):
-<br>
-&nbsp &nbsp &nbsp a. Open MPLAB SIM. Arrange all windows as per Tutorial #7 (Open your Project,
-Output, Stopwatch, Watch windows: <i>CMCON0, STATUS, ANSEL, TRISC, WREG,
-PORTC</i>).
-<br>
-&nbsp &nbsp &nbsp b. Add your breakpoints next to the nop instruction.
-<br><br>
-5. Run the Simulator:
-<br>
-&nbsp &nbsp &nbsp a. Verify SFRs.
-<br>
-&nbsp &nbsp &nbsp b. Verify outputs and delays are correct.
-<br>
-&nbsp &nbsp &nbsp c. You should see <b>bit 1</b> of the STATUS being set (i.e. goes to a 1) when PORTC resets
-from 1111 to 0000. Why does it do this???
-<br><br>
-6. Program Your PIC and test on breadboard. (Don't forget resistors with your LEDs!)
-<br><br>
-7. Make a new program:
-<br>
-&nbsp &nbsp &nbsp a. Construct a new program called <b>asmMod16d</b> which counts down from 1111 to 0000,
-then automatically resets (hint: use one of the flags to assist you).
-<br>
-&nbsp &nbsp &nbsp b. Setup your workspace to include all relevant windows: Project, Output, Stopwatch,
-Watch (including all SFRs and relevant PORTS).
-<br>
-<br><br>
-<b><u>Conclusion:</b></u>
-<br>
-Why does <b>bit 1</b> of the STATUS set (i.e. goes to a 1) when PORTC resets from 1111 to
-0000? 
-<br>
-<center>
-<img src="../Pictures/software_8_1.jpg">
-</center>
-        <br>
-        <!-- don't put text after this for first column john -->
-	</div>
-    <center>
-	<h1>PDF Version:</h1>
-	<br>
-      <object data="pdf/tutorial_8.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-      </p>
-      <br>
-      <br>
-    </center>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-    </footer>
-      <!-- End footer -->
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+        #instructions{
+            font-size: 20px;
+        }
+    </style>
 
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- End header -->
+            <center>
+                <!--                title-->
+                <br><br>
+                <h2>TUTORIAL #8: Counters
+                    <br>
+                    TEJ4M0</h2>
+                <br>
+                <!--links for prev or next-->
+                <h3><a href="tutorial_7.html">Previous Tutorial</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <a href="tutorial_9.html">Next Tutorial</a></h3>
+            </center>
+            <br>
+            <div id="instructions">
+                <b><u>Objective:</u></b>
+                <br> To create a PIC interface which uses one button input to control the speed of three LEDs flashing.
+                <br>
+                <br>
+                <b><u>Procedure:</b></u>
+                <br>
+                <ol>
+                    <li>Create new project:</li>
+                    <ol type="a">
+                        <li>Create a new project/workspace called asmMod16 in a new folder with the same
+                            name.</li>
+                        <li>Open <i>asmLEDFlash_B.asm</i> (version B); re-save it as <i>asmMod16.asm</i>.</li>
+                        <li>Add the file to the project's source code.</li>
+                    </ol>
+                    <li>Change the <i>Title</i> section (see code attached):</li>
+                    <ol type="a">
+                        <li>Change the title, and what the program does.</li>
+                        <li><i>Hardware Notes</i>: Change it to specify which ports are outputs and which devices (i.e.
+                            LEDs) are attached to which port (i.e.RC0, RC1).</li>
+                    </ol>
+                    <li>Modify and Build:</li>
+                    <ol type="a">
+                        <li>Change code in the <i>mainline</i> so it matches the code below.</li>
+                        <li>Add any other code you think is necessary.</li>
+                        <li>Build the code and debug any problems.</li>
+                    </ol>
+                    <li>Setup your Workspace appropriately (i.e. arrange all windows):</li>
+                    <ol type="a">
+                        <li>Open MPLAB SIM. Arrange all windows as per Tutorial #7 (Open your Project,
+                            Output, Stopwatch, Watch windows: <i>CMCON0, STATUS, ANSEL, TRISC, WREG,
+                            PORTC</i>).</li>
+                        <li>Add your breakpoints next to the nop instruction.</li>
+                    </ol>
+                    <li>Run the Simulator:</li>
+                    <ol type="a">
+                        <li>Verify SFRs.</li>
+                        <li>Verify outputs and delays are correct.</li>
+                        <li>You should see <b>bit 1</b> of the STATUS being set (i.e. goes to a 1) when PORTC resets
+                            from 1111 to 0000. Why does it do this???</li>
+                    </ol>
+                    <li>Program Your PIC and test on breadboard. (Don't forget resistors with your LEDs!)</li>
+                    <li>Make a new program:</li>
+                    <ol type="a">
+                        <li>Construct a new program called <b>asmMod16d</b> which counts down from 1111 to 0000,
+                            then automatically resets (hint: use one of the flags to assist you).</li>
+                        <li>Setup your workspace to include all relevant windows: Project, Output, Stopwatch,
+                            Watch (including all SFRs and relevant PORTS).</li>
+                    </ol>
+                </ol>
+                <b><u>Conclusion:</u></b>
+                <br>
+                Why does <b>bit 1</b> of the STATUS set (i.e. goes to a 1) when PORTC resets from 1111 to
+                0000? 
+                <br>
+                <center>
+                    <img src="../Pictures/software_8_1.jpg">
+                </center>
+                <br>
+            </div>
+            <!-- pictures to aid instructions, right column -->
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_8.pdf" type="application/pdf" width="1000" height="800"></object>
+                <br>
+                <br>
+            </center>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
+
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
