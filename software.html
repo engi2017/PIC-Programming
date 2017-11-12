@@ -1,176 +1,183 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  #banner{
-  border:5px;
-  border-style:solid;
-  height-top:500px;
-  width: 110%;
-  margin-left: -5%;
-  margin-top: -8%;
-  background-color: #85878c;
-  border-color: #494949;
-  }
-  #textBoxBorder {
-  border:7px;
-  border-style:double;
-  border-color:#c4af11;
-  width: 700px;
-  display: inline-block;
-  background-color: #FFFFFF;
-  border-radius: 25px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  }
-  #textBoxBorderOutline {
-  border:9px;
-  border-style:solid;
-  border-color:#CC0099;
-  border-radius: 25px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  width: 700px;
-  display: inline-block;
-  background-color: #FFFFFF;
-  }
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    <title>Software Tutorials</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #textBoxBorder {
+            border:7px;
+            border-style:double;
+            border-color:#c4af11;
+            width: 700px;
+            display: inline-block;
+            background-color: #FFFFFF;
+            border-radius: 25px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        #textBoxBorderOutline {
+            border:9px;
+            border-style:solid;
+            border-color:#CC0099;
+            border-radius: 25px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            width: 700px;
+            display: inline-block;
+            background-color: #FFFFFF;
+        }
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-    text-decoration: none;
-    color: initial;
-	font-size: 25px;
-}
-</style>
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
+        a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
 
-<body>
+            text-decoration: none;
+            color: initial;
+            font-size: 25px;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+    </style>
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+    <body>
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        <!-- Page Content -->
+        <div class="w3-main w3-padding-large">
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-	<div id="banner">
-	<br>
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <p>PIC Programming</p>
-	  </div>
-    </header>
-    <!-- end header -->
-	  
-    <center><div style="border:10px; border-style:solid; border-color:#494949; border-radius: 25px; width: 1500px; background-color: #85878c">
-	<br>
-	    <div id="textBoxBorder" alt="Tutorial 1">
-		<img src="Pictures/Software_1.png">
-	    <a href="software/tutorial_1.html"><h2>Tutorial 1</h2></a></div> &nbsp &nbsp
-		<div id="textBoxBorder">
-		<img src="Pictures/Software_2.png">
-		<a href="software/tutorial_2.html"><h2>Tutorial 2</h2></a></div>
-		<br>
-		<br>
-	    <div id="textBoxBorder">
-		<img src="Pictures/Software_3.png">
-	    <a href="software/tutorial_3.html"><h2>Tutorial 3</h2></a></div> &nbsp &nbsp
-		<div id="textBoxBorder">
-		<img src="Pictures/Software_4.png">
-		<a href="software/tutorial_4.html"><h2>Tutorial 4</h2></a></div>
-        <br>
-		<br>
-	    <div id="textBoxBorder">
-		<img src="Pictures/Software_5.png">
-	    <a href="software/tutorial_5.html"><h2>Tutorial 5</h2></a></div> &nbsp &nbsp
-		<div id="textBoxBorder">
-		<img src="Pictures/Software_6.png">
-		<a href="software/tutorial_6.html"><h2>Tutorial 6</h2></a></div>
-        <br>
-		<br>
-	    <div id="textBoxBorder">
-		<img src="Pictures/Software_7.png">
-	    <a href="software/tutorial_7.html"><h2>Tutorial 7</h2></a></div> &nbsp &nbsp
-		<div id="textBoxBorder">
-		<img src="Pictures/Software_8.png">
-		<a href="software/tutorial_8.html"><h2>Tutorial 8</h2></a></div>
-        <br>
-		<br>
-	    <div id="textBoxBorder">
-		<img src="Pictures/Software_9.png">
-	    <a href="software/tutorial_9.html"><h2>Tutorial 9</h2></a></div> &nbsp &nbsp
-		<div id="textBoxBorder">
-		<img src="Pictures/Software_10.png">
-		<a href="software/tutorial_10.html"><h2>Tutorial 10</h2></a></div>
-		<br>
-		<br>
-      </div>
-	  <br>
-	  <!-- <button type="button">PIC16F684 Datasheet</button> -->
-       <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41202C.pdf" class="button">&nbsp &nbsp &nbsp PIC16F684 Datasheet&nbsp &nbsp &nbsp </a>
-	   <a href="software/pdf/software_cheat_sheet.pdf" class="button">&nbsp &nbsp &nbsp Software Cheat Sheet&nbsp &nbsp &nbsp </a>
-    </center>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
-    </footer>
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
 
-    <!-- END PAGE CONTENT -->
-  </div>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- end header -->
+            <br><br><br><br><br>
+            <center>
+                <div style="border:10px; border-style:solid; border-color:#494949; border-radius: 25px; width: 1500px; background-color: #85878c; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px">
+                    <h3>Below are the software tutorials created by the software team. Each tutorial page includes a text and downloadable pdf version of both the instructions and the solutions, if applicable.</h3>
+                </div>
+                <div style="border:10px; border-style:solid; border-color:#494949; width: 1500px; background-color: #85878c;">
+                    <br>
+                    <div id="textBoxBorder" alt="Tutorial 1">
+                        <img src="Pictures/Software_1.png">
+                        <a href="software/tutorial_1.html"><h2>Tutorial 1</h2></a></div> &nbsp &nbsp
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_2.png">
+                        <a href="software/tutorial_2.html"><h2>Tutorial 2</h2></a></div>
+                    <br>
+                    <br>
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_3.png">
+                        <a href="software/tutorial_3.html"><h2>Tutorial 3</h2></a></div> &nbsp &nbsp
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_4.png">
+                        <a href="software/tutorial_4.html"><h2>Tutorial 4</h2></a></div>
+                    <br>
+                    <br>
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_5.png">
+                        <a href="software/tutorial_5.html"><h2>Tutorial 5</h2></a></div> &nbsp &nbsp
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_6.png">
+                        <a href="software/tutorial_6.html"><h2>Tutorial 6</h2></a></div>
+                    <br>
+                    <br>
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_7.png">
+                        <a href="software/tutorial_7.html"><h2>Tutorial 7</h2></a></div> &nbsp &nbsp
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_8.png">
+                        <a href="software/tutorial_8.html"><h2>Tutorial 8</h2></a></div>
+                    <br>
+                    <br>
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_9.png">
+                        <a href="software/tutorial_9.html"><h2>Tutorial 9</h2></a></div> &nbsp &nbsp
+                    <div id="textBoxBorder">
+                        <img src="Pictures/Software_10.png">
+                        <a href="software/tutorial_10.html"><h2>Tutorial 10</h2></a></div>
+                    <br>
+                    <br>
+                </div>
+                <!-- <button type="button">PIC16F684 Datasheet</button> -->
+                <div style="border:10px; border-style:solid; border-color:#494949; border-radius: 25px; width: 1500px; background-color: #85878c; border-top-left-radius: 0px; border-top-right-radius: 0px">
+                    <br>
+                    <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41202C.pdf" class="button">&nbsp; &nbsp; &nbsp; PIC16F684 Datasheet&nbsp; &nbsp; &nbsp; </a>
+                    <a href="software/pdf/software_cheat_sheet.pdf" class="button">&nbsp; &nbsp; &nbsp; Software Cheat Sheet&nbsp; &nbsp; &nbsp; </a>
+                    <br>
+                    <br>
+                </div>
+            </center>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+                <!-- End footer -->
+            </footer>
 
-  <script>
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+            <!-- END PAGE CONTENT -->
+        </div>
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+        <script>
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
