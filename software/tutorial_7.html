@@ -1,494 +1,489 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-  
-  #instructionsPrompt {
-    width: 50%;
-    font-size: 20px;
-  }
-  
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-</style>
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-<body>
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-    <!-- End header -->
-    <center>
-      <h2>TUTORIAL #7
-<br>
-TEJ4M0</h2>
-      <br>
-      <h3>
-		<a href="tutorial_6.html">Previous Tutorial</a>
-		<br>
-		<a href="tutorial_8.html">Next Tutorial</a>
-	  </h3>
-    </center>
-    <div class="row">
-      <div id="instructionsPrompt" class="column">
-        <!-- hey you want to put the stuff for the left column in here -->
-        <br>
-        <b><u>Objective:</u></b>
-        <br>
-• Configure the SFRs
-<br>
-• Use basic assembly language instructions (<i>movlw, movwf, clrf, goto</i>):
-<br>
-&nbsp &nbsp &nbsp o To program PORTS so the LED will turn on and off, repeatedly
-<br>
-• Simulate code using MPLAB SIM <u>before</u> flashing code to PIC
-<br>
-&nbsp &nbsp &nbsp o Adding the Stopwatch window and breakpoints to verify the timing of a delay
-<br>
-• Program your PIC using the PICKit3
-        <br>
-        <br>
-        <b><u>Procedure:</b></u>
-		<br>
-1. Create new project:
-<br>
-&nbsp &nbsp &nbsp a. Create a new project and workspace called <i>asmLED_Flash</i> in a folder with the same
-name
-<br>
-&nbsp &nbsp &nbsp b. Open asmTemplate.asm from the Tutorial #1 and re-save it as <i>asmLEDFlash_A.asm</i>.
-<br>
-&nbsp &nbsp &nbsp c. Add the file to the project's source code
-<br>
-2. The Delay header file:
-<br>
-&nbsp &nbsp &nbsp a. After the <b>INCLUDE “p16f684.inc”</b> add: <b>INCLUDE "asmDelay.inc"</b> on the next line.
-<br>
-Locate and open the file. This file contains code that allows the programmer to
-specify a delay in microseconds. For example - <b>Delay 1500000</b> – represents 1.5
-seconds.
-<br>
-&nbsp &nbsp &nbsp b. To allow us to use it in multiple programs, we need to save it with the other header
-files in the following path: <b>C:\Program Files\Microchip\MPASM Suite.
-<br>
-If this is not possible for you, save it in the asmLED_Flash folder and add it to
-HEADER within the MPLAB program.</b>
-<br>
-&nbsp &nbsp &nbsp c. Close the file after you've saved it in the new location.
-<br>
-3. Modify Code:
-<br>
-&nbsp &nbsp &nbsp a. Modify the code to match what is shown on asmLEDFlash_A.asm on the next page.
-<br>
-&nbsp &nbsp &nbsp b. Build all (Ctrl + F10) and rearrange the windows as shown below.
-<br>
-<br>
-<b>Configuring SFRs:</b>
-<br>
-•Before we can begin to use the PIC to send out digital 1s and 0s, we need to first configure
-some of the SFRs (Special Function Registers).
-<br>
-&nbsp &nbsp &nbsp o Turn off comparators
-<br>
-&nbsp &nbsp &nbsp o Switch all ports from analog to digital
-<br>
-&nbsp &nbsp &nbsp o Teach each ports to be inputs and/or outputs
-<br>
-• CMCON0:
-<br>
-&nbsp &nbsp &nbsp o This code is simply disabling the internal comparators so that it doesn’t interfere
-with your program.
-<br>
-• ANSEL:
-<br>
-&nbsp &nbsp &nbsp o This SFR is in Bank 1. Therefore, to access it, you must move to Bank 1 (set RP0
-(bit 5) in your STATUS Register). This is called BANK SWITCHING.
-<br>
-&nbsp &nbsp &nbsp o This PIC has 8 analog channels which share with the digital ports. The problem is,
-the PIC defaults to analog. Thus, you must specify that you’re using digital from
-the start. Hence, the code.
-<br>
-• TRISC:
-<br>
-&nbsp &nbsp &nbsp o All 12 ports in the P16F684 are bi-directional (with the exception of RA3 which can
-never be an output)
-<br>
-&nbsp &nbsp &nbsp o To teach a port to be an input, you set (1) that bit in the TRIS reg 
-<br>
-&nbsp &nbsp &nbsp o To teach a port to be an output, you clear (0) that bit in the TRIS reg
-<br>
-&nbsp &nbsp &nbsp o In our example, by clearing the TRISC reg, you’re making all the ports in PORTC
-(RC0:RC5) outputs.
-<br>
-• STATUS:
-<br>
-&nbsp &nbsp &nbsp o We must return to Bank 0 so that we can write to PORTC. To accomplish this we
-clear (0) RP0. This is called BANK SWITCHING! 
-<br>
-4. Setup MPLAB SIM
-<br>
-&nbsp &nbsp &nbsp a. Open MPLAB SIM
-<br>
-&nbsp &nbsp &nbsp b. Open the Watch window. Move it to the bottom right-hand corner of the screen.
-<br>
-&nbsp &nbsp &nbsp c. Add the following SFRs to the Watch window:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • STATUS
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • CMCON0
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • ANSEL
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • TRISC
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • WREG
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • PORTC
-<br>
-5. Setup the Stopwatch window:
-<br>
-&nbsp &nbsp &nbsp a. Select <u><i>Debugger>Stopwatch</u></i>
-<br>
-&nbsp &nbsp &nbsp b. Select <u><i>Debugger>Settings…</u></i>
-<br>
-&nbsp &nbsp &nbsp c. Change the Processor Frequency from 20 to 4 MHz, which is what the P16F684's
-internal oscillator defaults at. Click OK.
-<br>
-&nbsp &nbsp &nbsp d. Move the Stopwatch window to the right center side of the screen.
-<br>
-6. Verify values in SFRs:
-<br>
-&nbsp &nbsp &nbsp a. Click on the "Step Into" button for MPLAB SIM and verify the contents of the SFRs in
-the Watch window
-<br>
-&nbsp &nbsp &nbsp b. <font color="red">Stop when you get to the first nop instruction.</font>
-<br>
-&nbsp &nbsp &nbsp c. You should notice that <b>RC0</b> in PORTC (i.e. bit 0 in PORTC) has been "set". In other
-words, <b>RC0</b> is outputting or 'writing' a HIGH, which turns the LED ON.
-<br>
-7. Add Breakpoints:
-<br>
-&nbsp &nbsp &nbsp a. Breakpoints allow us to "Run" from one breakpoint to another, rather than stepping
-one instruction at a time. Due to the fact that we now have delays in our program
-which represent millions of instructions, it might take you some time to step through
-that!!!
-<br>
-&nbsp &nbsp &nbsp b. To add a breakpoint, double-click next to the <b>nop</b> instructions, which stand for "no
-instruction", and which offers another way to insert breakpoints.
-<br>
-&nbsp &nbsp &nbsp c. A circled <b>B</b> will appear signifying a breakpoint (to remove a breakpoint, simply doubleclick
-again)
-<br><br><br>
-<b>The Stopwatch window</b>
-&nbsp &nbsp &nbsp • The P16F684 contains an internal clock that is configured to operate at 4MHz , or
-4,000,000 clock cycles/second which is why you changed this in Step 5 above. All PICs
-take 4 clock cycles to complete 1 instruction cycle, which equates to 1,000,000
-instructions/sec if you're using a 4MHz clock speed (4,000,000/4). Creating a delay is
-simply a matter of keeping the processor busy looping nothing for a specific number of
-instructions – precisely 1,000,000 instructions per second.
-<br>
-&nbsp &nbsp &nbsp • Take note that the Stopwatch Window has counted 6 instructions (or 6 microseconds).
-This should make sense as you have just simulated 6 lines of code. Most instructions in
-assembler utilize one instruction cycle, whereas program branches (i.e. goto, subroutine
-calls) require two instruction cycles. This is why assembler is considered to be far more
-efficient a program than high-level languages like 'C' or 'Basic', which require
-considerably more instruction cycles/line of code, and are thus slower to process, and
-require more program memory. 
-<br>
-8. Simulate LED Flashing with MPLAB SIM:
-<br>
-&nbsp &nbsp &nbsp a. Recall the purpose of this program: turn an LED ON, then turn it OFF; repeatedly.
-<br>
-&nbsp &nbsp &nbsp b. Click on the Zero button on the Stopwatch window to reset the count back to 0.
-<br>
-&nbsp &nbsp &nbsp c. With your green PC pointer at the <b>nop</b> line, click on the "Run" command in the
-simulator toolbar. <b>You should observe two crucial pieces of information</b>:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Time in the Stopwatch now shows <b>2.000002</b> seconds (the <b>.000002</b> represents
-the two instructions (<b>nop</b> and <b>bsf PORTC, 0</b>) executed in addition to the <b>2s</b> delay
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Watch window shows <b>PORTC</b> outputting a <b>'000001`(RC0 is ON)</b> which is
-exactly what you want, and represents the turning ON of the LED for those 2
-seconds.
-<br>
-&nbsp &nbsp &nbsp <b>d. Using MPLAB SIM to verify data flowing through registers BEFORE
-programming the PIC saves time in the long run because you're instantly
-aware that any problems must be hardware related (since the software has
-been verified).</b>
-<br>
-9. Simulate and Remainder of Program
-<br>
-&nbsp &nbsp &nbsp a. Click on the Zero button on the Stopwatch window to reset the count back to 0.
-<br>
-&nbsp &nbsp &nbsp b. Using MPLAB SIM, click "Run" to the next breakpoint. Note the following:
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • RC0 (bit 0 in PORT0) is now 0, which represents the turning OFF of the LED.
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Time in the Stopwatch now shows <b>2.000004</b> seconds (the <b>.000004</b> represents
-two instructions that require 1 instruction cycle (<b>nop</b> and <b>bsf PORTC, 0</b>) plus 1
-instruction, <b>goto</b>, requiring two instruction cycles (2+2=4 instruction cycles), plus
-the <b>2s</b> delay
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp • The Watch window shows <b>PORTC</b> outputting a <b>'000000`(RC0 is OFF)</b> which is
-exactly what you want, and represents the turning OFF of the LED for those 2
-seconds. 
-<br>
-10. Setting up the PICKit3:
-<br>
-&nbsp &nbsp &nbsp a. The driver on the Starter Kit CD that comes with the PICKit3 must be installed before
-you can use this programmer. It comes with the program, but occasionally it needs to
-be separately installed.
-<br>
-&nbsp &nbsp &nbsp b. Plug in the PICKit3 to your PC's USB port.
-<br>
-&nbsp &nbsp &nbsp c. Connect it properly to your breadboard (the arrow on the programmer signifies the VPP
-pin or "programming pin", which is wired to <b>RA3</b> (pin 4) of your PIC.
-<br>
-&nbsp &nbsp &nbsp d. Turn on your breadboard power supply .
-<br>
-&nbsp &nbsp &nbsp e. Select <u>Project>Select Programmer>PICKit3</u>. The output window will show <i>PICKit3</i>
-connected.
-<br>
-11. Program the PIC:
-<br>
-&nbsp &nbsp &nbsp a. <u>Project>Program</u> will allow the computer to program the device. The computer will
-give a notification informing about voltage warning, make sure that the
-microcontroller uses the same voltage as the selected one from the computer.
-<br>
-&nbsp &nbsp &nbsp b. Your should receive a message like the one below.
-<br>
-&nbsp &nbsp &nbsp c. Turn on the 5V battery pack, and watch your LED flash! If it’s connected to a voltage
-regulator with a 9 volt battery, connect the battery and it will work!
-If there are any errors, refer to the information page!
-<br>
-&nbsp &nbsp &nbsp d. Can you make it flash faster?? 
-<br><br>
-&nbsp &nbsp &nbsp <b>Conclusion</b>
-<br>
-<b>1. Look below at the mainline for asmFlashLED_B (version B).</b>
-<br>
-&nbsp &nbsp &nbsp <b>a. What has changed?</b>
-<br>
-&nbsp &nbsp &nbsp Binary value is inputted instead of bsf and bcf for PORTC.
-<br>
-&nbsp &nbsp &nbsp <b>b. When would you use method A to write to PORTC?</b>
-<br>
-&nbsp &nbsp &nbsp When only one value is supposed changed.
-<br>
-&nbsp &nbsp &nbsp <b>c. When would you use method B to write to PORTC?</b>
-<br>
-&nbsp &nbsp &nbsp When the entire 8 bit value needs to be changed. 
-<br>
-<b>2. How many ports are there on the P16F684?</b>
-<br>
-12 Ports are present in the chip.
-<br><br>
-<b>3. Are all ports bi-directional?</b>
-<br>
-All ports are bi-directional.
-<br><br>
-<b>4. What is the first bit# on all registers in this PIC? The last bit#?</b>
-<br>
-The first bits are all 7, the last bit number is 0.
-<br><br>
-<b>5. What three things must you do before you write or read from any ports? Why?</b>
-<br>
-You must change the pin’s settings in to output or input,
-<br><br>
-<b>6. How do you use bank switching and why is it necessary?</b>
-<br>
-It is necessary to be able to access the special function register because the registers that
-control the chip’s settings are in it.
-<br><br>
-<b>7. Why is MPLAB SIM such an important tool?</b>
-<br>
-It checks all the values and results before the chip is used, as errors could potentially destroy
-the internal workings of the chip.
-<br><br>
-<b>8. What does the IDE in MPLAB IDE stand for? What does it mean?</b>
-<br>
-It stands for Integrated Development Environment.
-<br><br>
-<b>9. Why, when using the Stopwatch window, do we have to change the processor
-frequency from 20MHz to 4MHz?</b>
-<br>
-Because the PIC16F684 runs at 4MHz.
-<br><br>
-<b>10. How many clock cycles does 1 instruction cycle represent? </b>
-<br><br>
-<b>11. How many instruction cycles equals:</b>
-<br>
-&nbsp &nbsp &nbsp <b>a. one tenth of a second?</b>
-<br>
-&nbsp &nbsp &nbsp 100000 instruction cycles.
-<br>
-&nbsp &nbsp &nbsp <b>b. one thousandth?</b>
-<br>
-&nbsp &nbsp &nbsp 1000 instruction cycles.
-        <br>
-        <!-- don't put text after this for first column john -->
-      </div>
-      <div class="column">
-        <!-- pictures and whatever you want in the second column can go here!! -->
-        <center>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <img src="../Pictures/software_7_1.jpg">
-		  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>v<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		  <img src="../Pictures/software_7_2.jpg">
-          <br>
-        </center>
-        <!-- dont put anything after this john -->
-      </div>
-    </div>
-    <center>
-      <object data="pdf/tutorial_7.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-      </p>
-      <br>
-      <br>
-    </center>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-    </footer>
-      <!-- End footer -->
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
+        .column {
+            font-size: 20px;
+            float: left;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+        #answers{
+            font-size:20px;
+        }
+    </style>
 
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- End header -->
+            <center>
+                <!--                title-->
+                <br><br>
+                <h2>TUTORIAL #7
+                    <br>
+                    TEJ4M0</h2>
+                <br>
+                <!--links for prev or next-->
+                <h3><a href="tutorial_6.html">Previous Tutorial</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <a href="tutorial_8.html">Next Tutorial</a></h3>
+            </center>
+            <!--two columns-->
+            <div class="row">
+                <!-- left column instructions -->
+                <div class="column">
+                    <!-- hey you want to put the stuff for the left column in here -->
+                    <br>
+                    <b><u>Objective:</u></b>
+                    <ul style="list-style-type:square">
+                        <li>Configure the SFRs</li>
+                        <li>Use basic assembly language instructions (<i>movlw, movwf, clrf, goto</i>):</li>
+                        <ul style="list-style-type: circle">
+                            <li>To program PORTS so the LED will turn on and off, repeatedly</li>
+                        </ul>
+                        <li>Simulate code using MPLAB SIM <u>before</u> flashing code to PIC</li>
+                        <ul style="list-style-type: circle">
+                            <li>Adding the Stopwatch window and breakpoints to verify the timing of a delay</li>
+                        </ul>
+                        <li>Program your PIC using the PICKit3</li>
+                    </ul>
+                    <b><u>Procedure:</u></b>
+                    <br>
+                    <ol>
+                        <li>Create new project:</li>
+                        <ol type="a">
+                            <li>a. Create a new project and workspace called <i>asmLED_Flash</i> in a folder with the same
+                                name</li>
+                            <li>Open asmTemplate.asm from the Tutorial #1 and re-save it as <i>asmLEDFlash_A.asm</i>.</li>
+                            <li>Add the file to the project's source code</li>
+                        </ol>
+                        <li>The Delay header file:</li>
+                        <ol type="a">
+                            <li>After the <b>INCLUDE “p16f684.inc”</b> add: <b>INCLUDE "asmDelay.inc"</b> on the next line.
+                                <br>
+                                Locate and open the file. This file contains code that allows the programmer to
+                                specify a delay in microseconds. For example - <b>Delay 1500000</b> – represents 1.5
+                                seconds.</li>
+                            <li>To allow us to use it in multiple programs, we need to save it with the other header
+                                files in the following path: <b>C:\Program Files\Microchip\MPASM Suite.
+                                <br>
+                                If this is not possible for you, save it in the asmLED_Flash folder and add it to
+                                HEADER within the MPLAB program.</b></li>
+                            <li>Close the file after you've saved it in the new location.</li>
+                        </ol>
+                        <li>Modify Code:</li>
+                        <ol type="a">
+                            <li>Modify the code to match what is shown on asmLEDFlash_A.asm on the next page.</li>
+                            <li>Build all (Ctrl + F10) and rearrange the windows as shown below.</li>
+                        </ol>
+                        <br>
+                        <b>Configuring SFRs:</b>
+                        <ul style="list-style-type:square">
+                            <li>Before we can begin to use the PIC to send out digital 1s and 0s, we need to first configure
+                                some of the SFRs (Special Function Registers).</li>
+                            <ul style="list-style-type:circle">
+                                <li>Turn off comparators</li>
+                                <li>Switch all ports from analog to digital</li>
+                                <li>Teach each ports to be inputs and/or outputs</li>
+                            </ul>
+                            <li>CMCON0:</li>
+                            <ul style="list-style-type:circle">
+                                <li>This code is simply disabling the internal comparators so that it doesn’t interfere
+                                    with your program.</li>
+                            </ul>
+                            <li>ANSEL:</li>
+                            <ul style="list-style-type:circle">
+                                <li>This SFR is in Bank 1. Therefore, to access it, you must move to Bank 1 (set RP0
+                                    (bit 5) in your STATUS Register). This is called BANK SWITCHING.</li>
+                                <li>This PIC has 8 analog channels which share with the digital ports. The problem is,
+                                    the PIC defaults to analog. Thus, you must specify that you’re using digital from
+                                    the start. Hence, the code.</li>
+                            </ul>
+                            <li>TRISC:</li>
+                            <ul style="list-style-type:circle">
+                                <li>All 12 ports in the P16F684 are bi-directional (with the exception of RA3 which can
+                                    never be an output)</li>
+                                <li>To teach a port to be an input, you set (1) that bit in the TRIS reg </li>
+                                <li>To teach a port to be an output, you clear (0) that bit in the TRIS reg</li>
+                                <li>In our example, by clearing the TRISC reg, you’re making all the ports in PORTC
+                                    (RC0:RC5) outputs.</li>
+                            </ul>
+                            <li>STATUS:</li>
+                            <ul style="list-style-type:circle">
+                                <li>We must return to Bank 0 so that we can write to PORTC. To accomplish this we
+                                    clear (0) RP0. This is called BANK SWITCHING! </li>
+                            </ul>
+                        </ul>
+                        <li>Setup MPLAB SIM</li>
+                        <ol type="a">
+                            <li>Open MPLAB SIM</li>
+                            <li>Open the Watch window. Move it to the bottom right-hand corner of the screen.</li>
+                            <li>Add the following SFRs to the Watch window:</li>
+                            <ul style="list-style-type:square">
+                                <li>STATUS</li>
+                                <li>CMCON0</li>
+                                <li>ANSEL</li>
+                                <li>TRISC</li>
+                                <li>WREG</li>
+                                <li>PORTC</li>
+                            </ul>
+                        </ol>
+                        <li>Setup the Stopwatch window:</li>
+                        <ol type="a">
+                            <li>Select <u><i>Debugger>Stopwatch</i></u></li>
+                            <li>Select <u><i>Debugger>Settings…</i></u></li>
+                            <li>Change the Processor Frequency from 20 to 4 MHz, which is what the P16F684's
+                                internal oscillator defaults at. Click OK.</li>
+                            <li>Move the Stopwatch window to the right center side of the screen.</li>
+                        </ol>
+                        <li>Verify values in SFRs:</li>
+                        <ol type="a">
+                            <li>Click on the "Step Into" button for MPLAB SIM and verify the contents of the SFRs in
+                                the Watch window</li>
+                            <li><font color="red">Stop when you get to the first nop instruction.</font></li>
+                            <li>You should notice that <b>RC0</b> in PORTC (i.e. bit 0 in PORTC) has been "set". In other
+                                words, <b>RC0</b> is outputting or 'writing' a HIGH, which turns the LED ON.</li>
+                        </ol>
+                        <li>Add Breakpoints:</li>
+                        <ol type="a">
+                            <li>Breakpoints allow us to "Run" from one breakpoint to another, rather than stepping
+                                one instruction at a time. Due to the fact that we now have delays in our program
+                                which represent millions of instructions, it might take you some time to step through
+                                that!!!</li>
+                            <li>To add a breakpoint, double-click next to the <b>nop</b> instructions, which stand for "no
+                                instruction", and which offers another way to insert breakpoints.</li>
+                            <li>A circled <b>B</b> will appear signifying a breakpoint (to remove a breakpoint, simply doubleclick
+                                again)</li>
+                        </ol>
+                        <br>
+                        <b>The Stopwatch window</b>
+                        <ul style="list-style-type: square">
+                            <li>The P16F684 contains an internal clock that is configured to operate at 4MHz , or
+                                4,000,000 clock cycles/second which is why you changed this in Step 5 above. All PICs
+                                take 4 clock cycles to complete 1 instruction cycle, which equates to 1,000,000
+                                instructions/sec if you're using a 4MHz clock speed (4,000,000/4). Creating a delay is
+                                simply a matter of keeping the processor busy looping nothing for a specific number of
+                                instructions – precisely 1,000,000 instructions per second.</li>
+                            <li>Take note that the Stopwatch Window has counted 6 instructions (or 6 microseconds).
+                                This should make sense as you have just simulated 6 lines of code. Most instructions in
+                                assembler utilize one instruction cycle, whereas program branches (i.e. goto, subroutine
+                                calls) require two instruction cycles. This is why assembler is considered to be far more
+                                efficient a program than high-level languages like 'C' or 'Basic', which require
+                                considerably more instruction cycles/line of code, and are thus slower to process, and
+                                require more program memory. </li>
+                        </ul>
+                        <li>Simulate LED Flashing with MPLAB SIM:</li>
+                        <ol type="a">
+                            <li>Recall the purpose of this program: turn an LED ON, then turn it OFF; repeatedly.</li>
+                            <li>Click on the Zero button on the Stopwatch window to reset the count back to 0.</li>
+                            <li>With your green PC pointer at the <b>nop</b> line, click on the "Run" command in the
+                                simulator toolbar. <b>You should observe two crucial pieces of information</b>:</li>
+                            <ul style="list-style-type: square">
+                                <li>The Time in the Stopwatch now shows <b>2.000002</b> seconds (the <b>.000002</b> represents
+                                    the two instructions (<b>nop</b> and <b>bsf PORTC, 0</b>) executed in addition to the <b>2s</b> delay</li>
+                                <li>The Watch window shows <b>PORTC</b> outputting a <b>'000001`(RC0 is ON)</b> which is
+                                    exactly what you want, and represents the turning ON of the LED for those 2
+                                    seconds.</li>
+                            </ul>
+                            <li><b>Using MPLAB SIM to verify data flowing through registers BEFORE
+                                programming the PIC saves time in the long run because you're instantly
+                                aware that any problems must be hardware related (since the software has
+                                been verified).</b></li>
+                        </ol>
+                        <li>Simulate and Remainder of Program</li>
+                        <ol type="a">
+                            <li>Click on the Zero button on the Stopwatch window to reset the count back to 0.</li>
+                            <li>Using MPLAB SIM, click "Run" to the next breakpoint. Note the following:</li>
+                            <ul style="list-style-type: square">
+                                <li>RC0 (bit 0 in PORT0) is now 0, which represents the turning OFF of the LED.</li>
+                                <li>The Time in the Stopwatch now shows <b>2.000004</b> seconds (the <b>.000004</b> represents
+                                    two instructions that require 1 instruction cycle (<b>nop</b> and <b>bsf PORTC, 0</b>) plus 1
+                                    instruction, <b>goto</b>, requiring two instruction cycles (2+2=4 instruction cycles), plus
+                                    the <b>2s</b> delay</li>
+                                <li>The Watch window shows <b>PORTC</b> outputting a <b>'000000`(RC0 is OFF)</b> which is
+                                    exactly what you want, and represents the turning OFF of the LED for those 2
+                                    seconds. </li>
+                            </ul>
+                        </ol>
+                        <li>Setting up the PICKit3:</li>
+                        <ol type="a">
+                            <li>The driver on the Starter Kit CD that comes with the PICKit3 must be installed before
+                                you can use this programmer. It comes with the program, but occasionally it needs to
+                                be separately installed.</li>
+                            <li>Plug in the PICKit3 to your PC's USB port.</li>
+                            <li>Connect it properly to your breadboard (the arrow on the programmer signifies the VPP
+                                pin or "programming pin", which is wired to <b>RA3</b> (pin 4) of your PIC.</li>
+                            <li>Turn on your breadboard power supply.</li>
+                            <li>Select <u>Project>Select Programmer>PICKit3</u>. The output window will show <i>PICKit3</i>
+                                connected.</li>
+                        </ol>
+                        <li>Program the PIC:</li>
+                        <ol type="a">
+                            <li><u>Project>Program</u> will allow the computer to program the device. The computer will
+                                give a notification informing about voltage warning, make sure that the
+                                microcontroller uses the same voltage as the selected one from the computer.</li>
+                            <li>Your should receive a message like the one below.</li>
+                            <li>Turn on the 5V battery pack, and watch your LED flash! If it’s connected to a voltage
+                                regulator with a 9 volt battery, connect the battery and it will work!
+                                If there are any errors, refer to the information page!</li>
+                            <li>Can you make it flash faster?? </li>
+                            <br><br>
+                        </ol>
+                    </ol>
+                    <u><b>Conclusion</b></u>
+                    <ol>
+                        <li>Look below at the mainline for asmFlashLED_B (version B).</li>
+                        <ol type="a">
+                            <li>What has changed?</li>
+                            <li>b. When would you use method A to write to PORTC?</li>
+                            <li>When would you use method B to write to PORTC?</li>
+                        </ol>
+                        <li>How many ports are there on the P16F684?</li>
+                        <li>Are all ports bi-directional?</li>
+                        <li>What is the first bit# on all registers in this PIC? The last bit#?</li>
+                        <li>What three things must you do before you write or read from any ports? Why?</li>
+                        <li>How do you use bank switching and why is it necessary?</li>
+                        <li>Why is MPLAB SIM such an important tool?</li>
+                        <li>What does the IDE in MPLAB IDE stand for? What does it mean?</li>
+                        <li>Why, when using the Stopwatch window, do we have to change the processor
+                            frequency from 20MHz to 4MHz?</li>
+                        <li>How many clock cycles does 1 instruction cycle represent?</li>
+                        <ol type="a">
+                            <li>one tenth of a second?</li>
+                            <li>one thousandth?</li>
+                        </ol>
+                        <br>
+                    </ol>
+                </div>
+                <!-- pictures to aid instructions, right column -->
+                <div class="column">
+                    <center>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img src="../Pictures/software_7_1.jpg">
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <img src="../Pictures/software_7_2.jpg">
+                        <br>
+                    </center>
+                </div>
+            </div>
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_7.pdf" type="application/pdf" width="1000" height="800"></object>
+            </center>
+            <br>
+            <br>
+            <!--                answers section-->
+            <center>
+                <h2><b>Tutorial 7 Answers Below:</b></h2>
+                <!--hidden/reveal button-->
+                <button onclick="showPDFButton()">Reveal Answers</button>
+                <button onclick="hidePDFButton()">Hide Answers</button>
+            </center>
+            <!--answer pdf contents-->
+            <div hidden id="answers">
+                <ol>
+                    <li><b>Look below at the mainline for asmFlashLED_B (version B).</b></li>
+                    <ol type="a">
+                        <li><b>What has changed?</b></li>
+                        Binary value is inputted instead of bsf and bcf for PORTC.
+                        <li><b>When would you use method A to write to PORTC?</b></li>
+                        When only one value is supposed changed.
+                        <li><b>When would you use method B to write to PORTC?</b></li>
+                        When the entire 8 bit value needs to be changed. 
+                    </ol>
+                    <li><b>How many ports are there on the P16F684?</b></li>
+                    12 Ports are present in the chip.
+                    <li><b>Are all ports bi-directional?</b></li>
+                    All ports are bi-directional.
+                    <li><b>What is the first bit# on all registers in this PIC? The last bit#?</b></li>
+                    The first bits are all 7, the last bit number is 0.
+                    <li><b>What three things must you do before you write or read from any ports? Why?</b></li>
+                    You must change the pin’s settings in to output or input,
+                    <li><b>How do you use bank switching and why is it necessary?</b></li>
+                    It is necessary to be able to access the special function register because the registers that
+                    control the chip’s settings are in it.
+                    <li><b>Why is MPLAB SIM such an important tool?</b></li>
+                    It checks all the values and results before the chip is used, as errors could potentially destroy
+                    the internal workings of the chip.
+                    <li><b>What does the IDE in MPLAB IDE stand for? What does it mean?</b></li>
+                    It stands for Integrated Development Environment.
+                    <li><b>9. Why, when using the Stopwatch window, do we have to change the processor
+                        frequency from 20MHz to 4MHz?</b></li>
+                    Because the PIC16F684 runs at 4MHz.
+                    <li><b>How many clock cycles does 1 instruction cycle represent? </b></li>
+                    <li><b>How many instruction cycles equals:</b></li>
+                    <ol type="a">
+                        <li><b>one tenth of a second?</b></li>
+                        100000 instruction cycles.
+                        <li><b>one thousandth?</b></li>
+                        1000 instruction cycles.
+                    </ol>
+                </ol>
+                <br>
+                <br>
+                <br>
+                <center>
+                    <h1>PDF Version:</h1>
+                    <!-- PDF 2-->
+                    <object data="pdf/answer_7.pdf" type="application/pdf" width="1000" height="800">
+                    </object>
+                </center>
+            </div>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
