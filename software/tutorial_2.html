@@ -1,115 +1,109 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-	  background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-}
-	
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-#instructionsPrompt{
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  width: 50%;
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-  font-size: 20px;
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-}
+        .column {
+            font-size: 20px;
+            float: left;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+    </style>
 
-.column {
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
 
-    float: left;
-
-    width: 50%;
-
-    padding: 10px;
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-	}
-</style>
-
-<body>
-
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
-
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
-
-    <!-- Header -->
-       <header>
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
                 <center>
                     <br><br><br>
                     <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
@@ -119,9 +113,9 @@
             </header>
             <!-- End header -->
             <center>
-                <!--               title-->
+                <!--                title-->
                 <br><br>
-                <h2>TUTORIAL #2: My First Program
+                <h2>TUTORIAL #2: "My First Program!"
                     <br>
                     TEJ4M0</h2>
                 <br>
@@ -129,266 +123,204 @@
                 <h3><a href="tutorial_1.html">Previous Tutorial</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                     <a href="tutorial_3.html">Next Tutorial</a></h3>
             </center>
-<div class="row">
-<div id="instructionsPrompt" class="column">
-<!-- hey you want to put the stuff for the left column in here -->
-<br>
-<b><u>Objectives:</u></b>
-<br>
-• Create your first program in MPLAB and observe how data moves through WREG.
-<br>
-• Simulating code with WATCH window to observe data move through WREG.
-<br>
-• Use basic assembly language instructions (movlw, movwf, addlw, goto).
-<br><br>
-<b><u>Procedure:</b></u>
-<br>
-1. Create a new project and workspace:
-<br>
-a. Select <u>Project>New…</u>Name the project asmFirst.
-<br>
-b. Create a new folder called asmFirst within the Pic Programming folder in your student drive.
-<br>
-c. Save the project asmFirst into the folder asmFirst.
-<br>
-2. Create a new source code file - use asmTemplate.asm:
-<br>
-a. Select <u>File>Open...</u>Open asmTemplate.asm that you created in Tutorial #2.
-<br>
-b. Select  <u>File>Save As…</u> Change the name from asmTemplate.asm to asmFirst.asm.
-<br>
-c. Save it in the folder asmFirst.
-<br>
-3. Add source code to project and build:
-<br>
-a. Right click on Source Files in the Project window (TIP: To open the Project window, click  <u>View>Project</u>  and the Project window should open up).
-<br>
-b. Select  <u>Add  Files…</u>Add asmFirst.asm to the project.
-<br>
-c. Build project (Ctrl + F10); ensure you get "BUILD SUCCEEDED!".
-<br>
-4. Open MPLAB SIM and Watch window:
-<br>
-a. Select <u>Debugger>Select Tool>MPLAB SIM.</u> You should notice a new set of tools on the taskbar have 
-been added. These are the controls for the simulator.
-<br>
-b. Select <u>View>Watch</u> to open up the Watch window.
-<br>
-c. Rearrange the four windows to match Figure 2.1.
-<br>
-5. Write the program (Figure 2.1.1):
-<br>
-a. Modify the 'title' and 'setup' sections.
-<br>
-b. Add the code and programmer's comments in the mainline.
-<br>
-c. Remember that only one minor syntax error will result in a "BUILD FAILED”.
-<br>
-6. ‘Rebuild’ your program:
-<br>
-a. Ctrl + F10
-<br>
-b. Troubleshoot if necessary.
-<br>
-7. Setup Watch window (Fig 2.2):
-<br>
-a. Right-click on the column entitled Value and select both Binary and Decimal.
-<br>
-b. Deselect Value and Address.
-<br>
-c. Select the WREG from the pull down menu on the left.
-<br>
-d. Click the Add SFR button; WREG should appear in the window.
-<br>
-e. Select the i variable from the pull-down menu on the right.
-<br>
-f. Click the Add Symbol button; variable i should appear (Fig 2.4).
-<br>
-8. Start MPLAB SIM:
-<br>
-a. Place your mouse cursor over each of the symbols on the simulator toolbar until you
-come across Reset. Click it (Fig 2.5).
-<br>
-b. You will notice a green arrow (which represents the PC (Program Counter)) pop up on
-the screen, pointing at the first line of code after “org 0”. This is where the simulator
-starts (Fig 2.6).
-<br>
-9. Execute MPLAB SIM:
-<br>
-a. Each instruction in Assembler has two distinct parts: The mnemonic and the operand.
-(refer to your “Instruction Set” table which lists all 35 instructions). For example, the
-instruction movlw k, movlw is called the mnemonic and k is the operand. The
-mnemonic is simply an abbreviated form of the instruction. In this case, it’s saying
-“move some value into the working register”. The operand k, simply represents the
-value. Therefore, movlw 15 would move a value of 15 into the working register.
-<br>
-b. Click on the Step Into button on the simulator taskbar.
-<br>
-c. Observe the change to WREG in the Watch window: 6 has been loaded into the
-working register. Hence, the instruction movlw (i.e. move a literal value into the
-working register) is visible in both binary and decimal. Notice also that it turned
-everything red, indicating a change has been made (Fig 2.7).
-<br>
-d. Click one more time and you will see that 6 has been moved from the WREG to i.
-Hence, the instruction movwf (i.e. move the contents of w to a file register).
-Remember: All data must pass though the working register FIRST before going
-to any other register.
-<br>
-e. Step through until you reach the addwf i, f line of code. As you can probably guess,
-the addwf mnemonic is telling you that it will add the contents of the WREG with the
-contents of variable i. The additional piece of code that is included is the letter f. This
-is referred to as the destination bit, which can be either f or w. This means you can
-store the result of the addition in either the variable you're using, or the WREG (Fig
-2.8).
-<br>
-f. Change the destination bit to w, rebuild, reset the simulator and note the change (Fig
-2.9).
-<br>
-g. The simulator is an essential tool for building successful programs and interfaces,
-particularly when building the robot!!!
-<br>
-<!-- don't put text after this for first column john -->
-</div>
-<div class="column">
-<!-- pictures and whatever you want in the second column can go here!! -->
-<center>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
-                        <br>
-
+            <!--two columns-->
+            <div class="row">
+                <!-- left column instructions -->
+                <div class="column">
+                    <br>
+                    <b><u>Objectives:</u></b>
+                    <ul style="list-style-type: square">
+                        <li>Create your first program in MPLAB and observe how data moves through WREG.</li>
+                        <li>Simulating code with WATCH window to observe data move through WREG.</li>
+                        <li>Use basic assembly language instructions (movlw, movwf, addlw, goto).</li>
+                    </ul>
+                    <b><u>Procedure:</u></b>
+                    <ol>
+                        <li>Create a new project and workspace:</li>
+                        <ol type="a">
+                            <li>Select <u>Project>New…</u>Name the project asmFirst.</li>
+                            <li>Create a new folder called asmFirst within the Pic Programming folder in your student drive.</li>
+                            <li>Save the project asmFirst into the folder asmFirst.</li>
+                        </ol>
+                        <li>Create a new source code file - use asmTemplate.asm:</li>
+                        <ol type="a">
+                            <li>Select <u>File>Open...</u>Open asmTemplate.asm that you created in Tutorial #2.</li>
+                            <li>Select  <u>File>Save As…</u> Change the name from asmTemplate.asm to asmFirst.asm.</li>
+                            <li>Save it in the folder asmFirst.</li>
+                        </ol>
+                        <li>Add source code to project and build:</li>
+                        <ol type="a">
+                            <li>Right click on Source Files in the Project window (TIP: To open the Project window, click  <u>View>Project</u>  and the Project window should open up).</li>
+                            <li>Select  <u>Add  Files…</u>Add asmFirst.asm to the project.</li>
+                            <li>Build project (Ctrl + F10); ensure you get "BUILD SUCCEEDED!".</li>
+                        </ol>
+                        <li>Open MPLAB SIM and Watch window:</li>
+                        <ol type="a">
+                            <li>Select <u>Debugger>Select Tool>MPLAB SIM.</u> You should notice a new set of tools on the taskbar have 
+                                been added. These are the controls for the simulator.</li>
+                            <li>Select <u>View>Watch</u> to open up the Watch window.</li>
+                            <li>Rearrange the four windows to match Figure 2.1.</li>
+                        </ol>
+                        <li>Write the program (Figure 2.1.1):</li>
+                        <ol type="a">
+                            <li>Modify the 'title' and 'setup' sections.</li>
+                            <li>Add the code and programmer's comments in the mainline.</li>
+                            <li>Remember that only one minor syntax error will result in a "BUILD FAILED”.</li>
+                        </ol>
+                        <li>‘Rebuild’ your program:</li>
+                        <ol type="a">
+                            <li>Ctrl + F10</li>
+                            <li>Troubleshoot if necessary.</li>
+                        </ol>
+                        <li>Setup Watch window (Fig 2.2):</li>
+                        <ol type="a">
+                            <li>Right-click on the column entitled Value and select both Binary and Decimal.</li>
+                            <li>Deselect Value and Address.</li>
+                            <li>Select the WREG from the pull down menu on the left.</li>
+                            <li>Click the Add SFR button; WREG should appear in the window.</li>
+                            <li>Select the i variable from the pull-down menu on the right.</li>
+                            <li>Click the Add Symbol button; variable i should appear (Fig 2.4).</li>
+                        </ol>
+                        <li>Start MPLAB SIM:</li>
+                        <ol type="a">
+                            <li>Place your mouse cursor over each of the symbols on the simulator toolbar until you
+                                come across Reset. Click it (Fig 2.5).</li>
+                            <li>You will notice a green arrow (which represents the PC (Program Counter)) pop up on
+                                the screen, pointing at the first line of code after “org 0”. This is where the simulator
+                                starts (Fig 2.6).</li>
+                        </ol>
+                        <li>Execute MPLAB SIM:</li>
+                        <ol type="a">
+                            <li>Each instruction in Assembler has two distinct parts: The mnemonic and the operand.
+                                (refer to your “Instruction Set” table which lists all 35 instructions). For example, the
+                                instruction movlw k, movlw is called the mnemonic and k is the operand. The
+                                mnemonic is simply an abbreviated form of the instruction. In this case, it’s saying
+                                “move some value into the working register”. The operand k, simply represents the
+                                value. Therefore, movlw 15 would move a value of 15 into the working register.</li>
+                            <li>Click on the Step Into button on the simulator taskbar.</li>
+                            <li>Observe the change to WREG in the Watch window: 6 has been loaded into the
+                                working register. Hence, the instruction movlw (i.e. move a literal value into the
+                                working register) is visible in both binary and decimal. Notice also that it turned
+                                everything red, indicating a change has been made (Fig 2.7).</li>
+                            <li>Click one more time and you will see that 6 has been moved from the WREG to i.
+                                Hence, the instruction movwf (i.e. move the contents of w to a file register).
+                                Remember: All data must pass though the working register FIRST before going
+                                to any other register.</li>
+                            <li>Step through until you reach the addwf i, f line of code. As you can probably guess,
+                                the addwf mnemonic is telling you that it will add the contents of the WREG with the
+                                contents of variable i. The additional piece of code that is included is the letter f. This
+                                is referred to as the destination bit, which can be either f or w. This means you can
+                                store the result of the addition in either the variable you're using, or the WREG (Fig
+                                2.8).</li>
+                            <li>Change the destination bit to w, rebuild, reset the simulator and note the change (Fig
+                                2.9).</li>
+                            <li>The simulator is an essential tool for building successful programs and interfaces,
+                                particularly when building the robot!!!</li>
+                            <br>
+                            <img src="../Pictures/software_2_7.jpg"> 
+                            <br>
+                            <i>Figure 2.7</i>
+                            <br>
+                            <img src="../Pictures/software_2_8.jpg">
+                            <br>
+                            <i>Figure 2.8</i>
+                        </ol>
+                    </ol>
+                </div>
+                <!-- pictures to aid instructions, right column -->
+                <div class="column">
+                    <center>
                         <img src="../Pictures/software_2_1.jpg" width="600" height="400">
-
                         <br>
-	                <i>Figure 2.1</i>
-	                <br><br><br>
-	
-	                <img src="../Pictures/software_2_1.1.jpg">
-
+                        <i>Figure 2.1</i>
                         <br>
-	<i>Figure 2.1.1</i>
-	<br><br><br>
-
+                        <img src="../Pictures/software_2_1.1.jpg">
+                        <br>
+                        <i>Figure 2.1.1</i>
+                        <br>
                         <img src="../Pictures/software_2_2.jpg">
-
                         <br>
-	<i>Figure 2.2</i>
-	<br><br><br>
-
+                        <i>Figure 2.2</i>
+                        <br>
                         <img src="../Pictures/software_2_3.jpg">
-
                         <br>
-	<i>Figure 2.3</i>
-	<br><br><br>
-
+                        <i>Figure 2.3</i>
+                        <br>
                         <img src="../Pictures/software_2_4.jpg">
-
                         <br>
-	<i>Figure 2.4</i>
-	<br><br><br>
-
+                        <i>Figure 2.4</i>
+                        <br>
                         <img src="../Pictures/software_2_5.jpg">
-
                         <br>
-	<i>Figure 2.5</i>
-	<br><br><br>
-
+                        <i>Figure 2.5</i>
+                        <br>
                         <img src="../Pictures/software_2_6.jpg" width="600" height="400">
-
                         <br>
-	<i>Figure 2.6</i>
-	<br><br><br>
-
-                        <img src="../Pictures/software_2_7.jpg">
-
+                        <i>Figure 2.6</i>
                         <br>
-	<i>Figure 2.7</i>
-	<br><br><br>
-
-                        <img src="../Pictures/software_2_8.jpg">
-
                         <br>
-	<i>Figure 2.8</i>
-	<br><br><br>
-
                         <img src="../Pictures/software_2_9.jpg">
-
                         <br>
-	<i>Figure 2.9</i>
-	<br><br><br>
-
+                        <i>Figure 2.9</i>
+                        <br>
                     </center>
-<!-- dont put anything after this john -->
-</div>
-</div>
-    
-    
-      <!-- PDF 1-->
-      <object data="pdf/Tutorial 2.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-      
-      
-    </p>
-    <br>
-	<br>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
-    </footer>
+                </div>
+            </div>
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_2.pdf" type="application/pdf" width="1000" height="800"></object>
+                <br>
+                <br>
+            </center>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
 
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
+
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
