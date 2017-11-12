@@ -1,338 +1,326 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
-  }
-#instructionsPrompt{
-  width: 50%;
-  font-size: 20px;
-}
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-</style>
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-<body>
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-    <!-- End header -->
-<center><h2>TUTORIAL #1: MPLAB IDE
-<br>
-TEJ4M0</h2>
-<br>
-<h3><a href="tutorial_2.html">Next Tutorial</a></h3>
-</center>
-<div class="row">
-<div id="instructionsPrompt" class="column">
-<!-- hey you want to put the stuff for the left column in here -->
-<br>
-<b><u>Objectives:</u></b>
-<br>
-• Create a project, workspace, source code template in MPLAB IDE that you can use for all your subsequent programs.
-<br>
-• Learn to troubleshoot basic "ERRORS", "WARNINGS" and "MESSAGES".
-<br>
-• Apply a structured approach to coding.
-<br><br>
-<b><u>Procedure:</b></u>
-<br>
-1. Create a new project and workspace:
-<br>
-&nbsp &nbsp &nbsp a. Select Project>New…
-<br>
-&nbsp &nbsp &nbsp b. Name the project asmTemplate in the Project Name textbox.
-<br>
-&nbsp &nbsp &nbsp c. Click the 'Browse' button in the Project Directory textbox. Create a new folder within
-your student drive and call it Pic Programming. Then save your file in this new folder
-with the name asmTemplate. Click OK to close both windows.
-<br>
-&nbsp &nbsp &nbsp d. In older versions of MPLAB, the project window would automatically appear, but not
-so with the new one. Select View>Project . Notice that the project window opens and
-a new workspace (asmTemplate.mcw) is created with the new project contained
-inside it (asmTemplate.mcp) – see picture below. The purpose of the workspace is
-that it saves the "view" or the arrangement of windows, which is very useful as we
-will see later. The project is essentially a container for all the other files (i.e. source
-code, header, object files). For our purposes, we will be storing one source file within
-one project.
-<br>
-&nbsp &nbsp &nbsp e. Move the Project Window to the bottom left-hand corner (Fig 1.1).
-<br>
-2. Verify the correct Toolsuite is used:
-<br>
-&nbsp &nbsp &nbsp a. Select <i><u>Project>Select Language Toolsuite…</u></i>
-<br>
-&nbsp &nbsp &nbsp b. You should have Microchip MPASM Toolsuite already selected. If not, change it. This
-is also where you would change to HIGH-TECH Universal Toolsuite if you wanted to
-program your PIC in 'C' (Fig 1.2).
-<br>
-3. Configure MPLAB IDE to use the proper PIC device:
-<br>
-&nbsp &nbsp &nbsp a. First select <u><i>Configure>Select Device…</u></i>
-<br>
-&nbsp &nbsp &nbsp b. Locate and select the P16F684 in the Device textbox.
-<br>
-4. Create a new source code file asmTemplate.asm:
-<br>
-&nbsp &nbsp &nbsp a. Select <u><i>File>New…</u></i>
-<br>
-&nbsp &nbsp &nbsp b. Select <u><i>File>Save As…</u></i>
-<br>
-c. Name it asmTemplate.asm (include the .asm extension) and save it in the Pic
-Programming folder.
-<br>
-5. Add source code file to project:
-<br>
-&nbsp &nbsp &nbsp a. Right click on <i>Source Files</i> in the <i>Project</i> window. Select <u><i>Add Files…</u></i>
-<br>
-&nbsp &nbsp &nbsp b. Open the Pic Programming folder. Add <i>asmTemplate.asm</i> source code file to the
-project.
-<br>
-&nbsp &nbsp &nbsp c. You should see the file <i>asmTemplate.asm</i> is part of the project in the <i>Project</i> window.
-<br>
-&nbsp &nbsp &nbsp d. Double click on that file in the <i>Project</i> window, and your <i>Editor</i> window (which contains
-your source code) should pop up. Stretch the Editor window to fit above the <i>Project</i>
-window, but still leaving space to the right (Fig 1.3).
-<br>
-6. Write the source code in the Editor window:
-<br>
-&nbsp &nbsp &nbsp a. Read the last page of this Tutorial entitled - "Programming Conventions" – which
-gives you an explanation of the different sections that make up a typical program.
-<br>
-&nbsp &nbsp &nbsp b. Type in code (in the blue box) and programmer’s comments to your Editor window.
-<br>
-&nbsp &nbsp &nbsp c. Remember that only one minor syntax error will result in a “BUILD FAILED” .
-<br>
-<br>
-<b>Troubleshooting "ERRORS" and "WARNINGS" and "MESSAGES"</b>
-<br>
-• The only way your code won't build successfully is if you have an "ERROR". "WARNINGS" and "MESSAGES" usually involve a mistake in formatting. A common warning, for example, is <i>"Found opcode in column 1"</i>. Any code that occupies the first character space of any line is considered to be in column 1. Simple press the space bar, or tab key to shift the code out of column 1. Rebuild (Ctrl + F10) and you should see it disappear.
-<br>
-• If your code doesn't build successfully, scroll back and locate the <u>FIRST</u> "ERROR" . Scroll to the end of the error, and or warning and you will find a message describing the error (i.e. <i>"path exceeds 62 characters"</i> – try saving all files in a folder in the root directory of 'C' to shorten path length). Double click on the "ERROR", which will point to the exact line where the "ERROR" has occurred, fix it and rebuild. ERRORS are typically syntax in nature, and thus involve fixing a spelling mistake of some sort.
-<br>
-• <b>Remember that it only takes ONE syntax error to get a BUILD FAILED, so check carefully!!!</b>
-<br><br>
-7. Build your program as shown in Fig 1.4.:
-<br>
-&nbsp &nbsp &nbsp a. Modify the two lines of code that say 'author' and 'date' to your name and today's date.
-<br>
-&nbsp &nbsp &nbsp b. Resave your asmTemplate.asm file.
-<br>
-&nbsp &nbsp &nbsp c. Select Project>Build All (Ctrl + F10 is faster!).
-<br>
-&nbsp &nbsp &nbsp d. The Output window should open and a message should state "BUILD SUCCEEDED".
-<br>
-&nbsp &nbsp &nbsp e. Resize the Output window to fit below the Editor window.
-<br><br>
-<b>MPLAB IDE:</b>
-<br>
-• IDE stands for Integrated Development Environment, which is a fancy way of saying there
-are multiple functions/windows (write source code, simulate, program hardware, etc.)
-that can be used and organized in virtual environment.
-<br>
-• Organizing windows to view all the these functions is essential to using the PIC,
-particularly later when more windows are introduced; otherwise windows overlap, and it
-becomes increasingly difficult to see everything.
-<br><br>
-<b>Programming Conventions</b>
-<br>
-• Communicating your code correctly is almost as important as the code itself. Code that is not properly communicated is more difficult to debug. This template provides an accurate example of how each program is to be structured. Ensure that you always follow this format. All of your programs should be broken up into three or four distinct (depending on if you have subroutines or not) and separate sections, each of which is separated by a dotted line.
-<br><br>
-<b>Section 1: Title</b>
-<br>
-• Each of your programs should begin with a title and a description about what the program does. The word "title" is a directive, and must be placed in the second column (use Tab key or one space). You should notice in your Editor Window that all directives and instructions are blue. Directives are actually a slightly lighter shade than are instructions.
-<br>
-• Underneath that should be a description of what the program does, some notes about the hardware, your name and the date. Observe the use of the semi-colon used for any comments. When your code builds, anything in front of the semi colon is ignored. Comments are depicted in green.
-<br><br>
-<b>Section 2: Setup</b>
-<br>
-• "Setup" establishes a few things. MPLAB defaults to a hexadecimal numbering system. For most programs that involve hardware, it's easier to use binary, however there is no way to default to binary. Some programmers prefer to use decimal for ease of use. Your other option is octal. Notice the LIST directive is used to establish that the "radix" (or "R": a fancy way of saying numbering system) will be decimal.
-<br>
-• The "include" directive on the second line includes the "header file" for the particular PIC we are using - the 16F684. This header file equates labels (words that describe registers, locations in memory, etc.) to specific addresses so that you can code with greater ease. For example, to move to Bank 1, we must set the RP0 bit in the STATUS register. Rather than having to remember what bit number RP0 represents (bit 5), and write - bsf STATUS, 5 - we can write - bsf STATUS, RP0 – instead.
-<br>
-• The configuration statement enables and disables specific features of the PIC, "ANDing" all of these instructions together. For example, the last statement _INTOSCIO enables the internal oscillator (i.e. clock). Be sure to record this statement exactly as you see it. Keep in mind that the first statement (__CONFIG) consists of two underscores, and to put the entire config statement on ONE line.
-<br>
-• "CBLOCK" is used to declare variables to the first available registers in the GPR. Recall that the first available GPR is at address 0x020 (remember the "0x" means it's hex, do the conversion, and the number is 32 in decimal). CBLOCK automatically assigns variables to addresses in data memory (RAM).
-<br><br>
-<b>Section 3/4: Mainline/Subroutine</b>
-<br>
-• "PAGE" is another directive which refers to where you write the mainline code and subroutines (more on that later). Note that all subroutines are placed after the mainline. The directive "org" tells the PIC to begin executing code in the first address of program memory (called the reset vector @ address 0x00).
-<br>
-• The "end" directive does just what it says – it ends your program!
-<br><br><br>
-<b>Tips</b>
-<br>
-1) If the project window is closed, then click View>Project to open up the window.
-<br>
-2) Make sure that your code is not in the first column as that will give you an error.
-<br><br>
-<!-- don't put text after this for first column john -->
-</div>
-<div class="column">
-<!-- pictures and whatever you want in the second column can go here!! -->
-<center>
-<br><br><br><br><br><br><br><br><br>
-<img src="../Pictures/software_1_1.jpg">
-<br>
-<i>Fig 1.1: Project window placement.</i>
-<br><br>
-<img src="../Pictures/software_1_2.jpg">
-<br>
-<i>Fig 1.2: Select MPASM Toolsite.</i>
-<br><br>
-<img src="../Pictures/software_1_3.jpg">
-<br>
-<i>Fig 1.3: Editor window placement.</i>
-<br><br>
-<img src="../Pictures/software_1_4.jpg">
-<br>
-<i>The source code</i>
-<br><br>
-<img src="../Pictures/software_1_5.jpg">
-<br>
-<i>Fig 1.4: Workspace setup</i>
-</center>
-<!-- dont put anything after this john -->
-</div>
-</div>
-<center>
-      <object data="pdf/tutorial_1.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-	  </center>
-    </p>
-    <br>
-	<br>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
-    </footer>
+        .column {
+            font-size: 20px;
+            float: left;
+            width: 50%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+    </style>
 
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- End header -->
+            <center>
+                <!--                title-->
+                <br><br>
+                <h2>TUTORIAL #1: MPLAB IDE
+                    <br>
+                    TEJ4M0</h2>
+                <br>
+                <!--links for prev or next-->
+                <h3><a href="../software.html">Back to Menu</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <a href="tutorial_2.html">Next Tutorial</a></h3>
+            </center>
+            <!--two columns-->
+            <div class="row">
+                <!-- left column instructions -->
+                <div class="column">
+                    <br>
+                    <b><u>Objectives:</u></b>
+                    <ul style="list-style-type: square">
+                        <li>Create a project, workspace, source code template in MPLAB IDE that you can use for all your subsequent programs.</li>
+                        <li>Learn to troubleshoot basic "ERRORS", "WARNINGS" and "MESSAGES".</li>
+                        <li>Apply a structured approach to coding.</li>
+                    </ul>
+                    <b><u>Procedure:</u></b>
+                    <ol>
+                        <li>Create a new project and workspace:</li>
+                        <ol type="a">
+                            <li>Select Project>New…</li>
+                            <li>Name the project asmTemplate in the Project Name textbox.</li>
+                            <li>Click the 'Browse' button in the Project Directory textbox. Create a new folder within
+                                your student drive and call it Pic Programming. Then save your file in this new folder
+                                with the name asmTemplate. Click OK to close both windows.</li>
+                            <li>In older versions of MPLAB, the project window would automatically appear, but not
+                                so with the new one. Select View>Project . Notice that the project window opens and
+                                a new workspace (asmTemplate.mcw) is created with the new project contained
+                                inside it (asmTemplate.mcp) – see picture below. The purpose of the workspace is
+                                that it saves the "view" or the arrangement of windows, which is very useful as we
+                                will see later. The project is essentially a container for all the other files (i.e. source
+                                code, header, object files). For our purposes, we will be storing one source file within
+                                one project.</li>
+                            <li>Move the Project Window to the bottom left-hand corner (Fig 1.1).</li>
+                        </ol>
+                        <li>Verify the correct Toolsuite is used:</li>
+                        <ol type="a">
+                            <li>Select <i><u>Project>Select Language Toolsuite…</u></i></li>
+                            <li>You should have Microchip MPASM Toolsuite already selected. If not, change it. This
+                                is also where you would change to HIGH-TECH Universal Toolsuite if you wanted to
+                                program your PIC in 'C' (Fig 1.2).</li>
+                        </ol>
+                        <li>Configure MPLAB IDE to use the proper PIC device:</li>
+                        <ol type="a">
+                            <li>First select <u><i>Configure>Select Device…</i></u></li>
+                            <li>Locate and select the P16F684 in the Device textbox.</li>
+                        </ol>
+                        <li>Create a new source code file asmTemplate.asm:</li>
+                        <ol type="a">
+                            <li>Select <u><i>File>New…</i></u></li>
+                            <li>Select <u><i>File>Save As…</i></u></li>
+                            <li>Name it asmTemplate.asm (include the .asm extension) and save it in the Pic
+                                Programming folder.</li>
+                        </ol>
+                        <li>Add source code file to project:</li>
+                        <ol type="a">
+                            <li>Right click on <i>Source Files</i> in the <i>Project</i> window. Select <u><i>Add Files…</i></u></li>
+                            <li>Open the Pic Programming folder. Add <i>asmTemplate.asm</i> source code file to the
+                                project.</li>
+                            <li>You should see the file <i>asmTemplate.asm</i> is part of the project in the <i>Project</i> window.</li>
+                            <li>Double click on that file in the <i>Project</i> window, and your <i>Editor</i> window (which contains
+                                your source code) should pop up. Stretch the Editor window to fit above the <i>Project</i>
+                                window, but still leaving space to the right (Fig 1.3).</li>
+                        </ol>
+                        <li>Write the source code in the Editor window:</li>
+                        <ol type="a">
+                            <li>Read the last page of this Tutorial entitled - "Programming Conventions" – which
+                                gives you an explanation of the different sections that make up a typical program.</li>
+                            <li>Type in code (in the blue box) and programmer’s comments to your Editor window.</li>
+                            <li>Remember that only one minor syntax error will result in a “BUILD FAILED” .</li>
+                        </ol>
+                        <b>Troubleshooting "ERRORS" and "WARNINGS" and "MESSAGES"</b>
+                        <ul style="list-style-type: square">
+                            <li>The only way your code won't build successfully is if you have an "ERROR". "WARNINGS" and "MESSAGES" usually involve a mistake in formatting. A common warning, for example, is <i>"Found opcode in column 1"</i>. Any code that occupies the first character space of any line is considered to be in column 1. Simple press the space bar, or tab key to shift the code out of column 1. Rebuild (Ctrl + F10) and you should see it disappear.</li>
+                            <li>If your code doesn't build successfully, scroll back and locate the <u>FIRST</u> "ERROR" . Scroll to the end of the error, and or warning and you will find a message describing the error (i.e. <i>"path exceeds 62 characters"</i> – try saving all files in a folder in the root directory of 'C' to shorten path length). Double click on the "ERROR", which will point to the exact line where the "ERROR" has occurred, fix it and rebuild. ERRORS are typically syntax in nature, and thus involve fixing a spelling mistake of some sort.</li>
+                            <li><b>Remember that it only takes ONE syntax error to get a BUILD FAILED, so check carefully!!!</b></li>
+                        </ul>
+                        <li>Build your program as shown in Fig 1.4.:</li>
+                        <ol type="a">
+                            <li>Modify the two lines of code that say 'author' and 'date' to your name and today's date.</li>
+                            <li>Resave your asmTemplate.asm file.</li>
+                            <li>Select Project>Build All (Ctrl + F10 is faster!).</li>
+                            <li>The Output window should open and a message should state "BUILD SUCCEEDED".</li>
+                            <li>Resize the Output window to fit below the Editor window.</li>
+                        </ol>
+                    </ol>
+                    <b>MPLAB IDE:</b>
+                    <ul style="list-style-type: square">
+                        <li>IDE stands for Integrated Development Environment, which is a fancy way of saying there
+                            are multiple functions/windows (write source code, simulate, program hardware, etc.)
+                            that can be used and organized in virtual environment.</li>
+                        <li>Organizing windows to view all the these functions is essential to using the PIC,
+                            particularly later when more windows are introduced; otherwise windows overlap, and it
+                            becomes increasingly difficult to see everything.</li>
+                    </ul>
+                    <b>Programming Conventions</b>
+                    <ul style="list-style-type: square">
+                        <li>Communicating your code correctly is almost as important as the code itself. Code that is not properly communicated is more difficult to debug. This template provides an accurate example of how each program is to be structured. Ensure that you always follow this format. All of your programs should be broken up into three or four distinct (depending on if you have subroutines or not) and separate sections, each of which is separated by a dotted line.</li>
+                    </ul>
+                    <b>Section 1: Title</b>
+                    <ul style="list-style-type: square">
+                        <li>Each of your programs should begin with a title and a description about what the program does. The word "title" is a directive, and must be placed in the second column (use Tab key or one space). You should notice in your Editor Window that all directives and instructions are blue. Directives are actually a slightly lighter shade than are instructions.</li>
+                        <li>Underneath that should be a description of what the program does, some notes about the hardware, your name and the date. Observe the use of the semi-colon used for any comments. When your code builds, anything in front of the semi colon is ignored. Comments are depicted in green.</li>
+                    </ul>
+                    <b>Section 2: Setup</b>
+                    <ul style="list-style-type: square">
+                        <li>"Setup" establishes a few things. MPLAB defaults to a hexadecimal numbering system. For most programs that involve hardware, it's easier to use binary, however there is no way to default to binary. Some programmers prefer to use decimal for ease of use. Your other option is octal. Notice the LIST directive is used to establish that the "radix" (or "R": a fancy way of saying numbering system) will be decimal.</li>
+                        <li>The "include" directive on the second line includes the "header file" for the particular PIC we are using - the 16F684. This header file equates labels (words that describe registers, locations in memory, etc.) to specific addresses so that you can code with greater ease. For example, to move to Bank 1, we must set the RP0 bit in the STATUS register. Rather than having to remember what bit number RP0 represents (bit 5), and write - bsf STATUS, 5 - we can write - bsf STATUS, RP0 – instead.</li>
+                        <li>The configuration statement enables and disables specific features of the PIC, "ANDing" all of these instructions together. For example, the last statement _INTOSCIO enables the internal oscillator (i.e. clock). Be sure to record this statement exactly as you see it. Keep in mind that the first statement (__CONFIG) consists of two underscores, and to put the entire config statement on ONE line.</li>
+                        <li>"CBLOCK" is used to declare variables to the first available registers in the GPR. Recall that the first available GPR is at address 0x020 (remember the "0x" means it's hex, do the conversion, and the number is 32 in decimal). CBLOCK automatically assigns variables to addresses in data memory (RAM).</li>
+                    </ul>
+                    <b>Section 3/4: Mainline/Subroutine</b>
+                    <ul style="list-style-type: square">
+                        <li>"PAGE" is another directive which refers to where you write the mainline code and subroutines (more on that later). Note that all subroutines are placed after the mainline. The directive "org" tells the PIC to begin executing code in the first address of program memory (called the reset vector @ address 0x00).</li>
+                        <li>The "end" directive does just what it says – it ends your program!</li>
+                    </ul>
+                    <b>Tips</b>
+                    <ol>
+                        <li>If the project window is closed, then click View>Project to open up the window.</li>
+                        <li>Make sure that your code is not in the first column as that will give you an error.</li>
+                    </ol>
+                </div>
+                <!-- pictures to aid instructions, right column -->
+                <div class="column">
+                    <center>
+                        <br><br><br><br><br><br><br><br><br>
+                        <img src="../Pictures/software_1_1.jpg">
+                        <br>
+                        <i>Fig 1.1: Project window placement.</i>
+                        <br><br>
+                        <img src="../Pictures/software_1_2.jpg">
+                        <br>
+                        <i>Fig 1.2: Select MPASM Toolsite.</i>
+                        <br><br>
+                        <img src="../Pictures/software_1_3.jpg">
+                        <br>
+                        <i>Fig 1.3: Editor window placement.</i>
+                        <br><br>
+                        <img src="../Pictures/software_1_4.jpg">
+                        <br>
+                        <i>The source code</i>
+                        <br><br>
+                        <img src="../Pictures/software_1_5.jpg">
+                        <br>
+                        <i>Fig 1.4: Workspace setup</i>
+                    </center>
+                </div>
+            </div>
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_1.pdf" type="application/pdf" width="1000" height="800"></object>
+                <br>
+                <br>
+            </center>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
+
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
