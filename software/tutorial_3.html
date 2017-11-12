@@ -1,251 +1,291 @@
 <!DOCTYPE html>
 <html>
-<title>Software Tutorials</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  #myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: grey;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 30px;
-    /* Some padding */
-    border-radius: 100px;
-    /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color: #1f4060;
-    /* Add a dark-grey background on hover */
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
-  
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
-  
-  .bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/w3images/profile_girl.jpg');
-    min-height: 100%;
- 
-}
+    <title>PIC Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /*        button css config*/
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: grey;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 30px;
+            /* Some padding */
+            border-radius: 100px;
+            /* Rounded corners */
+        }
 
-</style>
+        #myBtn:hover {
+            background-color: #1f4060;
+            /* Add a dark-grey background on hover */
+        }
 
-<body>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
-      <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
-      <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large">
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/w3images/profile_girl.jpg');
+            min-height: 100%;
+        }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+        header{
+            border: solid;
+            border-color: #494949;
+            margin-top: -25px;
+            margin-left: -25px;
+            margin-right: -25px;
+            background-color: #85878c;
+        }
+        #instructions{
+            font-size: 20px;
+        }
+    </style>
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
-      <img src="#" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="#" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-    <!-- End header -->
-<center><h2>TUTORIAL #3: PIC Scavenger Hunt
-<br>
+    <body>
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="../index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="../about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="../software.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software</a>
+                <a href="../hardware.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hardware</a>
+                <a href="../contact_us.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <!--        menu holder-->
+        <div class="w3-main w3-padding-large">
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <!-- Header -->
+            <header>
+                <center>
+                    <br><br><br>
+                    <h1 class="w3-jumbo"><b>Software Tutorials</b></h1>
+                    PIC Programming
+                    <br><br>
+                </center>
+            </header>
+            <!-- End header -->
+            <center>
+                <!--                title-->
+                <br><br>
+                <h2>TUTORIAL #3: PIC Scavenger Hunt
+                    <br>
                     TEJ4M0</h2>
                 <br>
                 <!--links for prev or next-->
                 <h3><a href="tutorial_2.html">Previous Tutorial</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                     <a href="tutorial_4.html">Next Tutorial</a></h3>
             </center>
-<div class="row">
-<div id="instructionsPrompt" class="column">
-<!-- hey you want to put the stuff for the left column in here -->
-<br>
-<b><u>Objectives:</u></b>
-<br>
-• To educate one self on how to find answers about the PIC16F684 and Assembler
-<br><br>
-<b><u>Procedure:</b></u>
-<br>
-- Go to <a href="http://www.microchip.com/">www.microchip.com</a> and download the latest full version of MPLAB IDE onto your PC at home. Also load PICC-Lite when it prompts you after loading MPLAB. This is the 'C' complier you can use if writing in 'C'.
-<br>
-- Use MPLAB IDE, and “The PIC Package” to answer the following questions:
-<br>
-1. How many available GPRs are thee in Bank 0 of the 16F684?
-<br>
-2. What is the first available address (in hex) in the GPR? The last?
-<br>
-3. Which programmers can you use with the P16F684? (hint: see "Configure" menu in MPLAB IDE)
-<br>
-4. How large is the instruction set in MPASM (Microchip PIC Assembler)?
-<br>
-5. For the instruction movlw k , what does k represent?
-<br>
-6. Where must all data first be written to before going to any other register?
-<br>
-7. For the instruction addwf f,d , what does f represent?
-<br>
-8. For the instruction addwf f,d , what does d represent?
-<br>
-9. Using Notepad, open the header file p16f684.inc (run a search). What values are assigned
-(EQU) to W and F registers. Why?
-<br>
-10. What are the two address locations of the Status Register?
-<br>
-11. What would have to happen in order to set (logical 1) the Z bit of the Status Reg?
-<br>
-12. What would have to happen in order to set (logical 1) the C bit of the Status Reg?
-<br>
-13. Which bit in the STATUS Register is responsible for bank selecting?
-<br>
-14. Which bank is being selected if the Status Reg had a value of 00100110?
-<br>
-Is the value of the Digit Carry bit set (logical 1) or cleared (logical 0)?
-<br>
-15. What is the address of the “Reset Vector”?
-<br>
-16. What do bits 6 and 7 represent in both PORTA and PORTC?
-Why?
-<br>
-17. asmSecond
-<br>
-Make a new project and name it asmSecond.mcp, saving it in a folder called asmSecond
-Write a program that adds the contents of 2 different GPR registers, subtracts this sum from
-the contents of another register, and finally stores the result in the WREG (i.e. (10 + 13) - 5
-=18). Remember to utilize the template when coding and use MPLAB SIM to view the results
-of your code in the Watc.
+            <br>
+            <div id="instructions">
+                <br>
+                <b><u>Objectives:</u></b>
+                <ul style="list-style-type: square">
+                    <li>To educate one self on how to find answers about the PIC16F684 and Assembler</li>
+                </ul>
+                <b><u>Procedure:</u></b>
+                <ul style="list-style-type: square">
+                    <li>Go to <a href="http://www.microchip.com/">www.microchip.com</a> and download the latest full version of MPLAB IDE onto your PC at home. Also load PICC-Lite when it prompts you after loading MPLAB. This is the 'C' complier you can use if writing in 'C'.</li>
+                    <li>Use MPLAB IDE, and “The PIC Package” to answer the following questions:</li>
+                    1. How many available GPRs are thee in Bank 0 of the 16F684?
+                    <br>
+                    2. What is the first available address (in hex) in the GPR? The last?
+                    <br>
+                    3. Which programmers can you use with the P16F684? (hint: see "Configure" menu in MPLAB IDE)
+                    <br>
+                    4. How large is the instruction set in MPASM (Microchip PIC Assembler)?
+                    <br>
+                    5. For the instruction movlw k , what does k represent?
+                    <br>
+                    6. Where must all data first be written to before going to any other register?
+                    <br>
+                    7. For the instruction addwf f,d , what does f represent?
+                    <br>
+                    8. For the instruction addwf f,d , what does d represent?
+                    <br>
+                    9. Using Notepad, open the header file p16f684.inc (run a search). What values are assigned
+                    (EQU) to W and F registers. Why?
+                    <br>
+                    10. What are the two address locations of the Status Register?
+                    <br>
+                    11. What would have to happen in order to set (logical 1) the Z bit of the Status Reg?
+                    <br>
+                    12. What would have to happen in order to set (logical 1) the C bit of the Status Reg?
+                    <br>
+                    13. Which bit in the STATUS Register is responsible for bank selecting?
+                    <br>
+                    14. Which bank is being selected if the Status Reg had a value of 00100110?
+                    <br>
+                    Is the value of the Digit Carry bit set (logical 1) or cleared (logical 0)?
+                    <br>
+                    15. What is the address of the “Reset Vector”?
+                    <br>
+                    16. What do bits 6 and 7 represent in both PORTA and PORTC?
+                    Why?
+                    <br>
+                    17. asmSecond
+                    <br>
+                    Make a new project and name it asmSecond.mcp, saving it in a folder called asmSecond
+                    Write a program that adds the contents of 2 different GPR registers, subtracts this sum from
+                    the contents of another register, and finally stores the result in the WREG (i.e. (10 + 13) - 5
+                    =18). Remember to utilize the template when coding and use MPLAB SIM to view the results
+                    of your code in the Watc.
+                </ul>
+            </div>
+            <!-- pictures to aid instructions, right column -->
 
-<!-- don't put text after this for first column john -->
-</div>
-<div class="column">
-<!-- pictures and whatever you want in the second column can go here! -->
-<!-- dont put anything after this john -->
-</div>
-</div>
-	  
-	  
-	  
-	  
-    <!-- Title and prev/next pdfs hyperlink-->
-    <center><pre class="tab"><h3><a href="tutorial_2.html">Previous Tutorial</a>		<b>Tutorial 3 - PIC Scavenger Hunt</b>			<a href="tutorial_4.html">Next Tutorial</a></h3></pre>
-      <br>
-      <!-- PDF 1-->
-      <object data="pdf/Tutorial 3.pdf" type="application/pdf" width="1000" height="800">
-        <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-      </object>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <!-- title for pdf answers-->
-      <h3><b>Tutorial 3 answers:</b></h3>
-	  <!--hidden/reveal button-->
-      <button onclick="showPDFButton()">Reveal Answers</button>
-      <button onclick="hidePDFButton()">Hide Answers</button>
-	  <!--answer pdf contents-->
-      <p hidden id="answers">
-        <br>
-        <!-- PDF 2-->
-        <object data="pdf/answer_3.pdf" type="application/pdf" width="1000" height="800">
-          <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>.</p>
-    </center>
-    </object>
-    </p>
-    <br>
-	<br>
-    <!-- go back to top button html-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Footer -->
-    <br>
-    <br>
-    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-      <p class="w3-medium">Created by the Web Development team</p>
-      <!-- End footer -->
-    </footer>
+            <!--pdf version-->
+            <center>
+                <h1>PDF Version:</h1>
+                <br>
+                <object data="pdf/tutorial_3.pdf" type="application/pdf" width="1000" height="800"></object>
+            </center>
+            <br>
+            <br>
+            <center>
+                <h2><b>Tutorial 3 Answers Below:</b></h2>
+                <!--hidden/reveal button-->
+                <button onclick="showPDFButton()">Reveal Answers</button>
+                <button onclick="hidePDFButton()">Hide Answers</button>
+                <br>
+            </center>
+            <div hidden id="answers">
+                <div style="font-size: 20px">
+                    <ol>
+                        <li>How many available GPRs are there in Bank 0 of the 16F684?</li>
+                        Bank 0 contains 128, which are 00h to 7Fh.
+                        <li>What is the first available address (in hex) in the GPR? The last?</li>
+                        20h to 7Fh.
+                        <li>Which programmers can you use with the P16F684?</li>
+                        PICSTART Plus, MPLAB REAL ICE, PICkit 1/2/3, MPLAB ICD 2/3, PRO MATE II,
+                        MPLAB PM3 are the programmers.
+                        <li>How large is the instruction set in MPASM?</li>
+                        Instruction set in MPASM is 35 commands.
+                        <li>For the instruction movlw k, what does k represent?</li>
+                        k = Literal field, constant data or label.
+                        <li>Where must all data first be written to before going to any other register?</li>
+                        Working register takes all the data before allocating them to other registers.
+                        <li>For the instruction addwf f, d, what does f represent?</li>
+                        f = register file address (0x00 to 0x7F).
+                        <li>For the instruction addwf f,d , what does d represent?</li>
+                        d = destination select; d = 0 indicates store result in working register, d = 1 indicates
+                        result in file, corresponding register.
+                        <li>Using Notepad, open the header file p16f684.inc (run a search). What values are assigned
+                            (EQU) to W and F registers?</li>
+                        H’0000’ is assigned to W register. F register is set to H’0001’.
+                        <li>What are the two address locations of the Status Register?</li>
+                        03h, 83h are the two addresses.
+                        <li>What would have to happen to set (logical 1) the Z (bit 2) bit of the Status Reg?</li>
+                        The arithmetic/logic operation must have an answer of not 0.
+                        <li>What would have to happen to set (logical 1) the C (bit 0) bit of the Status Reg?</li>
+                        When 1 is carried out from the most significant bit from the result in ALU bit position.
+                        <li>Which bit in the STATUS Register is responsible for bank selecting?</li>
+                        bit 5, register bank select bit. Indicates which bank it will message.
+                        <li>Which bank is being selected if the Status Reg had a value of 00100110? Is the value of the
+                            Digit Carry bit set (logical 1) or cleared (logical 0)?</li>
+                        Bank 1 is being selected, the result of the arithmetic operation is not 0, The carry bit
+                        is 0, but the digit carry is 1.
+                        <li>What is the address of the “Reset Vector”?</li>
+                        0000h contains the reset vector, interrupt vector is at 0004h.
+                        <li>What do bits 6 and 7 represent in both PORTA and PORTC?</li>
+                        0, unimplemented location.
+                    </ol>
+                </div>
+                <!--answer pdf contents-->
+                <center>
+                    <h1>PDF Version:</h1>
+                    <!-- PDF 2-->
+                    <object data="pdf/answer_3.pdf" type="application/pdf" width="1000" height="800">
+                    </object>
+                    </div>
+                </center>
+            <br><br><br><br><br><br>
+            <!-- go back to top button html-->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- Footer -->
+            <br>
+            <br>
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <p class="w3-medium">Created by the Web Development team</p>
+            </footer>
+            <!-- End footer -->
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- js dont touch-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
 
-    <!-- END PAGE CONTENT -->
-  </div>
-  <!-- js dont touch-->
-  <script>
-    window.onscroll = function() {
-      scrollFunction()
-    };
+            function showPDFButton() {
+                document.getElementById("answers").removeAttribute("hidden");
+            }
 
-    function showPDFButton() {
-      document.getElementById("answers").removeAttribute("hidden");
-    }
+            function hidePDFButton() {
+                document.getElementById("answers").setAttribute("hidden", "true");
+            }
 
-    function hidePDFButton() {
-      document.getElementById("answers").setAttribute("hidden", "true");
-    }
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+            // Open and close sidebar
+            function openNav() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-      document.documentElement.scrollTop = 0; // For IE and Firefox
-    }
-    // Open and close sidebar
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-</body>
+            function closeNav() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </body>
 
 </html>
