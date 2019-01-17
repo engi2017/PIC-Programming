@@ -1,7 +1,7 @@
 # PIC-Programming
 Welcome!
 
-PIC-Programming is website created by the tech class of John Fraser Secondary School to educate tech-inspired students to build a line following robot. The website is hosted through github, and can be reached [here](www.tinyurl.com/haadware). We hope that you enjoy your adventures in building this robot, and learn lots along the way!
+PIC-Programming is website created by the tech class of John Fraser Secondary School to educate tech-inspired students to build a line following robot. The website is hosted through github, and can be reached [here](https://engi2017.github.io/PIC-Programming/). We hope that you enjoy your adventures in building this robot, and learn lots along the way!
 
 
 Below are the subsections of the website.
